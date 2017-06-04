@@ -92,7 +92,7 @@ ro.mediatek.version.release=ALPS.W10.24.p0
 ro.mediatek.platform=MT8163
 
 # Tethering
-wifi.tethering.interface=ap0
+wifi.tethering.interface=wlan0
 ro.tether.denied=false
 
 # Device-Specific prop
