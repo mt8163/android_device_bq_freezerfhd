@@ -90,7 +90,9 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_cli \
     hostapd \
-    hostapd_cli
+    hostapd_cli \
+    wificond \
+    wifilogd
 
 # Graphic
 PRODUCT_PACKAGES += \
