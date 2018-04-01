@@ -11,7 +11,7 @@ ifeq ($(TARGET_INCLUDE_LIBKARIN),true)
         karin_xlog.c \
         karin_framework.cpp \
         karin_gui.cpp \
-        karin_thermal.cpp \
+        karin_net.cpp \
         karin_camera.cpp
 include $(BUILD_SHARED_LIBRARY)
 endif
