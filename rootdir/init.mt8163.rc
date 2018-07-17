@@ -114,6 +114,10 @@ on post-fs
     # Allow writing to the kernel trace log.
     chmod 0222 /sys/kernel/debug/tracing/trace_marker
 
+    # Hack for nvram/nvdata
+    chmod a+rw /nvdata
+    chmod a+rw /dev/block/platform/mtk-msdc.0/11120000.MSDC0/by-name/nvram
+
 on post-fs-data
     chown system system /persist
     chmod 0771 /persist
