@@ -1,4 +1,4 @@
-LOCAL_PATH := device/malatamobile/bq_aquaris_m8
+LOCAL_PATH := device/bq/karin
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := $(LOCAL_PATH)/kernel
