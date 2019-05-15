@@ -1,5 +1,5 @@
 # Inherit device configuration
-$(call inherit-product, device/bq/aquaris_M8/device.mk)
+$(call inherit-product, device/bq/omni_aquaris_M8/device.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := aquaris_M8
