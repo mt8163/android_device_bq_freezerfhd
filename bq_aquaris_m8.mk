@@ -7,4 +7,4 @@ PRODUCT_NAME := Aquaris_M8
 PRODUCT_BRAND := bq
 PRODUCT_MANUFACTURER := bq
 PRODUCT_MODEL := Aquaris_M8
-TARGET_DEVICE = omni_Aquaris_M8
+TARGET_DEVICE = bq_aquaris_m8
