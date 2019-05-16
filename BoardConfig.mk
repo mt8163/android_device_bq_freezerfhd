@@ -1,3 +1,6 @@
+# Device path
+LOCAL_PATH := device/malatamobile/bq_aquaris_m8
+
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 TARGET_BOOTLOADER_BOARD_NAME := Aquaris_M8
@@ -26,7 +29,7 @@ TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
 
 # Kernel
-TARGET_PREBUILT_KERNEL := device/malatamobile/bq_aquaris_m8/Image.gz-dtb
+TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/Image.gz-dtb
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 BOARD_MKBOOTIMG_ARGS := --pagesize 2048 --base 0x40078000 --kernel_offset 0x00008000 --ramdisk_offset 0x05f88000 --second_offset 0x00e88000 --tags_offset 0x0df88000
 

@@ -1,5 +1,5 @@
 LOCAL_PATH := $(call my-dir)
 
-include $(CLEAR_VARS)
-
-ALL_PREBUILT += $(INSTALLED_KERNEL_TARGET)
+ifneq ($(filter Aquaris_M8,$(TARGET_DEVICE)),)
+include $(call all-makefiles-under,$(LOCAL_PATH))
+endif
