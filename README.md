@@ -1,4 +1,4 @@
-# Device tree freezerfhd for build LineageOS 14.0/CM14.1
+# Device tree karin for build LineageOS 14.0/CM14.1
 About Device:
 ![alt text](http://i1.wp.com/www.blogtecnologia.es/wp-content/uploads/2017/02/bq.jpg)
 =====================================
