@@ -16,13 +16,13 @@ $(call inherit-product, device/bq/aquaris_m8/full_aquaris_m8.mk)
 
 $(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 
-PRODUCT_NAME := lineage_aquaris_m8
+PRODUCT_NAME := full_aquaris_m8
 BOARD_VENDOR := bq
 PRODUCT_DEVICE := aquaris_m8
 
-PRODUCT_GMS_CLIENTID_BASE := android-motorola
+PRODUCT_GMS_CLIENTID_BASE := android-bq
 
-PRODUCT_MANUFACTURER := motorola
+PRODUCT_MANUFACTURER := bq
 PRODUCT_MODEL := BQ Aquaris M8
 
 PRODUCT_BRAND := bq
