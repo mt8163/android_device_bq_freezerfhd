@@ -32,6 +32,8 @@ TARGET_2ND_CPU_VARIANT := cortex-a15
 
 TARGET_CPU_ABI_LIST := arm64-v8a,armeabi-v7a,armeabi
 TARGET_CPU_ABI_LIST_64_BIT := arm64-v8a
+TARGET_USES_64_BIT_BINDER := true
+
 
 # Common properties
 TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
