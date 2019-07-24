@@ -125,4 +125,5 @@ WIFI_DRIVER_FW_PATH_STA:=P2P
 # Inherit from the proprietary version
 -include vendor/bq/aquaris_m8/BoardConfigVendor.mk
 
-
+# Little hack for avoid Kernel source errors
+$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr/)
