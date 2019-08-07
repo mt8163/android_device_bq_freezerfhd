@@ -12,20 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/bq/aquaris_m8/full_aquaris_m8.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
+# Inherit from aquaris_m8
+$(call inherit-product, device/bq/aquaris_m8/device.mk)
 
-PRODUCT_NAME := full_aquaris_m8
-BOARD_VENDOR := bq
 PRODUCT_DEVICE := aquaris_m8
-
-PRODUCT_GMS_CLIENTID_BASE := android-bq
-
-PRODUCT_MANUFACTURER := bq
-PRODUCT_MODEL := BQ Aquaris M8
-
+PRODUCT_NAME := cm_aquaris_m8
 PRODUCT_BRAND := bq
-TARGET_VENDOR := bq
-TARGET_VENDOR_PRODUCT_NAME := full_aquaris_m8
-TARGET_VENDOR_DEVICE_NAME := full_aquaris_m8
+PRODUCT_MODEL := aquaris_m8
+PRODUCT_MANUFACTURER := google
