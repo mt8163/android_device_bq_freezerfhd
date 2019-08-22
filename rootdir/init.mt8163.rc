@@ -30,14 +30,8 @@ on init
     symlink /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/logo /dev/logo
     symlink /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/misc2 /dev/misc2
 
-    mkdir /protect_f 0771 system system
-    mkdir /protect_s 0771 system system
-
     # Create mount point for persist partition
     mkdir /persist 0771 system system
-
-    # Create CIP mount point
-    mkdir /custom
 
     mkdir /mnt/cd-rom 0000 system system
 
@@ -1739,3 +1733,4 @@ on property:persist.service.hdcpkey.enable=1
 
 on property:persist.service.hdcpkey.enable=0
 		stop hdcpkey
+
