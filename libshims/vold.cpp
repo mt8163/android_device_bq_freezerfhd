@@ -4,3 +4,4 @@ extern "C" void _ZN10properties3keyE(void) {}
 extern "C" void _ZN10properties5propsE(void) {}
 extern "C" void _ZNK21UnencryptedProperties3GetINSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEEEET_PKcS8_(void) {}
 extern "C" void _ZNK21UnencryptedProperties2OKEv(void) {}
+extern "C" void e4crypt_non_default_key(void) {}
