@@ -28,7 +28,7 @@ TARGET_CPU_SMP := true
 #Kernel
 TARGET_PREBUILT_KERNEL := $(DEVICE_BASE)/prebuilt/Image.gz-dtb
 TARGET_KERNEL_ARCH := arm64
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x03f88000 --second_offset 0x00e88000 --tags_offset 0x0df88000
+BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x03f88000 --second_offset 0x00e88000 --tags_offset 0x0df88000 --base 0x40078000
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 40078000

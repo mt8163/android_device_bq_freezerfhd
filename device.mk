@@ -107,6 +107,13 @@ libshim_audio
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.zygote=zygote64_32
 
+# ADB on boot
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+	ro.secure=0
+        ro.adb.secure=0
+        security.perf_harden=0
+        ro.allow.mock.location=1
+        persist.sys.usb.config=adb,mtp
 
 WITH_EXFAT := true
 
