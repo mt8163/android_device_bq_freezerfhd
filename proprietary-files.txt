@@ -140,8 +140,6 @@ lib/hw/camera.mt8163.so
 lib/hw/hwcomposer.mt8163.so
 lib/hw/gralloc.mt8163.so
 lib/hw/gatekeeper.mt8163.so
-lib/hw/lights.mt8163.so
-lib/hw/power.default.so
 lib/hw/sensors.mt8163.so
 lib/lib3a.so
 lib/libacdk.so
@@ -283,8 +281,6 @@ lib64/hw/camera.mt8163.so
 lib64/hw/hwcomposer.mt8163.so
 lib64/hw/gralloc.mt8163.so
 lib64/hw/gatekeeper.mt8163.so
-lib64/hw/power.default.so
-lib64/hw/lights.mt8163.so
 lib64/hw/sensors.mt8163.so
 lib64/lib3a.so
 lib64/libacdk.so

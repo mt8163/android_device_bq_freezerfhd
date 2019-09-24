@@ -80,12 +80,12 @@ PRODUCT_PACKAGES += \
     memtrack.mt8163
 
 # Lights
-#PRODUCT_PACKAGES += \
-    #lights.mt8163
+PRODUCT_PACKAGES += \
+    lights.mt8163
 
 # Power
-#PRODUCT_PACKAGES += \
-	#power.default
+PRODUCT_PACKAGES += \
+    power.default
 
 # network
 PRODUCT_PACKAGES += \
@@ -95,6 +95,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ebtables \
     ethertypes
+
+# libmtk_symbols
+PRODUCT_PACKAGES += \
+    libmtk_symbols
 
 # Shims
 PRODUCT_PACKAGES += \
