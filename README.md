@@ -15,9 +15,8 @@ Storage | 16GB
 MicroSD | 256 GB
 Battery | LiPo 7280 mAh (non-removable)
 Dimensions | 246 x 171 x 8.2 mm
-Display | 1920 x 1200 pixels, 10.1"
+Display | 1280 x 800 pixels, 8"
 Rear Camera  | 5.0 MP
 Front Camera | 2.0 MP
 
-Note: This device tree still on work.. It may work wrong.
 This branch is for building CyanogenMod 13.0/LineageOS 13.0
