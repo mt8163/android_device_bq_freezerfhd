@@ -1,3 +1,4 @@
+# LOCAL PATHS
 DEVICE_BASE := device/bq/aquaris_m8
 DEVICE_VENDOR := vendor/bq/aquaris_m8
 KERNEL_SOURCE := kernel/bq/aquaris_m8
@@ -5,13 +6,16 @@ KERNEL_SOURCE := kernel/bq/aquaris_m8
 # inherit from the proprietary version
 -include $(DEVICE_VENDOR)/BoardConfigVendor.mk
 
+# Include
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_BASE)/include
 
+# Board
 TARGET_BOARD_PLATFORM_GPU := mali-720mp2
 
-TARGET_BOOTLOADER_BOARD_NAME := bq
+TARGET_BOOTLOADER_BOARD_NAME := mt8163b
 TARGET_NO_BOOTLOADER := true
 
+# ARCH
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
@@ -23,6 +27,7 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a15
 
+# CPU
 TARGET_CPU_SMP := true
 
 #Kernel
@@ -43,6 +48,7 @@ MTK_HARDWARE := true
 # Binder API version
 TARGET_USES_64_BIT_BINDER := true
 
+# Common Flags
 TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -DMTK_HARDWARE -mfpu=neon -mfloat-abi=softfp
 COMMON_GLOBAL_CFLAGS += -DMTK_HARDWARE -DREFRESH_RATE=60
@@ -57,7 +63,7 @@ MTK_HARDWARE := true
 MTK_APPENDED_DTB_SUPPORT := yes
 BOARD_USES_MTK_HARDWARE := true
 
-#Wifi
+# Wifi
 BOARD_WLAN_DEVICE := MediaTek
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_HOSTAPD_DRIVER := NL80211
@@ -80,7 +86,7 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 # Camera
 USE_CAMERA_STUB := true
 
-# BT
+# Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_MTK := true
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
@@ -103,7 +109,6 @@ TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 MAX_VIRTUAL_DISPLAY_DIMENSION := 1
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 1024*1024
-
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
 # VSYNC
@@ -146,13 +151,12 @@ TARGET_LD_SHIM_LIBS := \
 /system/lib/hw/audio.primary.mt8163.so|libshim_audio.so \
 /system/lib64/hw/audio.primary.mt8163.so|libshim_audio.so
 
-
 # SELinux
 BOARD_SEPOLICY_DIRS := \
        $(DEVICE_BASE)/sepolicy
 
 BLOCK_BASED_OTA := false
-TARGET_OTA_ASSERT_DEVICE := Aquaris_M8
+TARGET_OTA_ASSERT_DEVICE := Aquaris_M8,aquaris_m8,karin
 
 #TWRP COMMON
 TARGET_RECOVERY_FSTAB := $(DEVICE_BASE)/recovery.fstab
@@ -163,4 +167,5 @@ DEVICE_RESOLUTION := 800x1280
 # MTK HEADERS
 BOARD_CUSTOM_BOOTIMG_MK := device/bq/aquaris_m8/mkbootimg.mk
 
+# Build without sources
 $(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)

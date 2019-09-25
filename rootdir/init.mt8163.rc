@@ -24,7 +24,8 @@ on init
     # setprop ro.vold.primary_physical 1
 
     # LibShims support
-    export LD_SHIM_LIBS "/system/lib/libmedia_jni.so|vendor/lib/libshim_media.so:/system/lib64/libmedia_jni.so|vendor/lib64/libshim_media.so:/system/lib/libmtk_symbols.so"
+    export LD_SHIM_LIBS "/system/lib/libmedia_jni.so|vendor/lib/libshim_media.so:/system/lib64/libmedia_jni.so|vendor/lib64/libshim_media.so:/system/lib/hw/audio.primary.mt8163.so|system/vendor/lib/libshim_audio.so:/system/lib64/hw/audio.primary.mt8163.so|system/vendor/lib64/libshim_audio.so"
+    LD_PRELOAD "system/lib/libmtk_symbols.so:system/lib64/libmtk_symbols.so"
 
     # BATTERY proc
     chown shell system /proc/mtk_battery_cmd/current_cmd

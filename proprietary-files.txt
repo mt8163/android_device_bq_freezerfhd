@@ -149,6 +149,7 @@ lib/libaudiocompensationfilter.so
 lib/libaudiocomponentengine.so
 lib/libaudiocustparam.so
 lib/libaudiospdif.so
+lib/libaudiosetting.so
 lib/libbessound_hd_mtk.so
 lib/libblisrc32.so
 lib/libbluetooth_hw_test.so
@@ -289,6 +290,7 @@ lib64/libalsautils.so
 lib64/libaudiocompensationfilter.so
 lib64/libaudiocomponentengine.so
 lib64/libaudiocustparam.so
+lib64/libaudiosetting.so
 lib64/libbessound_hd_mtk.so
 lib64/libblisrc32.so
 lib64/libbluetooth_hw_test.so
@@ -331,7 +333,6 @@ lib64/libdirect-coredump.so
 lib64/libdpframework.so
 lib64/libdrmmtkutil.so
 lib64/libdrmmtkwhitelist.so
-lib64/libhevce_sb.ca7.android.so
 lib64/libblisrc.so
 lib64/libeffects.so
 lib64/libjni_pq.so
@@ -448,4 +449,38 @@ vendor/lib64/mediadrm/libmockdrmcryptoplugin.so
 vendor/pittpatt/models/recognition/face.face.y0-y0-71-N-tree_7-wmd.bin
 vendor/pittpatt/models/detection/yaw_roll_face_detectors.7.1
 vendor/pittpatt/models/detection/multi_pose_face_landmark_detectors.8
+
+# "Lost libs"
+lib/libfmjni.so
+lib64/libfmjni.so
+lib/libfmcust.so
+lib64/libfmcust.so
+etc/fmr/mt6627_fm_cust.cfg
+lib/libaudiodcrflt.so
+lib64/libaudiodcrflt.so
+lib/libmmsdkservice.so
+lib64/libmmsdkservice.so
+lib/libblisrc.so
+lib64/libblisrc.so
+lib/libcamdrv_FrmB.so
+lib64/libcamdrv_FrmB.so
+lib/libcam.iopipe_FrmB.so
+lib64/libcam.iopipe_FrmB.so
+lib/libaudiosetting.so
+lib64/libaudiosetting.so
+lib/libhevce_sb.ca7.android.so
+lib/libGdmaScalerPipe.so
+lib64/libGdmaScalerPipe.so
+lib/libcvsd_mtk.so
+lib64/libcvsd_mtk.so
+lib/libmsbc_mtk.so
+lib64/libmsbc_mtk.so
+lib/libcam.sdkclient.so
+lib64/libcam.sdkclient.so
+lib/libimageio_plat_drv_FrmB.so
+lib64/libimageio_plat_drv_FrmB.so
+lib/libimageio_FrmB.so
+lib64/libimageio_FrmB.so
+lib/libcam.campipe.so
+lib64/libcam.campipe.so
 

@@ -14,6 +14,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 PRODUCT_AAPT_CONFIG := normal mdpi
 PRODUCT_AAPT_PREF_CONFIG := mdpi
 
+# Set locale
+PRODUCT_DEFAULT_LANGUAGE := en
+PRODUCT_DEFAULT_REGION   := US
+
 # Permissions
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:system/etc/permissions/android.hardware.bluetooth_le.xml \
@@ -36,12 +40,16 @@ PRODUCT_COPY_FILES += \
 
 # Config files
 PRODUCT_COPY_FILES += \
-    frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
-    frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
+    $(DEVICE_BASE)/configs/media_codecs_ffmpeg.xml:system/etc/media_codecs_ffmpeg.xml \
+    $(DEVICE_BASE)/configs/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
+    $(DEVICE_BASE)/configs/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
+    $(DEVICE_BASE)/configs/media_codecs_mediatek_audio.xml:system/etc/media_codecs_mediatek_audio.xml \
+    $(DEVICE_BASE)/configs/media_codecs_mediatek_video.xml:system/etc/media_codecs_mediatek_video.xml \
+    $(DEVICE_BASE)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
     $(DEVICE_BASE)/configs/media_codecs.xml:system/etc/media_codecs.xml \
     $(DEVICE_BASE)/configs/media_profiles.xml:system/etc/media_profiles.xml \
-    $(DEVICE_BASE)/configs/audio_device.xml:system/etc/audio_device.xml
+    $(DEVICE_BASE)/configs/audio_device.xml:system/etc/audio_device.xml \
+    $(DEVICE_BASE)/configs/mtk_omx_core.cfg:system/etc/mtk_omx_core.cfg
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -62,18 +70,19 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-	bluetooth.default
+    bluetooth.default
 	
 # Graphics
 PRODUCT_PACKAGES += \
     libion \
-    #libccci_util \
-    #ccci_fsd \
-    #ccci_mdinit \
     libgui_ext \
     libui_ext \
-    #libgralloc_extra \
     libcap
+
+# MISC
+PRODUCT_PACKAGES += \
+    librs_jni \
+    com.android.future.usb.accessory
 
 # Memtrack
 PRODUCT_PACKAGES += \
@@ -85,7 +94,8 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    power.default
+    power.default \
+    power.mt8163
 
 # network
 PRODUCT_PACKAGES += \
@@ -102,10 +112,13 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-libshim_vold \
-libshim_media \
-libshim_audio
+    libshim_vold \
+    libshim_media \
+    libshim_audio
 
+# Camera
+PRODUCT_PACKAGES += \
+    Snap
 
 # Zygote
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -113,16 +126,23 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # ADB on boot
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	ro.secure=0
-        ro.adb.secure=0
-        security.perf_harden=0
-        ro.allow.mock.location=1
-        persist.sys.usb.config=adb,mtp
+	ro.adb.secure=0 \
+	ro.secure=0 \
+	ro.allow.mock.location=0 \
+	ro.debuggable=1
+
+# FM Radio
+PRODUCT_PACKAGES += \
+    FMRadio \
+    libfmjni
 
 WITH_EXFAT := true
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
+# MTP
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+	persist.sys.usb.config=adb,mtp
 
 # call dalvik heap config
 $(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
