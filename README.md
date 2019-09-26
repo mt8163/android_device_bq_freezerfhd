@@ -20,3 +20,34 @@ Rear Camera  | 5.0 MP
 Front Camera | 2.0 MP
 
 This branch is for building CyanogenMod 13.0/LineageOS 13.0
+
+Whats working?
+=================================================
+* Wifi
+* Bluetooth
+* Light Sensor
+* Power Sensor
+* Memtrack
+* Audio
+* OMX
+* DRM
+* GPS
+
+Whats not working? (TODO)
+=================================================
+* CameraDecoder
+* Video Record
+* Radio FM (Use jni for mtk)
+* Gyroscope
+* Accelerometer
+* SELinux in Permissive
+
+Not tested (?)
+=================================================
+* USB OTG
+* Ethernet
+* HDMI-CEC
+
+Special thanks to:
+=================================================
+* kjones

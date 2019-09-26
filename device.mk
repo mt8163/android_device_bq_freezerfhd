@@ -136,6 +136,15 @@ PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
 
+# Wi-Fi
+PRODUCT_PACKAGES += \
+    wifi2agps \
+    libwpa_client \
+    hostapd \
+    dhcpcd.conf \
+    wpa_supplicant \
+    wpa_supplicant.conf
+
 WITH_EXFAT := true
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0

@@ -94,7 +94,7 @@ bin/tiny_mkswap
 bin/tiny_swapoff
 bin/tiny_swapon
 bin/vtservice
-bin/wifi2agps
+#bin/wifi2agps
 bin/wpa_cli
 bin/xlog
 bin/wmt_loader
@@ -483,4 +483,7 @@ lib/libimageio_FrmB.so
 lib64/libimageio_FrmB.so
 lib/libcam.campipe.so
 lib64/libcam.campipe.so
+
+# Wifi critical lib
+lib64/libwapi.so
 
