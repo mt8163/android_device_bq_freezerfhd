@@ -32,11 +32,13 @@ Whats working?
 * OMX
 * DRM
 * GPS
+* Camera
+* Video Recording
 
 Whats not working? (TODO)
 =================================================
-* CameraDecoder
-* Video Record
+* ~~CameraDecoder~~
+* ~~Video Record~~
 * Radio FM (Use jni for mtk)
 * Gyroscope
 * Accelerometer
