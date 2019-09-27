@@ -1,4 +1,4 @@
-Device Tree For BQ Aquaris M8 (ALPHA)
+Device Tree For BQ Aquaris M8
 =================================================
 About Device:
 ![alt text](http://i1.wp.com/www.blogtecnologia.es/wp-content/uploads/2017/02/bq.jpg)
