@@ -446,9 +446,6 @@ vendor/lib/mediadrm/libmockdrmcryptoplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib64/mediadrm/libdrmclearkeyplugin.so
 vendor/lib64/mediadrm/libmockdrmcryptoplugin.so
-vendor/pittpatt/models/recognition/face.face.y0-y0-71-N-tree_7-wmd.bin
-vendor/pittpatt/models/detection/yaw_roll_face_detectors.7.1
-vendor/pittpatt/models/detection/multi_pose_face_landmark_detectors.8
 
 # "Lost libs"
 lib/libfmjni.so
@@ -483,6 +480,17 @@ lib/libimageio_FrmB.so
 lib64/libimageio_FrmB.so
 lib/libcam.campipe.so
 lib64/libcam.campipe.so
+
+# Camcoder
+lib/libMtkOmxAdpcmDec.so
+lib/libMtkOmxGsmDec.so
+lib/libMtkOmxRawDec.so
+lib/libMtkOmxG711Dec.so
+lib/libMtkOmxFlacDec.so
+lib/libMtkOmxAlacDec.so
+vendor/pittpatt/models/recognition/face.face.y0-y0-71-N-tree_7-wmd.bin
+vendor/pittpatt/models/detection/yaw_roll_face_detectors.7.1
+vendor/pittpatt/models/detection/multi_pose_face_landmark_detectors.8
 
 # Wifi critical lib
 lib64/libwapi.so
