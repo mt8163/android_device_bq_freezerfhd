@@ -154,7 +154,7 @@ BOARD_SEPOLICY_DIRS := \
        $(DEVICE_BASE)/sepolicy
 
 BLOCK_BASED_OTA := false
-TARGET_OTA_ASSERT_DEVICE := freezerfhd,Aquaris_M10FHD,Aquaris M10 FHD,aquaris_M10_FHD
+TARGET_OTA_ASSERT_DEVICE := freezerfhd
 
 #TWRP COMMON
 TARGET_RECOVERY_FSTAB := $(DEVICE_BASE)/recovery.fstab
