@@ -140,6 +140,7 @@ lib/hw/camera.mt8163.so
 lib/hw/hwcomposer.mt8163.so
 lib/hw/gralloc.mt8163.so
 lib/hw/gatekeeper.mt8163.so
+lib/hw/gps.mt8163.so
 lib/hw/sensors.mt8163.so
 lib/lib3a.so
 lib/libacdk.so
@@ -150,6 +151,7 @@ lib/libaudiocomponentengine.so
 lib/libaudiocustparam.so
 lib/libaudiospdif.so
 lib/libaudiosetting.so
+lib/libatciserv_jni.so
 lib/libbessound_hd_mtk.so
 lib/libblisrc32.so
 lib/libbluetooth_hw_test.so
@@ -259,6 +261,7 @@ lib/libvcodecdrv.so
 lib/libvp8dec_sa.ca7.so
 lib/libvp8enc_sa.ca7.so
 lib/libvp9dec_sa.ca7.so
+lib/libril_dongle.so
 lib/libwebrtc_audio_preprocessing.so
 lib/libwpa_client.so
 lib/libjni_eglfence.so
@@ -282,6 +285,7 @@ lib64/hw/camera.mt8163.so
 lib64/hw/hwcomposer.mt8163.so
 lib64/hw/gralloc.mt8163.so
 lib64/hw/gatekeeper.mt8163.so
+lib64/hw/gps.mt8163.so
 lib64/hw/sensors.mt8163.so
 lib64/lib3a.so
 lib64/libacdk.so
@@ -291,6 +295,7 @@ lib64/libaudiocompensationfilter.so
 lib64/libaudiocomponentengine.so
 lib64/libaudiocustparam.so
 lib64/libaudiosetting.so
+lib64/libatciserv_jni.so
 lib64/libbessound_hd_mtk.so
 lib64/libblisrc32.so
 lib64/libbluetooth_hw_test.so
@@ -380,6 +385,7 @@ lib64/libperfservicenative.so
 lib64/libpq_cust.so
 lib64/libpq_prot.so
 lib64/libspeech_enh_lib.so
+lib64/libril_dongle.so
 lib64/libstagefrighthw.so
 lib64/libSwJpgCodec.so
 lib64/libtz_uree.so
