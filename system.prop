@@ -65,6 +65,7 @@ ro.boot.selinux=disable
 debug.hwui.render_dirty_regions=false
 
 ro.sf.lcd_density=240
+ro.sf.hwrotation=90
 ro.product.device_group=g8004
 ro.product.customer=bq
 # disable ipo for development
