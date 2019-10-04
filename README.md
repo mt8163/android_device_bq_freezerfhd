@@ -23,3 +23,38 @@ Front Camera | 5.0 MP
 
 This branch is for building CyanogenMod 13.0/LineageOS 13.0
 
+Whats working?
+=================================================
+* Wifi
+* Bluetooth
+* Light Sensor
+* Power Sensor
+* Memtrack
+* Audio
+* OMX
+* DRM
+* GPS
+* Camera
+* Video Recording
+* HDMI
+
+Whats not working? (TODO)
+=================================================
+* Radio FM (Use jni for mtk)
+* Gyroscope
+* Accelerometer
+
+Other
+=================================================
+* SELinux in Permissive
+
+Not tested (?)
+=================================================
+* USB OTG
+* Ethernet
+
+Special thanks to:
+=================================================
+* yos-two for mt8163 sources
+
+

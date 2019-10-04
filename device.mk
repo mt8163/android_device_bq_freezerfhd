@@ -34,6 +34,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
 
+# Tedongle
+PRODUCT_COPY_FILES += \
+    $(DEVICE_BASE)/configs/android.mediatek.tedongle.xml:system/etc/permissions/android.mediatek.tedongle.xml
+
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(DEVICE_BASE)/rootdir,root)
