@@ -1,21 +1,25 @@
-# LOCAL PATHS
-DEVICE_BASE := device/bq/aquaris_m8
-DEVICE_VENDOR := vendor/bq/aquaris_m8
-KERNEL_SOURCE := kernel/bq/aquaris_m8
+DEVICE_PATH := device/bq/aquaris_m8
 
-# inherit from the proprietary version
--include $(DEVICE_VENDOR)/BoardConfigVendor.mk
+# Headers
+TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
-# Include
-TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_BASE)/include
+# Inherit from the proprietary version
+include vendor/bq/mt8163/BoardConfigVendor.mk
+include vendor/bq/aquaris_m8/BoardConfigVendor.mk
 
-# Board
+
+# Bootanimation
+TARGET_SCREEN_WIDTH := 1280
+TARGET_SCREEN_HEIGHT := 800
+
+# Platform
+TARGET_BOARD_PLATFORM := mt8163
 TARGET_BOARD_PLATFORM_GPU := mali-720mp2
 
-TARGET_BOOTLOADER_BOARD_NAME := mt8163b
+# Bootloader
 TARGET_NO_BOOTLOADER := true
 
-# ARCH
+# Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
@@ -26,44 +30,45 @@ TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a15
-
-# CPU
 TARGET_CPU_SMP := true
+TARGET_USES_64_BIT_BINDER := true
 
-#Kernel
-TARGET_PREBUILT_KERNEL := $(DEVICE_BASE)/prebuilt/Image.gz-dtb
-TARGET_KERNEL_ARCH := arm64
-BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x03f88000 --second_offset 0x00e88000 --tags_offset 0x0df88000 --base 0x40078000
+
+# Kernel Config
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+BOARD_KERNEL_BASE := 0x40078000
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_OFFSET := 0x00008000
+BOARD_KERNEL_TAGS_OFFSET := 0x0df88000
+BOARD_RAMDISK_OFFSET := 0x03f88000
+BOARD_SECOND_OFFSET := 0x00e88000
+
+BOARD_MKBOOTIMG_ARGS := \
+    --kernel_offset $(BOARD_KERNEL_OFFSET) \
+    --ramdisk_offset $(BOARD_RAMDISK_OFFSET) \
+    --second_offset $(BOARD_SECOND_OFFSET)   \
+    --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
+
+
+TARGET_PREBUILT_KERNEL := device/bq/aquaris_m8/prebuilt/Image.gz-dtb
+
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
-BOARD_KERNEL_BASE := 40078000
-BOARD_KERNEL_OFFSET := 00008000
-BOARD_KERNEL_PAGESIZE := 2048
-BOARD_FLASH_BLOCK_SIZE := 131072
 
-# MTK
+
 BOARD_HAS_MTK_HARDWARE := true
-MTK_HARDWARE := true
 
 # Binder API version
 TARGET_USES_64_BIT_BINDER := true
 
-# Common Flags
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -DMTK_HARDWARE -mfpu=neon -mfloat-abi=softfp
-COMMON_GLOBAL_CFLAGS += -DMTK_HARDWARE -DREFRESH_RATE=60
-COMMON_GLOBAL_CFLAGS += -DAMAZON_LOG -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
-COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
+BOARD_NO_SECURE_DISCARD := true
 
-# MTK Common stuff
-TARGET_BOARD_PLATFORM := mt8163
-BOARD_USES_MTK_AUDIO := true
-BOARD_HAS_MTK_HARDWARE := true
-MTK_HARDWARE := true
-MTK_APPENDED_DTB_SUPPORT := yes
-BOARD_USES_MTK_HARDWARE := true
+# Bootanimation
+TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
+TARGET_BOOTANIMATION_PRELOAD := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
-# WLAN
+# WIFI
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_HOSTAPD_DRIVER := NL80211
@@ -76,25 +81,14 @@ WIFI_DRIVER_FW_PATH_STA:=STA
 WIFI_DRIVER_FW_PATH_AP:=AP
 WIFI_DRIVER_FW_PATH_STA:=P2P
 
-# Bootanimation
-TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
-TARGET_BOOTANIMATION_PRELOAD := true
-TARGET_BOOTANIMATION_TEXTURE_CACHE := true
-
-# Camera
-USE_CAMERA_STUB := true
-
-# Bluetooth
-BOARD_HAVE_BLUETOOTH := true
+# BT
+BOARD_HAS_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_MTK := true
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_BASE)/bluetooth
-
-#Vold
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun%d/file
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 
 # Graphics
-BOARD_EGL_CFG := $(DEVICE_BASE)/configs/egl.cfg
+BOARD_EGL_CFG := $(DEVICE_PATH)/egl.cfg
 USE_OPENGL_RENDERER := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_OVERLAY := true
@@ -109,39 +103,29 @@ MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 1024*1024
 TARGET_FORCE_HWC_FOR_VIRTUAL_DISPLAYS := true
 
-# VSYNC
-#SF_VSYNC_EVENT_PHASE_OFFSET_NS := -8000000
-#VSYNC_EVENT_PHASE_OFFSET_NS := -8000000
-#PRESENT_TIME_OFFSET_FROM_VSYNC_NS := 0
+# HWC
 MTK_HWC_SUPPORT := yes
 MTK_HWC_VERSION := 1.4.1
-
-# Bootanimation
-TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
-TARGET_BOOTANIMATION_PRELOAD := true
-TARGET_BOOTANIMATION_TEXTURE_CACHE := true
-TARGET_SCREEN_WIDTH := 800
-TARGET_SCREEN_HEIGHT := 1280
 
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1937768448
 BOARD_CACHEIMAGE_PARTITION_SIZE := 444596224
-BOARD_USERDATA_PARTITION_SIZE := 1107296256
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 1107296256
 BOARD_FLASH_BLOCK_SIZE := 131072
+
 TARGET_USERIMAGES_USE_EXT4 := true
 
-BOARD_HAVE_BLUETOOTH_MTK := true
-BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
+BLOCK_BASED_OTA := true
 
-# Enable Minikin text layout engine (will be the default soon)
-USE_MINIKIN := true
+# Seccomp filters
+BOARD_SECCOMP_POLICY := $(DEVICE_PATH)/seccomp-policy
 
-#Use dlmalloc instead of jemalloc for mallocs
-MALLOC_SVELTE := true
+# Vold
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun%d/file
 
-# Shims
+# Libshims
 TARGET_LD_SHIM_LIBS := \
 /system/bin/vold|libshim_vold.so \
 /system/lib/libmedia_jni.so|libshim_media.so \
@@ -149,21 +133,64 @@ TARGET_LD_SHIM_LIBS := \
 /system/lib/hw/audio.primary.mt8163.so|libshim_audio.so \
 /system/lib64/hw/audio.primary.mt8163.so|libshim_audio.so
 
-# SELinux
-BOARD_SEPOLICY_DIRS := \
-       $(DEVICE_BASE)/sepolicy
 
-BLOCK_BASED_OTA := false
-TARGET_OTA_ASSERT_DEVICE := Aquaris_M8,aquaris_m8,karin
+# Software Gatekeeper
+BOARD_USE_SOFT_GATEKEEPER := true
 
-#TWRP COMMON
-TARGET_RECOVERY_FSTAB := $(DEVICE_BASE)/recovery.fstab
+# Charger
+BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
+BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/BOOT/BOOT/boot/boot_mode
+
+# Manifest
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifest.xml
+DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/configs/compatibility_matrix.xml
+
+# OTA assert
+TARGET_OTA_ASSERT_DEVICE:= Aquaris_M8
+
+# Enable Minikin text layout engine (will be the default soon)
+USE_MINIKIN := true
+
+# Fix video autoscaling on old OMX decoders
+TARGET_OMX_LEGACY_RESCALING:= true
+
+# Webkit
+ENABLE_WEBGL := true
+TARGET_FORCE_CPU_UPLOAD := true
+
+# Audio
+USE_XML_AUDIO_POLICY_CONF := 1
+
+# Exclude AudioFx
+TARGET_EXCLUDES_AUDIOFX := true
+
+# Camera
+TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
+TARGET_USES_NON_TREBLE_CAMERA := true
+USE_CAMERA_STUB := true
+TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := libcamera_parameters_mtk
+
+#BACKLIGHTS
+TARGET_PROVIDES_LIBLIGHT := true
+
+#system Prop
+TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
+
+#SENSORS
+TARGET_NO_SENSOR_PERMISSION_CHECK := true
+
+# TWRP
+ifneq (,$(strip $(wildcard bootable/recovery-twrp/twrp.cpp)))
+RECOVERY_VARIANT := twrp
+endif
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 BOARD_HAS_NO_SELECT_BUTTON := true
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone2/temp
 DEVICE_RESOLUTION := 800x1280
 
-# MTK HEADERS
-BOARD_CUSTOM_BOOTIMG_MK := device/bq/aquaris_m8/mkbootimg.mk
+#Use dlmalloc instead of jemalloc for mallocs
+MALLOC_SVELTE := true
 
-# Build without sources
-$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
+# Disable API check
+WITHOUT_CHECK_API := true
+

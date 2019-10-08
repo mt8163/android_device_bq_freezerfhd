@@ -39,6 +39,10 @@ ro.sys.usb.mtp.whql.enable=0
 # Power off opt in IPO
 sys.ipo.pwrdncap=2
 
+# Media Settings
+media.settings.xml=/system/vendor/etc/media_profiles_V1_0.xml
+persist.media.treble_omx=false
+
 ro.sys.usb.storage.type=mtp
 
 # USB BICR function
@@ -168,3 +172,4 @@ ro.mediatek.project.path=device/bq/aquaris_m8
 ro.mtk_sec_video_path_support=1
 ro.mtk_deinterlace_support=1
 ro.mtk_sensorhub_support=1
+
