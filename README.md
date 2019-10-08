@@ -35,21 +35,12 @@ repo init -u git://github.com/LineageOS/android.git -b lineage-16.0
 repo sync
 ```
 
-#### 3. Clone Fire device repositories
+#### 3. Clone BQ device repositories
 
 ```bash
 git clone https://github.com/mt8163/android_device_bq_aquaris_m8 -b lineage-16.0 device/amazon/karnak
 git clone https://github.com/mt8163/android_vendor_bq_aquaris_m8 -b lineage-16.0 vendor/bq/aquaris_m8
 ```
-
-#### 4. Build!
-
-Install my build script to build the kernel locally
-```bash
-curl  https://raw.githubusercontent.com/488315/build_scripts/master/build.sh > build.sh
-curl  https://raw.githubusercontent.com/488315/build_scripts/master/build_kernel.sh > build_kernel.sh
-```
-
 
 **Ensure you have `adb` and `fastboot` installed and in your path before continuing!**
 Learn how to do this here: https://wiki.lineageos.org/devices/bacon/build#build-lineageos-and-lineageos-recovery
