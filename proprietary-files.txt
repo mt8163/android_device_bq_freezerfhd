@@ -118,6 +118,7 @@ etc/firmware/mt6627/mt6627_fm_v5_coeff.bin
 etc/firmware/mt6627/mt6627_fm_v5_patch.bin
 etc/firmware/WIFI_RAM_CODE_8163
 etc/firmware/WMT_SOC.cfg
+etc/fmr/mt6627_fm_cust.cfg 
 etc/audio_device.xml
 etc/audio_effects.conf
 etc/audio_em.xml
@@ -150,13 +151,10 @@ lib/libaed.so
 lib/libaudiocompensationfilter.so
 lib/libaudiocomponentengine.so
 lib/libaudiocustparam.so
-
-
 lib/libaudiodcrflt.so
 lib/libaudioeffect_jni.so
 lib/libaudiomtkdcremoval.so
-
-
+lib/libaudiosetting.so
 lib/libaudiospdif.so
 lib/libbessound_hd_mtk.so
 lib/libblisrc32.so
@@ -200,6 +198,7 @@ lib/libcamalgo.so
 lib/libcamdrv.so
 lib/libcamdrv_FrmB.so
 lib/libcamera_client.so
+lib/libcam.sdkclient.so
 lib/libcameraservice.so
 lib/libcameracustom.so
 # CAM LIB END <<
@@ -226,6 +225,8 @@ lib/libfilterpack_imageproc.so
 lib/libfilterfw.so
 lib/libfeatureiodrv.so
 lib/libfile_op.so
+lib/libfmjni.so
+lib/libfmcust.so
 lib/libged.so
 lib/libgpu_aux.so
 lib/libgralloc_extra.so
@@ -241,6 +242,7 @@ lib/libblisrc.so
 lib/libimageio_plat_drv.so
 lib/libimageio.so
 lib/libion_mtk.so
+lib/libGdmaScalerPipe.so
 lib/libJpgDecPipe.so
 lib/libJpgEncPipe.so
 llib/libimsma_rtp.so
@@ -352,6 +354,7 @@ lib64/lib3a.so
 lib64/libacdk.so
 lib64/libaed.so
 lib64/libalsautils.so
+lib64/libaudiosetting.so
 lib64/libaudiocompensationfilter.so
 lib64/libaudiocomponentengine.so
 lib64/libaudiocustparam.so
@@ -385,6 +388,7 @@ lib64/libcam.iopipe.so
 lib64/libcam.metadata.so
 lib64/libcam.metadataprovider.so
 lib64/libcam.paramsmgr.so
+lib64/libcam.sdkclient.so
 lib64/libcam.utils.sensorlistener.so
 lib64/libcam.utils.so
 lib64/libcam1_utils.so
@@ -420,6 +424,8 @@ lib64/libfeatureiodrv.so
 lib64/libfilterpack_imageproc.so
 lib64/libfilterfw.so
 lib64/libfile_op.so
+lib64/libfmcust.so
+lib64/libfmjni.so
 lib64/libged.so
 lib64/libgpu_aux.so
 lib64/libgralloc_extra.so
@@ -461,6 +467,7 @@ lib64/libmtk_vt_swip.so
 lib64/libmtk_vt_utils.so
 lib64/libmtkcamera_client.so
 lib64/libmtkjpeg.so
+lib64/libGdmaScalerPipe.so
 lib64/libmtklimiter.so
 lib64/libMTKAudioTimeStretch.so
 lib64/libMtkOmxAdpcmDec.so
@@ -516,6 +523,7 @@ lib64/libvt_custom.so
 lib64/libvt_socketbind.so
 lib64/libvtmal.so
 lib64/libvobsub_jni.so
+lib64/libwapi.so
 lib64/soundfx/libaudiopreprocessing.so
 lib64/soundfx/libbundlewrapper.so
 lib64/soundfx/libdownmix.so
@@ -570,4 +578,3 @@ vendor/lib64/mediadrm/libmockdrmcryptoplugin.so
 vendor/pittpatt/models/recognition/face.face.y0-y0-71-N-tree_7-wmd.bin
 vendor/pittpatt/models/detection/yaw_roll_face_detectors.7.1
 vendor/pittpatt/models/detection/multi_pose_face_landmark_detectors.8
-
