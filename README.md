@@ -1,6 +1,6 @@
 ## LineageOS 16.0 for the BQ Aquaris M8 (aquaris_m8)
 
-An unofficial port of LineageOS 16.0 for the BQ Aquaris M8. This project is currently a work in progress. When the build is stable enough, a flashable zip will be released.
+An unofficial port of LineageOS 16.0 for the BQ Aquaris M8. This project is currently a work in progress.
 
 ### Building
 
@@ -38,7 +38,7 @@ repo sync
 #### 3. Clone BQ device repositories
 
 ```bash
-git clone https://github.com/mt8163/android_device_bq_aquaris_m8 -b lineage-16.0 device/amazon/karnak
+git clone https://github.com/mt8163/android_device_bq_aquaris_m8 -b lineage-16.0 device/bq/aquaris_m8
 git clone https://github.com/mt8163/android_vendor_bq_aquaris_m8 -b lineage-16.0 vendor/bq/aquaris_m8
 ```
 
