@@ -4,9 +4,7 @@ DEVICE_PATH := device/bq/aquaris_m8
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # Inherit from the proprietary version
-include vendor/bq/mt8163/BoardConfigVendor.mk
 include vendor/bq/aquaris_m8/BoardConfigVendor.mk
-
 
 # Bootanimation
 TARGET_SCREEN_WIDTH := 1280
@@ -30,12 +28,12 @@ TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a15
-TARGET_CPU_SMP := true
+
+TARGET_CPU_ABI_LIST := arm64-v8a,armeabi-v7a,armeabi
+TARGET_CPU_ABI_LIST_64_BIT := arm64-v8a
 TARGET_USES_64_BIT_BINDER := true
 
-
 # Kernel Config
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_BASE := 0x40078000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_OFFSET := 0x00008000
@@ -52,15 +50,15 @@ BOARD_MKBOOTIMG_ARGS := \
 
 TARGET_PREBUILT_KERNEL := device/bq/aquaris_m8/prebuilt/Image.gz-dtb
 
+# CMDLINE
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
-
+# MTK Hardware
 BOARD_HAS_MTK_HARDWARE := true
 
 # Binder API version
 TARGET_USES_64_BIT_BINDER := true
-
 BOARD_NO_SECURE_DISCARD := true
 
 # Bootanimation
@@ -114,9 +112,9 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1937768448
 BOARD_CACHEIMAGE_PARTITION_SIZE := 444596224
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1107296256
 BOARD_FLASH_BLOCK_SIZE := 131072
-
 TARGET_USERIMAGES_USE_EXT4 := true
 
+# OTA
 BLOCK_BASED_OTA := true
 
 # Seccomp filters
@@ -132,7 +130,6 @@ TARGET_LD_SHIM_LIBS := \
 /system/lib64/libmedia_jni.so|libshim_media.so \
 /system/lib/hw/audio.primary.mt8163.so|libshim_audio.so \
 /system/lib64/hw/audio.primary.mt8163.so|libshim_audio.so
-
 
 # Software Gatekeeper
 BOARD_USE_SOFT_GATEKEEPER := true
@@ -168,7 +165,6 @@ TARGET_EXCLUDES_AUDIOFX := true
 TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
 TARGET_USES_NON_TREBLE_CAMERA := true
 USE_CAMERA_STUB := true
-TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := libcamera_parameters_mtk
 
 #BACKLIGHTS
 TARGET_PROVIDES_LIBLIGHT := true
@@ -193,4 +189,3 @@ MALLOC_SVELTE := true
 
 # Disable API check
 WITHOUT_CHECK_API := true
-
