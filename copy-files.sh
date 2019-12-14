@@ -1,17 +1,24 @@
 #!/bin/bash
 
+SYSDIR=$1
+if [ "x$SYSDIR" = "x" ]; then
+echo "You must specify system directory as first argument";
+exit
+fi
+
 VENDOR=bq
 DEVICE=aquaris_m8
 
 BASE=../../../vendor/$VENDOR/$DEVICE/proprietary
 
-echo "Pulling $DEVICE files..."
+rm -rf $BASE/*
+
 for FILE in `cat proprietary-files.txt | grep -v ^# | grep -v ^$`; do
     DIR=`dirname $FILE`
     if [ ! -d $BASE/$DIR ]; then
         mkdir -p $BASE/$DIR
     fi
-    adb pull /system/$FILE $BASE/$FILE
+    cp $SYSDIR/$FILE $BASE/$FILE
 done
 
 ./setup-makefiles.sh

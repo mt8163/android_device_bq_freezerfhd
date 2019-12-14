@@ -451,7 +451,7 @@ lib64/libmal_datamngr.so
 lib64/libmal_epdga.so
 lib64/libmal_imsmngr.so
 lib64/libmal_mdmngr.so
-lib64/ibmal_nwmngr.so
+lib64/libmal_nwmngr.so
 lib64/libmal_rds.so
 lib64/libmal_rilproxy.so
 lib64/libmal_simmngr.so
@@ -470,19 +470,7 @@ lib64/libmtkjpeg.so
 lib64/libGdmaScalerPipe.so
 lib64/libmtklimiter.so
 lib64/libMTKAudioTimeStretch.so
-lib64/libMtkOmxAdpcmDec.so
-lib64/libMtkOmxAdpcmEnc.so
-lib64/libMtkOmxAlacDec.so
-lib64/libMtkOmxApeDec.so
 lib64/libMtkOmxCore.so
-lib64/libMtkOmxFlacDec.so
-lib64/libMtkOmxG711Dec.so
-lib64/libMtkOmxGsmDec.so
-lib64/libMtkOmxMp3Dec.so
-lib64/libMtkOmxRawDec.so
-lib64/libMtkOmxVdecEx.so
-lib64/libMtkOmxVenc.so
-lib64/libMtkOmxVorbisEnc.so
 lib64/libmsbc_mtk.so
 lib64/libmtkplayer.so
 lib64/libmtkshifter.so
@@ -498,8 +486,6 @@ lib64/libperfservice.so
 lib64/libperfservicenative.so
 lib64/libpq_cust.so
 lib64/libpq_prot.so
-lib64/libvie.so
-lib64/libvie_jni.so
 lib64/libspeech_enh_lib.so
 lib64/libstagefrighthw.so
 lib64/libSwJpgCodec.so
@@ -510,7 +496,6 @@ lib64/libvcodec_utility.so
 lib64/libwebrtc_audio_preprocessing.so
 lib64/libwifitest.so
 lib64/libjni_eglfence.so
-lib64/libjni_effects.so
 lib64/libja3m.so
 lib64/libwpa_client.so
 lib64/libzteevdo-ril.so
@@ -519,7 +504,6 @@ lib64/mtk-ril.so
 lib64/mtk-rilmd2.so
 lib64/volte_imsm.so
 lib64/libvt_avsync.so
-lib64/libvt_custom.so
 lib64/libvt_socketbind.so
 lib64/libvtmal.so
 lib64/libvobsub_jni.so
