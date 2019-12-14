@@ -116,7 +116,6 @@ PRODUCT_COPY_FILES += \
 # Camera
 PRODUCT_PACKAGES += \
     Camera2 \
-    libcamera_parameters_mtk \
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -178,6 +177,7 @@ PRODUCT_PACKAGES += \
 # Hidl
 include $(LOCAL_PATH)/hidl.mk
 
+# Vendor
 include vendor/bq/aquaris_m8/aquaris_m8-vendor.mk
 include vendor/bq/mt8163/mt8163-vendor.mk
 
