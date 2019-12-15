@@ -166,6 +166,7 @@ lib/libbluetoothem_mtk.so
 lib/libbt-vendor.so
 lib/libbtcusttable.so
 lib/libbwc.so
+lib/libcomutils.so
 # CAM LIB START >>
 lib/libcam_hwutils.so
 lib/libcam_mmp.so
@@ -366,6 +367,7 @@ lib64/libbluetooth_mtk.so
 lib64/libbluetooth_relayer.so
 lib64/libbluetoothem_mtk.so
 lib64/libbwc.so
+lib64/libcomutils.so
 #CAM LIB64 START >>
 lib64/libcameraservice
 lib64/libcamera_client.so
