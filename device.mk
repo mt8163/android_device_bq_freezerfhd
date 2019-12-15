@@ -172,7 +172,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libshim_vold \
     libshim_media \
-    libshim_audio
+    libshim_audio \
+    libshim_gui
 
 # Hidl
 include $(LOCAL_PATH)/hidl.mk
