@@ -47,8 +47,9 @@ BOARD_MKBOOTIMG_ARGS := \
     --second_offset $(BOARD_SECOND_OFFSET)   \
     --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 
-
+# Image
 TARGET_PREBUILT_KERNEL := device/bq/aquaris_m8/prebuilt/Image.gz-dtb
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 
 # CMDLINE
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
