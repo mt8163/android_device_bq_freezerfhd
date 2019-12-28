@@ -1,7 +1,3 @@
-#include <gui/BufferQueue.h>
-
-using namespace android;
-
 extern "C" {
     void _ZN7android4Rect10EMPTY_RECTE() {}
 }
