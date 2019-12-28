@@ -52,6 +52,11 @@ apt-get install bc bison build-essential ccache curl flex g++-multilib gcc-multi
 # Older than Ubuntu 16.04
 apt-get install bc bison build-essential ccache curl flex g++-multilib gcc-multilib git gnupg gperf imagemagick lib32ncurses5-dev lib32readline-dev lib32z1-dev liblz4-tool libncurses5-dev libsdl1.2-dev libssl-dev libwxgtk2.8-dev libxml2 libxml2-utils lzop pngcrush rsync schedtool squashfs-tools xsltproc zip zlib1g-dev
 
+# For can build for aquaris_m8 you have to make this
+mkdir out && mkdir out/target && mkdir out/target/product && mkdir out/target/product/aquaris_m8
+mv device/bq/aquaris_m8/prebuilt/kernel out/target/product/aquaris_m8
+
+
 # All versions
 croot
 source ./build/envsetup.sh
