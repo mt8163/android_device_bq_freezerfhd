@@ -126,7 +126,7 @@ BOARD_SECCOMP_POLICY := $(DEVICE_PATH)/seccomp-policy
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun%d/file
 
 # Shims
-TARGET_LD_SHIM_LIBS := \
+LINKER_FORCED_SHIM_LIBS := \
 /system/bin/vold|libshim_vold.so \
 /system/lib/libmedia_jni.so|libshim_media.so \
 /system/lib64/libmedia_jni.so|libshim_media.so \
