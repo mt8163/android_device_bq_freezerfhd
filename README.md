@@ -1,6 +1,6 @@
-## LineageOS 16.0 for the BQ Aquaris M8 (aquaris_m8)
+## LineageOS 15.1 for the BQ Aquaris M8 (aquaris_m8)
 
-An unofficial port of LineageOS 16.0 for the BQ Aquaris M8. This project is currently a work in progress.
+An unofficial port of LineageOS 15.1 for the BQ Aquaris M8. This project is currently a work in progress.
 
 ### Building
 
@@ -20,7 +20,7 @@ source ~/.profile
 
 Further reading: https://source.android.com/setup/build/downloading
 
-#### 2. Download the Lineage OS 16.0 source code
+#### 2. Download the Lineage OS 15.1 source code
 
 You may have to restart your shell after Step 1 to refresh the PATH variable.
 
@@ -31,15 +31,15 @@ You may have to restart your shell after Step 1 to refresh the PATH variable.
 mkdir -p ~/android/lineage
 cd <folder to contain source>
 # Initialise repo tool
-repo init -u git://github.com/LineageOS/android.git -b lineage-16.0
+repo init -u git://github.com/LineageOS/android.git -b lineage-15.2
 repo sync
 ```
 
 #### 3. Clone BQ device repositories
 
 ```bash
-git clone https://github.com/mt8163/android_device_bq_aquaris_m8 -b lineage-16.0 device/bq/aquaris_m8
-git clone https://github.com/mt8163/android_vendor_bq_aquaris_m8 -b lineage-16.0 vendor/bq/aquaris_m8
+git clone https://github.com/mt8163/android_device_bq_aquaris_m8 -b lineage-15.1 device/bq/aquaris_m8
+git clone https://github.com/mt8163/android_vendor_bq_aquaris_m8 -b lineage-15.1 vendor/bq/aquaris_m8
 ```
 
 **Ensure you have `adb` and `fastboot` installed and in your path before continuing!**
