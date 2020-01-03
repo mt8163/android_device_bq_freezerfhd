@@ -137,6 +137,9 @@ LINKER_FORCED_SHIM_LIBS := \
 /system/lib/libgui_ext.so|libshim_gui.so \
 /system/lib64/libgui_ext.so|libshim_gui.so
 
+# xlog
+TARGET_LDPRELOAD := libxlog.so
+
 # Software Gatekeeper
 BOARD_USE_SOFT_GATEKEEPER := true
 

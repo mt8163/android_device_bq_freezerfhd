@@ -175,6 +175,10 @@ PRODUCT_PACKAGES += \
     libshim_audio \
     libshim_gui
 
+# libxlog
+PRODUCT_PACKAGES += \
+    libxlog
+
 # Hidl
 include $(LOCAL_PATH)/hidl.mk
 
