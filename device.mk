@@ -132,7 +132,7 @@ PRODUCT_PACKAGES += \
 # Misc
 PRODUCT_PACKAGES += \
     libion \
-    libcap
+    libcap \
     librs_jni \
     libnl_2 \
     com.android.future.usb.accessory
