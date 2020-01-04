@@ -24,7 +24,8 @@ on init
     # setprop ro.vold.primary_physical 1
 
     # LibShims support
-    export LD_SHIM_LIBS "/system/lib/libmedia_jni.so|vendor/lib/libshim_media.so:/system/lib64/libmedia_jni.so|vendor/lib64/libshim_media.so:/system/lib/hw/audio.primary.mt8163.so|system/vendor/lib/libshim_audio.so:/system/lib64/hw/audio.primary.mt8163.so|system/vendor/lib64/libshim_audio.so"
+    export LD_PRELOAD "libkarin.so"
+    export LD_SHIM_LIBS "/system/lib/libdpframework.so|system/lib/libkarin.so:/system/lib64/libdpframework.so|system/lib64/libkarin.so:/system/lib/libandroid_runtime.so|system/lib/libkarin.so:/system/lib64/libandroid_runtime.so|system/lib64/libkarin.so:/system/lib/libshowlogo.so|system/lib/libkarin.so"
     LD_PRELOAD "system/lib/libmtk_symbols.so:system/lib64/libmtk_symbols.so"
 
     # BATTERY proc
