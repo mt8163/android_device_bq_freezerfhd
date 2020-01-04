@@ -158,6 +158,13 @@ lib/libaudiosetting.so
 lib/libaudiospdif.so
 lib/libbessound_hd_mtk.so
 lib/libblisrc32.so
+lib/libsource.so
+lib/libcustom_prop.so
+lib/libshowlogo.so
+lib/libBnMtkCodec.so
+lib/libvcodec_cap.so
+lib/libcomutils.so
+lib/libvcodecdrv.so
 lib/libbluetooth_hw_test.so
 lib/libbluetooth_mtk_pure.so
 lib/libbluetooth_mtk.so
@@ -238,7 +245,6 @@ lib/libsensorhub.so
 lib/libsensorhub_jni.so
 lib/libsensorhubservice.so
 lib/libsink.so
-lib/libharfbuzz_ng.so
 lib/libblisrc.so
 lib/libimageio_plat_drv.so
 lib/libimageio.so
@@ -366,6 +372,12 @@ lib64/libbluetooth_mtk_pure.so
 lib64/libbluetooth_mtk.so
 lib64/libbluetooth_relayer.so
 lib64/libbluetoothem_mtk.so
+lib64/libsource.so
+lib64/libcustom_prop.so
+lib64/libBnMtkCodec.so
+lib64/libvcodec_cap.so
+lib64/libcomutils.so
+lib64/libvcodecdrv.so
 lib64/libbwc.so
 lib64/libcomutils.so
 #CAM LIB64 START >>
@@ -432,7 +444,6 @@ lib64/libged.so
 lib64/libgpu_aux.so
 lib64/libgralloc_extra.so
 lib64/libgui_ext.so
-lib64/libharfbuzz_ng.so
 lib64/libhwm.so
 lib64/libhwsensorhub.so
 lib64/libsensorhub.so
