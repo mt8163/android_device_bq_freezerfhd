@@ -3,7 +3,7 @@ DEVICE_PATH := device/bq/aquaris_m8
 # Headers
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
-# Inherit from the proprietary version
+# Inherit from the vendor tree
 include vendor/bq/aquaris_m8/BoardConfigVendor.mk
 
 # Bootanimation
@@ -36,6 +36,7 @@ TARGET_BOARD_SUFFIX := _64
 TARGET_IS_64_BIT := true
 
 # Kernel Config
+KERNEL_PREBUILT := false
 ifeq ($(KERNEL_PREBUILT),true)
 TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/Image.gz-dtb
 PRODUCT_COPY_FILES += \
@@ -57,7 +58,6 @@ BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 androidboot.selinux=permissive
 BOARD_KERNEL_OFFSET := 0x00008000
 TARGET_USES_64_BIT_BINDER := true
 BOARD_NO_SECURE_DISCARD := true
-
 BOARD_MKBOOTIMG_ARGS := --base $(BOARD_KERNEL_BASE) --pagesize $(BOARD_KERNEL_PAGESIZE) --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_TAGS_OFFSET)
 
 # MTK Hardware
@@ -164,13 +164,13 @@ TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
 TARGET_USES_NON_TREBLE_CAMERA := true
 USE_CAMERA_STUB := true
 
-#BACKLIGHTS
+# Backlights
 TARGET_PROVIDES_LIBLIGHT := true
 
-#system Prop
+# System Prop
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
 
-#SENSORS
+# Sensors
 TARGET_NO_SENSOR_PERMISSION_CHECK := true
 
 # TWRP
@@ -182,9 +182,8 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone2/temp
 DEVICE_RESOLUTION := 800x1280
 
-#Use dlmalloc instead of jemalloc for mallocs
+# Use dlmalloc instead of jemalloc for mallocs
 MALLOC_SVELTE := true
 
 # Disable API check
 WITHOUT_CHECK_API := true
-

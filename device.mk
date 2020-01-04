@@ -1,10 +1,13 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+
+# Define paths
 LOCAL_PATH := device/bq/aquaris_m8
 DEVICE_FOLDER := device/bq/aquaris_m8
 
 # Build Date
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
+# Aquaris M8 is a tablet
 PRODUCT_CHARACTERISTICS := tablet
 
 # Device uses high-density artwork where available
@@ -25,12 +28,12 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
 
-#Camera Legacy
+# Camera Legacy
 PRODUCT_PROPERTY_OVERRIDES += \
      media.stagefright.legacyencoder=true \
      media.stagefright.less-secure=true
 
-# Lights
+# LibLights
 PRODUCT_PACKAGES +=\
     lights.mt8163
     
@@ -107,21 +110,15 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp-policy/mediacodec-seccomp.policy:system/vendor/etc/seccomp_policy/mediacodec.policy \
     $(LOCAL_PATH)/seccomp-policy/mediaextractor-seccomp.policy:system/vendor/etc/seccomp_policy/mediaextractor.policy
 
-# Wifi
+# Wifi Configs
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/wpa_supplicant.conf:system/vendor/etc/wifi/wpa_supplicant.conf \
-    $(LOCAL_PATH)/wifi/p2p_supplicant_overlay.conf:system/vendor/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/wifi/wpa_supplicant_overlay.conf:system/vendor/etc/wifi/wpa_supplicant_overlay.conf
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:system/vendor/etc/wifi/wpa_supplicant.conf \
+    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/vendor/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/vendor/etc/wifi/wpa_supplicant_overlay.conf
 
 # Camera
 PRODUCT_PACKAGES += \
     Camera2 \
-
-# DRM
-PRODUCT_PACKAGES += \
-    libdrm \
-    libmockdrmcryptoplugin \
-    libdrmclearkeyplugin
 
 # Camera Legacy
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -132,13 +129,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PACKAGES += \
     netutils-wrapper-1.0
 
-# etc
+# Misc
 PRODUCT_PACKAGES += \
     libion \
     libcap
-
-# Other
-PRODUCT_PACKAGES += \
     librs_jni \
     libnl_2 \
     com.android.future.usb.accessory
@@ -146,8 +140,7 @@ PRODUCT_PACKAGES += \
 # Bluetooth
 PRODUCT_PACKAGES += \
     libbluetooth_mtk \
-    libbt-vendor \
-    libmtk_symbols
+    libbt-vendor
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -172,10 +165,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libkarin
 
-# Hidl
-include $(LOCAL_PATH)/hidl.mk
+# HIDL
+include $(LOCAL_PATH)/libhidl/hidl.mk
 
-# Vendor
+# Call vendor blobs
 include vendor/bq/aquaris_m8/aquaris_m8-vendor.mk
 
 # call dalvik heap config

@@ -82,7 +82,7 @@ persist.service.hdcpkey.enable=1
 persist.service.bstd.enable=0
 ro.tether.denied=true
 
-#MTK stuff
+# MTK propeties
 ro.product.first_api_level=23
 ro.product.device_is_m8=true
 ro.mediatek.chip_ver=S01
@@ -172,4 +172,3 @@ ro.mediatek.project.path=device/bq/aquaris_m8
 ro.mtk_sec_video_path_support=1
 ro.mtk_deinterlace_support=1
 ro.mtk_sensorhub_support=1
-

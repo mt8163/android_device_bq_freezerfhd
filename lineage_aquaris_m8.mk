@@ -1,6 +1,5 @@
 #
-# Copyright (C) 2016 The CyanogenMod Project
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -28,6 +27,7 @@ $(call inherit-product, device/common/gps/gps_us_supl.mk)
 # Inherit some common LineageOS stuff.
 $(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
 
+# The device is a tablet
 PRODUCT_CHARACTERISTICS := tablet
 
 # Set those variables here to overwrite the inherited values.
@@ -38,5 +38,6 @@ PRODUCT_MODEL := Aquaris M8
 PRODUCT_BOARD := aquaris_m8
 PRODUCT_MANUFACTURER := bq
 
+# Override in build.prop
 PRODUCT_BUILD_PROP_OVERRIDES += \
    PRODUCT_NAME=aquaris_m8
