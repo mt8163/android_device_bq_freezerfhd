@@ -45,4 +45,24 @@ extern "C"
 
     void _ZN7android9MtpServer17sendObjectUpdatedEj() { }
 
+    void _ZN7android8hardware7camera26params24VendorTagDescriptorCache14readFromParcelEPKNS_6ParcelE() { }
+
+    void _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8Ejjij() { }
+
+    void _ZNK7android8hardware7camera26params24VendorTagDescriptorCache13writeToParcelEPNS_6ParcelE() { }
+
+    void _ZN7android11BufferQueue17createBufferQueueEPNS_2spINS_22IGraphicBufferProducerEEEPNS1_INS_22IGraphicBufferConsumerEEERKNS1_INS_19IGraphicBufferAllocEEE() { }
+
+    void _ZN7android14SurfaceControl8setLayerEj() { }
+
+    void  _ZTVN7android8hardware7camera26params24VendorTagDescriptorCacheE() { }
+
+    void  _ZN7android13GraphicBufferC1EP19ANativeWindowBufferb() { }
+
+    void _ZN7android24VendorTagDescriptorCache23getGlobalVendorTagCacheEv() { }
+
+    void _ZN7android24VendorTagDescriptorCache25clearGlobalVendorTagCacheEv() { }
+
+    void _ZN7android24VendorTagDescriptorCache25setAsGlobalVendorTagCacheERKNS_2spIS0_EE() { }
+
 }
