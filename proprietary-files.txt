@@ -252,7 +252,7 @@ lib/libion_mtk.so
 lib/libGdmaScalerPipe.so
 lib/libJpgDecPipe.so
 lib/libJpgEncPipe.so
-llib/libimsma_rtp.so
+lib/libimsma_rtp.so
 lib/libimsma.so
 lib/libmal.so
 lib/libmal_datamngr.so
@@ -482,7 +482,6 @@ lib64/libmtkcamera_client.so
 lib64/libmtkjpeg.so
 lib64/libGdmaScalerPipe.so
 lib64/libmtklimiter.so
-lib64/libMTKAudioTimeStretch.so
 lib64/libMtkOmxCore.so
 lib64/libmsbc_mtk.so
 lib64/libmtkplayer.so
