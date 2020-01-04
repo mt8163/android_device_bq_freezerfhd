@@ -168,16 +168,9 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/vendor/etc/permissions/android.hardware.usb.host.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/vendor/etc/permissions/android.software.sip.voip.xml \
 
-# Shims
+# Shim libraries
 PRODUCT_PACKAGES += \
-    libshim_vold \
-    libshim_media \
-    libshim_audio \
-    libshim_gui
-
-# libxlog
-PRODUCT_PACKAGES += \
-    libxlog
+    libkarin
 
 # Hidl
 include $(LOCAL_PATH)/hidl.mk

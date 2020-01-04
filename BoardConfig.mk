@@ -126,19 +126,8 @@ BOARD_SECCOMP_POLICY := $(DEVICE_PATH)/seccomp-policy
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun%d/file
 
 # Shims
-LINKER_FORCED_SHIM_LIBS := \
-/system/bin/vold|libshim_vold.so \
-/system/lib/libmedia_jni.so|libshim_media.so \
-/system/lib64/libmedia_jni.so|libshim_media.so \
-/system/lib/hw/audio.primary.mt8163.so|libshim_audio.so \
-/system/lib64/hw/audio.primary.mt8163.so|libshim_audio.so \
-/system/lib/libui_ext.so|libshim_gui.so \
-/system/lib64/libui_ext.so|libshim_gui.so \
-/system/lib/libgui_ext.so|libshim_gui.so \
-/system/lib64/libgui_ext.so|libshim_gui.so
-
-# xlog
-TARGET_LDPRELOAD := libxlog.so
+TARGET_INCLUDE_LIBKARIN := true
+TARGET_LDPRELOAD := libkarin.so
 
 # Software Gatekeeper
 BOARD_USE_SOFT_GATEKEEPER := true
