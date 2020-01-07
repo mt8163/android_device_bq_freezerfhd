@@ -25,7 +25,7 @@ $(call inherit-product, device/bq/aquaris_m8/device.mk)
 $(call inherit-product, device/common/gps/gps_us_supl.mk)
 
 # Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
 
 # The device is a tablet
 PRODUCT_CHARACTERISTICS := tablet
