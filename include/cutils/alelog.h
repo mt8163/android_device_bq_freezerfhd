@@ -57,3 +57,4 @@ int ale_log_output(int bufid, int prio, const struct ale_convert *convert, ...);
 #endif
 
 #endif
+

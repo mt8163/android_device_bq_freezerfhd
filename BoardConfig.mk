@@ -36,9 +36,10 @@ TARGET_BOARD_SUFFIX := _64
 TARGET_IS_64_BIT := true
 
 # Kernel Config
-KERNEL_PREBUILT := false
+KERNEL_PREBUILT := true
 ifeq ($(KERNEL_PREBUILT),true)
-TARGET_PREBUILT_KERNEL := $(LOCAL_PATH)/prebuilt/Image.gz-dtb
+$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
+TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
 PRODUCT_COPY_FILES += \
     $(TARGET_PREBUILT_KERNEL):kernel
 else

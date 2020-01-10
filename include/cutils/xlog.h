@@ -183,3 +183,4 @@ int __xlog_buf_printf(int bufid, const struct xlog_record *rec, ...);
 #endif
 
 #endif
+
