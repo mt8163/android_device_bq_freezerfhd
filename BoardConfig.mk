@@ -61,6 +61,9 @@ TARGET_USES_64_BIT_BINDER := true
 BOARD_NO_SECURE_DISCARD := true
 BOARD_MKBOOTIMG_ARGS := --base $(BOARD_KERNEL_BASE) --pagesize $(BOARD_KERNEL_PAGESIZE) --kernel_offset $(BOARD_KERNEL_OFFSET) --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_TAGS_OFFSET)
 
+# MediaTek Boot Image Headers
+BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
+
 # MTK Hardware
 BOARD_HAS_MTK_HARDWARE := true
 
