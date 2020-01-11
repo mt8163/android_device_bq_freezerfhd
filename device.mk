@@ -161,7 +161,8 @@ PRODUCT_COPY_FILES += \
 
 # Shim libraries
 PRODUCT_PACKAGES += \
-    libkarin
+    libkarin \
+    libmtk_symbols
 
 # HIDL
 #include $(LOCAL_PATH)/libhidl/hidl.mk
