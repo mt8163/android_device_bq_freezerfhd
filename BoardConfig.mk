@@ -57,7 +57,7 @@ BOARD_NO_SECURE_DISCARD := true
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x03f88000 --second_offset 0x00e88000 --tags_offset 0x0df88000 --base 0x40078000
 
 # MediaTek Boot Image Headers
-BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
+BOARD_CUSTOM_BOOTIMG_MK := device/bq/aquaris_m8/mkbootimg.mk
 
 # MTK Hardware
 BOARD_HAS_MTK_HARDWARE := true
