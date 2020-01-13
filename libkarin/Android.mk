@@ -8,7 +8,6 @@ ifeq ($(TARGET_INCLUDE_LIBKARIN),true)
     LOCAL_C_INCLUDES := system/core/include/ frameworks/rs/server/ frameworks/av/include/ hardware/libhardware/include/
     LOCAL_SRC_FILES := \
         karin_audio.cpp \
-        karin_xlog.c \
         karin_framework.cpp \
         karin_gui.cpp \
         karin_net.cpp \

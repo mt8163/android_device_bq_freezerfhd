@@ -10,5 +10,10 @@ git apply -v ../../$PATCHES_DIR/external/apache-http/0001-FIX-APACHE-HTTP-BUILD-
 
 cd ../..
 
-echo "Patching complete!"
+cd system/core
 
+git apply -v ../../$PATCHES_DIR/system/core/0002-FIX-MISSING-XLOG-SYMBOL.patch
+
+cd ../..
+
+echo "Patching complete!"

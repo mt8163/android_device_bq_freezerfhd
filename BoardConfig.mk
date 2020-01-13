@@ -62,6 +62,7 @@ BOARD_CUSTOM_BOOTIMG_MK := device/bq/aquaris_m8/mkbootimg.mk
 # MTK Hardware
 BOARD_HAS_MTK_HARDWARE := true
 MTK_HARDWARE := true
+BOARD_USES_MTK_HARDWARE := true
 
 # Bootanimation
 TARGET_BOOTANIMATION_MULTITHREAD_DECODE := true
