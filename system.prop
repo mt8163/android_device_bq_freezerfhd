@@ -172,3 +172,6 @@ ro.mediatek.project.path=device/bq/aquaris_m8
 ro.mtk_sec_video_path_support=1
 ro.mtk_deinterlace_support=1
 ro.mtk_sensorhub_support=1
+
+# Disable Mediatek's xlog
+ro.disable.xlog property=1
