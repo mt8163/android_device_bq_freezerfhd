@@ -174,4 +174,4 @@ ro.mtk_deinterlace_support=1
 ro.mtk_sensorhub_support=1
 
 # Disable Mediatek's xlog
-ro.disable.xlog property=1
+ro.disable.xlog.property=1
