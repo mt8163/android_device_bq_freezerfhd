@@ -1,5 +1,5 @@
 #include <gui/BufferQueue.h>
-#define LOG_TAG "HW_UI_SHIM"
+#define LOG_TAG "HW_GUI_SHIM"
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -10,13 +10,9 @@
 #include <dlfcn.h>
 #include <string>
 
-extern "C" void _ZN7android11BufferQueue17createBufferQueueEPNS_2spINS_22IGraphicBufferProducerEEEPNS1_INS_22IGraphicBufferConsumerEEEb(
-    void *outProducer, void *outConsumer, bool consumerIsSurfaceFlinger);
-
-extern "C" void _ZN7android11BufferQueue17createBufferQueueEPNS_2spINS_22IGraphicBufferProducerEEEPNS1_INS_22IGraphicBufferConsumerEEERKNS1_INS_19IGraphicBufferAllocEEE(
-    void *outProducer, void *outConsumer, void *allocator __unused) {
-  _ZN7android11BufferQueue17createBufferQueueEPNS_2spINS_22IGraphicBufferProducerEEEPNS1_INS_22IGraphicBufferConsumerEEEb(
-      outProducer, outConsumer, false);
+extern "C" {
+    void _ZN7android11BufferQueue17createBufferQueueEPNS_2spINS_22IGraphicBufferProducerEEEPNS1_INS_22IGraphicBufferConsumerEEEb(void *outProducer, void *outConsumer, bool consumerIsSurfaceFlinger);
+    void _ZN7android11BufferQueue17createBufferQueueEPNS_2spINS_22IGraphicBufferProducerEEEPNS1_INS_22IGraphicBufferConsumerEEERKNS1_INS_19IGraphicBufferAllocEEE(void *outProducer, void *outConsumer, void *allocator __unused);
 }
 
 extern "C" {
@@ -35,9 +31,5 @@ extern "C" {
     void _ZN7android18BufferItemConsumerC1ERKNS_2spINS_22IGraphicBufferConsumerEEEjib();
 
     void _ZN7android18BufferItemConsumerC2ERKNS_2spINS_22IGraphicBufferConsumerEEEyib();
-
-    void _ZN7android11BufferQueue17createBufferQueueEPNS_2spINS_22IGraphicBufferProducerEEEPNS1_INS_22IGraphicBufferConsumerEEEb();
-
-    void _ZN7android11BufferQueue17createBufferQueueEPNS_2spINS_22IGraphicBufferProducerEEEPNS1_INS_22IGraphicBufferConsumerEEERKNS1_INS_19IGraphicBufferAllocEEE();
 
 }

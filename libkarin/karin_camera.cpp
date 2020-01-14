@@ -27,6 +27,10 @@ extern "C" {
      return _ZNK7android14CameraMetadata6unlockEPK15camera_metadata();
      }
 
+   bool _ZNK7android12CameraSource30isMetaDataStoredInVideoBuffersEv(){
+     return _ZNK7android12CameraSource30isMetaDataStoredInVideoBuffersEv();
+     }
+
    void _ZN7android12CameraSource16CreateFromCameraERKNS_2spINS_7ICameraEEERKNS1_INS_21ICameraRecordingProxyEEEiRKNS_8String16EjNS_4SizeEiRKNS1_INS_22IGraphicBufferProducerEEEb();
 
    void _ZN7android12CameraSource16CreateFromCameraERKNS_2spINS_7ICameraEEERKNS1_INS_21ICameraRecordingProxyEEEiRKNS_8String16EjNS_4SizeEiRKNS1_INS_22IGraphicBufferProducerEEEb();

@@ -1,6 +1,7 @@
-extern "C"
+#include <stdlib.h>
 
-{
+extern "C" {
+
     void _ZN7android8hardware7ICamera11asInterfaceERKNS_2spINS_7IBinderEEE() { }
 
     void _ZN7android6Camera6createERKNS_2spINS_8hardware7ICameraEEE() { }
@@ -72,11 +73,5 @@ extern "C"
     void _ZN7android10MediaCodec12CreateByTypeERKNS_2spINS_7ALooperEEEPKcbPii() { }
 
     void _ZN7android11QueryCodecsERKNS_2spINS_4IOMXEEEPKcbbPNS_6VectorINS_17CodecCapabilitiesEEE() { }
-
-    void _ZNK7android12CameraSource30isMetaDataStoredInVideoBuffersEv() { }
-
-    void _ZN7android10AudioTrackC1E19audio_stream_type_tj14audio_format_tjm20audio_output_flags_tPFviPvS4_ES4_jiNS0_13transfer_typeEPK20audio_offload_info_tiiPK18audio_attributes_tb() { }
-
-    void _ZN7android11AudioSourceC1E14audio_source_tRKNS_8String16Ejjj() { }
 
 }
