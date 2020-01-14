@@ -53,8 +53,6 @@ extern "C"
 
     void _ZN7android11BufferQueue17createBufferQueueEPNS_2spINS_22IGraphicBufferProducerEEEPNS1_INS_22IGraphicBufferConsumerEEERKNS1_INS_19IGraphicBufferAllocEEE() { }
 
-    void _ZN7android14SurfaceControl8setLayerEj() { }
-
     void  _ZTVN7android8hardware7camera26params24VendorTagDescriptorCacheE() { }
 
     void  _ZN7android13GraphicBufferC1EP19ANativeWindowBufferb() { }
@@ -67,15 +65,15 @@ extern "C"
 
     void _ZNK7android16NuMediaExtractor14getTrackFormatEmPNS_2spINS_8AMessageEEE() { }
 
-    void _ZN7android12CameraSource16CreateFromCameraERKNS_2spINS_7ICameraEEERKNS1_INS_21ICameraRecordingProxyEEEiRKNS_8String16EjNS_4SizeEiRKNS1_INS_22IGraphicBufferProducerEEEb() { }
+    int _ZN7android12CameraSource16CreateFromCameraERKNS_2spINS_7ICameraEEERKNS1_INS_21ICameraRecordingProxyEEEiRKNS_8String16EjNS_4SizeEiRKNS1_INS_22IGraphicBufferProducerEEEb(){
+         return 0;
+    }
 
     void _ZN7android10MediaCodec12CreateByTypeERKNS_2spINS_7ALooperEEEPKcbPii() { }
 
     void _ZN7android11QueryCodecsERKNS_2spINS_4IOMXEEEPKcbbPNS_6VectorINS_17CodecCapabilitiesEEE() { }
 
     void _ZNK7android12CameraSource30isMetaDataStoredInVideoBuffersEv() { }
-
-    void _ZN7android14FindAVCSPSInfoEPhmPNS_7SPSInfoE() { }
 
     void _ZN7android10AudioTrackC1E19audio_stream_type_tj14audio_format_tjm20audio_output_flags_tPFviPvS4_ES4_jiNS0_13transfer_typeEPK20audio_offload_info_tiiPK18audio_attributes_tb() { }
 

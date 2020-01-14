@@ -1,7 +1,17 @@
 #include <log/log.h>
-#define LOG_TAG "AUDIO_SHIM"
+#include <stdint.h>
 
-ALOGI("libkarin: dlopen audio_shim");
-extern "C" void _ZN7android11AudioSystem24getVoiceUnlockDLInstanceEv(void) {}
-extern "C" void _ZN7android11AudioSystem23GetVoiceUnlockDLLatencyEv(void) {}
-extern "C" void _ZN7android11AudioSystem17SetVoiceUnlockSRCEjj(void) {}
+extern "C" {
+   bool _ZN7android11AudioSystem24getVoiceUnlockDLInstanceEv(){
+       ALOGI("libkarin: dlopen _ZN7android11AudioSystem24getVoiceUnlockDLInstanceEv\n");
+       return 0;
+       }
+   int _ZN7android11AudioSystem23GetVoiceUnlockDLLatencyEv(){
+       ALOGI("libkarin: dlopen _ZN7android11AudioSystem23GetVoiceUnlockDLLatencyEv\n");
+       return 0;
+       }
+   int _ZN7android11AudioSystem17SetVoiceUnlockSRCEjj(uint32_t outSR, uint32_t outChannel){
+       ALOGI("libkarin: dlopen _ZN7android11AudioSystem17SetVoiceUnlockSRCEjj\n");
+       return 0;
+       }
+}

@@ -168,7 +168,7 @@ PRODUCT_PACKAGES += \
 #include $(LOCAL_PATH)/libhidl/hidl.mk
 
 # Call vendor blobs
-include vendor/bq/aquaris_m8/aquaris_m8-vendor.mk
+#include vendor/bq/aquaris_m8/aquaris_m8-vendor.mk
 
 # call dalvik heap config
 $(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
