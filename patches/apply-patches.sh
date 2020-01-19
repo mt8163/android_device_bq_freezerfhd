@@ -16,4 +16,10 @@ git apply -v ../../$PATCHES_DIR/system/core/0002-FIX-MISSING-XLOG-SYMBOL.patch
 
 cd ../..
 
+cd frameworks/native
+
+git apply -v ../../$PATCHES_DIR/frameworks/native/0003-MTK-PATCH-FOR-FRAMEWORKS-NATIVE.patch
+
+cd ../..
+
 echo "Patching complete!"
