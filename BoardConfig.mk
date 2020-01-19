@@ -126,8 +126,7 @@ BOARD_SECCOMP_POLICY := $(DEVICE_PATH)/seccomp-policy
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun%d/file
 
 # Shims
-TARGET_INCLUDE_LIBKARIN := true
-TARGET_LDPRELOAD := libkarin.so
+TARGET_INCLUDE_LIBKARIN := false
 
 # Software Gatekeeper
 BOARD_USE_SOFT_GATEKEEPER := true
