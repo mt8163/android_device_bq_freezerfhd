@@ -29,7 +29,6 @@ bin/dm_agent_binder
 bin/dmlog
 bin/dongled
 bin/downloader
-bin/em_svr
 bin/epdg_wod
 bin/factory
 bin/fsck_msdos_mtk
@@ -42,7 +41,6 @@ bin/hdcpkey
 bin/hostapd
 bin/hostapd_cli
 bin/init.gprs-pppd
-bin/kisd
 bin/kpoc_charger
 bin/lcdc_screen_cap
 bin/lsm303md
@@ -77,7 +75,6 @@ bin/radvd
 bin/resize_ext4
 bin/rild_dongle
 bin/rtt
-#bin/rpmb_svc
 bin/s62xd
 bin/sink
 bin/slpd
@@ -87,13 +84,11 @@ bin/spm_loader
 bin/stp_dump3
 bin/superumount
 bin/tertestclient
-bin/thermal
 bin/thermald
 bin/thermal_manager
 bin/tiny_mkswap
 bin/tiny_swapoff
 bin/tiny_swapon
-bin/vtservice
 bin/wifi2agps
 bin/wpa_cli
 bin/xlog
@@ -141,7 +136,6 @@ lib/hw/camera.mt8163.so
 lib/hw/hwcomposer.mt8163.so
 lib/hw/gralloc.mt8163.so
 lib/hw/gatekeeper.mt8163.so
-lib/hw/lights.mt8163.so
 lib/hw/power.default.so
 lib/hw/sensors.mt8163.so
 lib/lib3a.so
@@ -335,10 +329,6 @@ lib/zterilPara
 lib/mtk-ril.so
 lib/mtk-rilmd2.so
 lib/volte_imsm.so
-lib/libvt_avsync.so
-lib/libvt_custom.so
-lib/libvt_socketbind.so
-lib/libvtmal.so
 lib/libvobsub_jni.so
 lib/soundfx/libaudiopreprocessing.so
 lib/soundfx/libbundlewrapper.so
@@ -355,7 +345,6 @@ lib64/hw/hwcomposer.mt8163.so
 lib64/hw/gralloc.mt8163.so
 lib64/hw/gatekeeper.mt8163.so
 lib64/hw/power.default.so
-lib64/hw/lights.mt8163.so
 lib64/hw/sensors.mt8163.so
 lib64/lib3a.so
 lib64/libacdk.so
@@ -515,9 +504,6 @@ lib64/libzteevdo-ril.so
 lib64/mtk-ril.so
 lib64/mtk-rilmd2.so
 lib64/volte_imsm.so
-lib64/libvt_avsync.so
-lib64/libvt_socketbind.so
-lib64/libvtmal.so
 lib64/libvobsub_jni.so
 lib64/libwapi.so
 lib64/soundfx/libaudiopreprocessing.so
