@@ -36,7 +36,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # LibLights
 PRODUCT_PACKAGES +=\
     lights.mt8163
-    
+
+# Power
+PRODUCT_PACKAGES +=\
+    power.mt8163
+
 # Wi-Fi
 PRODUCT_PACKAGES += \
     libwpa_client \
@@ -163,6 +167,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libkarin \
     libmtk_symbols
+
+# Mediatek HAL
+PRODUCT_PACKAGES += \
+    kisd \
+    libui_ext \
+    libgui_ext \
+    thermal \
+    libgralloc_extra
 
 # HIDL
 #include $(LOCAL_PATH)/libhidl/hidl.mk
