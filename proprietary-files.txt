@@ -28,7 +28,6 @@ bin/dhcpcd
 bin/dm_agent_binder
 bin/dmlog
 bin/dongled
-bin/downloader
 bin/epdg_wod
 bin/factory
 bin/fsck_msdos_mtk
@@ -247,19 +246,15 @@ lib/libion_mtk.so
 lib/libGdmaScalerPipe.so
 lib/libJpgDecPipe.so
 lib/libJpgEncPipe.so
-lib/libimsma_rtp.so
-lib/libimsma.so
 lib/libmal.so
 lib/libmal_datamngr.so
 lib/libmal_epdga.so
-lib/libmal_imsmngr.so
 lib/libmal_mdmngr.so
 lib/libmal_nwmngr.so
 lib/libmal_rds.so
 lib/libmal_rilproxy.so
 lib/libmal_simmngr.so
 lib/libmatv_cust.so
-lib/libimsma_socketwrapper.so
 lib/libMTKAudioTimeStretch.so
 lib/libMtkOmxAdpcmDec.so
 lib/libMtkOmxAdpcmEnc.so
@@ -284,9 +279,6 @@ lib/libmrdump.so
 lib/libmtcloader.so
 lib/libmtk_drvb.so
 lib/libmtk_mmutils.so
-lib/libmtk_vt_service.so
-lib/libmtk_vt_swip.so
-lib/libmtk_vt_utils.so
 lib/libmtkcamera_client.so
 lib/libmtkjpeg.so
 lib/libmtklimiter.so
@@ -445,9 +437,6 @@ lib64/libimageio.so
 lib64/libion_mtk.so
 lib64/libJpgDecPipe.so
 lib64/libJpgEncPipe.so
-lib64/libimsma_rtp.so
-lib64/libimsma.so
-lib64/libimsma_socketwrapper.so
 lib64/libm4u.so
 lib64/libmal.so
 lib64/libmal_datamngr.so
@@ -465,9 +454,6 @@ lib64/libmhalImageCodec.so
 lib64/libmrdump.so
 lib64/libmtk_drvb.so
 lib64/libmtk_mmutils.so
-lib64/libmtk_vt_service.so
-lib64/libmtk_vt_swip.so
-lib64/libmtk_vt_utils.so
 lib64/libmtkcamera_client.so
 lib64/libmtkjpeg.so
 lib64/libGdmaScalerPipe.so
