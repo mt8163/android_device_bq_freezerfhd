@@ -130,6 +130,11 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto
 
 # Shims
 TARGET_INCLUDE_LIBKARIN := false
+LINKER_FORCED_SHIM_LIBS := \
+          /system/lib/libnetutils.so|libmtk_symbols.so \
+          /system/lib64/libnetutils.so|libmtk_symbols.so \
+          /system/lib/libandroid_runtime.so|libmtk_symbols.so \
+          /system/lib64/libandroid_runtime.so|libmtk_symbols.so
 
 # Software Gatekeeper
 BOARD_USE_SOFT_GATEKEEPER := true
