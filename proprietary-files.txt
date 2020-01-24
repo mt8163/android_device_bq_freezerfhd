@@ -86,6 +86,7 @@ bin/superumount
 bin/tertestclient
 bin/thermald
 bin/thermal_manager
+bin/thermal
 bin/tiny_mkswap
 bin/tiny_swapoff
 bin/tiny_swapon
