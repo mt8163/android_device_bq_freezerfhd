@@ -7,7 +7,7 @@ TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 include vendor/bq/aquaris_m8/BoardConfigVendor.mk
 
 # Inherit from the mt8163 bq based devices vendor tree
-include vendor/bq/mt8163/BoardConfigVendor.mk
+#include vendor/bq/mt8163/BoardConfigVendor.mk
 
 # Bootanimation
 TARGET_SCREEN_WIDTH := 1280

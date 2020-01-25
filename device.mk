@@ -170,14 +170,11 @@ PRODUCT_PACKAGES += \
 
 # Mediatek HAL
 PRODUCT_PACKAGES += \
-    kisd \
+    #kisd \
     libui_ext \
     libgui_ext \
     thermal \
     libgralloc_extra
-
-# HIDL
-#include $(LOCAL_PATH)/libhidl/hidl.mk
 
 # Call vendor blobs
 include vendor/bq/aquaris_m8/aquaris_m8-vendor.mk
