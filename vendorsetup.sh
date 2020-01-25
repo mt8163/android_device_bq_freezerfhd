@@ -23,3 +23,5 @@
 for var in eng user userdebug; do
   add_lunch_combo lineage_aquaris_m8-$var
 done
+
+export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
