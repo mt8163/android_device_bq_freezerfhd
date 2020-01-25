@@ -143,10 +143,6 @@ BOARD_USE_SOFT_GATEKEEPER := true
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/BOOT/BOOT/boot/boot_mode
 
-# Manifest
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifest.xml
-DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/configs/compatibility_matrix.xml
-
 # OTA assert
 TARGET_OTA_ASSERT_DEVICE:= Aquaris_M8
 
