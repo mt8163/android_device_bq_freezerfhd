@@ -371,7 +371,6 @@ lib64/libvcodecdrv.so
 lib64/libbwc.so
 lib64/libcomutils.so
 #CAM LIB64 START >>
-lib64/libcameraservice
 lib64/libcamera_client.so
 lib64/libcam.iopipe_FrmB.so
 lib64/libcam.campipe.so
