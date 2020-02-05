@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+<bool name="config_automatic_brightness_available">true</bool>
+
+        <!-- List supported color modes. -->
+    <string-array name="networkAttributes" translatable="false" >
+        <item>wifi,1,1,2,-1,true</item>
+        <item>bluetooth,7,7,0,-1,true</item>
+        <item>ethernet,9,9,0,-1,true</item>
+    </string-array>
+
+
+  <!-- radio modes. -->
+<string-array name="radioAttributes" translatable="false">
+        <item>1,1</item>
+        <item>7,1</item>
+        <item>9,1</item>
+ </string-array>
+
+
+    <integer-array name="config_autoBrightnessLevels">
+        <item>10</item>
+        <item>50</item>
+        <item>100</item>
+        <item>170</item>
+        <item>240</item>
+        <item>304</item>
+        <item>403</item>
+        <item>502</item>
+        <item>650</item>
+	<item>720</item>
+	<item>750</item>
+	<item>845</item>
+	<item>845</item>
+    </integer-array>
+
+   <integer-array name="config_autoBrightnessLcdBacklightValues">
+        <item>10</item>
+        <item>20</item>
+        <item>30</item>
+        <item>50</item>
+	<item>60</item>
+        <item>70</item>        
+	<item>87</item>
+        <item>114</item>
+        <item>139</item>
+        <item>179</item>
+        <item>210</item>
+        <item>255</item>
+        <item>255</item>
+    </integer-array>
+
+     <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
+         autodetected from the Configuration. -->
+    <bool name="config_showNavigationBar">true</bool>
+
+
+    <bool name="config_voice_capable">false</bool>
+
+    <!-- Flag indicating whether the current device allows sms service.
+         If true, this means that the device supports both sending and
+         receiving sms via the telephony network.
+         This can be overridden to false for "data only" devices
+         which can't send and receive sms message.
+         Note: Disable SMS also disable voicemail waiting sms,
+               cell broadcasting sms, and MMS. -->
+    <bool name="config_sms_capable">false</bool>
+
+  <!-- Disable lockscreen rotation by default -->
+    <bool name="config_enableLockScreenRotation">true</bool>
+
+    <!-- If true, the screen can be rotated via the accelerometer in all 4
+         rotations as the default behavior. -->
+    <bool name="config_allowAllRotations">true</bool>
+
+    <!-- If supported, are dreams enabled? (by default) -->
+    <bool name="config_dreamsEnabledByDefault">true</bool>
+
+  <!-- If this is true, the screen will come on when you plug/unplug usb/power/whatever. -->
+    <bool name="config_unplugTurnsOnScreen">true</bool>
+
+    <!-- Indicate whether closing the lid causes the device to go to sleep and opening
+         it causes the device to wake up.
+         The default is false. -->
+    <bool name="config_lidControlsSleep">true</bool>
+        <!--  Maximum number of supported users -->
+    <integer name="config_multiuserMaximumUsers">4</integer>
+
+    <!--  Whether Multiuser UI should be shown -->
+    <bool name="config_enableMultiUserUI">true</bool>
+    <!-- Enable doze mode
+         ComponentName of a dream to show whenever the system would otherwise have gone to sleep. -->
+    <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
+    <!-- If true, the doze component is not started until after the screen has been turned off
+         and the screen off animation has been performed. -->
+    <bool name="config_dozeAfterScreenOff">true</bool>
+    <!-- Specifies whether to decouple the interactive state of the device from the display on/off state. -->
+    <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
+    
+    <!-- Auto Power Modes is required for Doze and App Standby -->
+    <bool name="config_enableAutoPowerModes">true</bool>
+
+    <bool name="config_supportDoubleTapWake">true</bool>
+</resources>
