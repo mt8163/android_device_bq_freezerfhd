@@ -3,6 +3,7 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
     mtk_asc.cpp \
+    mtk_cam.cpp \
     mtk_audio.cpp \
     mtk_fence.cpp \
     mtk_omx.cpp \
