@@ -2,7 +2,8 @@
 PRODUCT_RELEASE_NAME := aquaris_m8
 
 # Inherit some common CM stuff.
-$(call inherit-product, vendor/cm/config/common_full_phone.mk)
+$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/bq/aquaris_m8/device_aquaris_m8.mk)
