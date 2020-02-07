@@ -64,13 +64,15 @@ PRODUCT_COPY_FILES += \
 
 # Audio
 PRODUCT_PACKAGES += \
+    audio.usb.default \
     audio.a2dp.default \
     audio.r_submix.default \
     libaudio-resampler \
     libtinyalsa \
     libtinycompress \
     libtinymix \
-    libtinyxml
+    libtinyxml \
+    libalsautils
 
 # WiFi
 PRODUCT_PACKAGES += \

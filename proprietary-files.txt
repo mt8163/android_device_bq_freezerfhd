@@ -15,6 +15,7 @@ bin/bmm050d
 bin/em_svr
 bin/ccci_mdinit
 bin/akmd09911
+bin/nvram_agent_binder
 bin/nvram_daemon
 bin/mc6420d
 bin/lsm303md
@@ -364,6 +365,7 @@ lib/libpq_cust.so
 lib/libvcodec_cap.so
 lib/libtz_uree.so
 
+lib/soundfx/libaudiopreprocessing.so
 
 lib/hw/audio.a2dp.default.so
 lib/hw/audio_policy.stub.so
