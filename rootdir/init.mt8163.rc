@@ -1087,7 +1087,7 @@ service netdiag /system/bin/netdiag
 service nvram_daemon /system/bin/nvram_daemon
     class core
     user root
-    group system
+    group root
     oneshot
 
 # DFO (Begin)
