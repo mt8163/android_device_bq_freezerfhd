@@ -171,4 +171,4 @@ BOARD_SEPOLICY_DIRS := \
        $(DEVICE_PATH)/sepolicy
 
 # Seccomp filter
-#BOARD_SECCOMP_POLICY += $(DEVICE_PATH)/seccomp
+BOARD_SECCOMP_POLICY += $(DEVICE_PATH)/seccomp
