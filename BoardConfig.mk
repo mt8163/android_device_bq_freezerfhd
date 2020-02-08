@@ -63,9 +63,6 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 # Assert
 TARGET_OTA_ASSERT_DEVICE := Aquaris_M8
 
-# Disable memcpy opt (for audio libraries)
-TARGET_CPU_MEMCPY_OPT_DISABLE := true
-
 # MediaTek Flags
 BOARD_HAS_MTK_HARDWARE := true
 MTK_HARDWARE := true
@@ -90,9 +87,6 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
 # Audio
 BOARD_USES_MTK_AUDIO := true
-
-# Fix video autoscaling on old OMX decoders
-TARGET_OMX_LEGACY_RESCALING := true
 
 # Charger
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
