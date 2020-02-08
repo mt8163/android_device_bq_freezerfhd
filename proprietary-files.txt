@@ -191,7 +191,6 @@ usr/keylayout/mtk-kpd.kl
 usr/keylayout/ACCDET.kl
 
 etc/audio_policy.conf
-etc/audio_device.xml
 etc/wifi/wpa_supplicant.conf
 etc/wifi/p2p_supplicant_overlay.conf
 etc/wifi/wpa_supplicant_overlay.conf
