@@ -56,6 +56,10 @@ on init
     chown root system /proc/lk_env
     chmod 0660 /proc/lk_env
 
+# change ged permission
+    chown root root /proc/ged
+    chmod 0666 /proc/ged
+
 # mount different fs start
 
 on charger
