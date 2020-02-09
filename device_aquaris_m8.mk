@@ -58,7 +58,9 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:/system/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:/system/etc/usb_audio_policy_configuration.xml \
     $(LOCAL_PATH)/configs/audio_effects.conf:system/etc/audio_effects.conf \
-    $(LOCAL_PATH)/configs/audio_device.xml:system/etc/audio_device.xml
+    $(LOCAL_PATH)/configs/audio_device.xml:system/etc/audio_device.xml \
+    $(LOCAL_PATH)/configs/audio_em.xml:system/etc/audio_em.xml \
+    $(LOCAL_PATH)/configs/AudioParamOptions.xml:system/etc/audio_param/AudioParamOptions.xml
 
 # Dalvik
 PRODUCT_TAGS += dalvik.gc.type-precise
