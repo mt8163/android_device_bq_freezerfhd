@@ -38,6 +38,10 @@ bin/s62xd
 bin/mobile_log_d
 bin/netdiag
 bin/pq
+bin/aee
+bin/aee_archive
+bin/aee_aee_core_forwarder
+bin/aee_dumpstate
 
 lib64/libcam.camadapter.so
 lib64/libcameracustom.so
