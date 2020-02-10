@@ -29,7 +29,8 @@ bin/geomagneticd
 bin/akmd8975
 bin/6620_launcher
 bin/6620_wmt_concurrency
-bin/6620_wmt_lpbkbin/ami304d
+bin/6620_wmt_lpbk
+bin/ami304d
 bin/gsm0710muxd
 bin/wifi2agps
 bin/memsicd
@@ -42,7 +43,38 @@ bin/aee
 bin/aee_archive
 bin/aee_aee_core_forwarder
 bin/aee_dumpstate
+bin/AcdApiDaemon
+bin/atci_service
+bin/atcid
+bin/audiocmdservice_atci
+bin/autokd
+bin/dm_agent_binder
+bin/dmlog
+bin/epdg_wod
+bin/gsensorcalid
+bin/init.gprs-pppd
+bin/kpoc_charger
+bin/magd
+bin/matv
+bin/ppl_agent
+bin/pppd_dt
+bin/program_binary_service
+bin/rtt
+bin/spm_loader
+bin/stp_dump3
 
+lib64/libMtkOmxAdpcmDec.so
+lib64/libMtkOmxAdpcmEnc.so
+lib64/libMtkOmxAlacDec.so
+lib64/libMtkOmxApeDec.so
+lib64/libMtkOmxFlacDec.so
+lib64/libMtkOmxG711Dec.so
+lib64/libMtkOmxGsmDec.so
+lib64/libMtkOmxMp3Dec.so
+lib64/libMtkOmxRawDec.so
+lib64/libMtkOmxVdecEx.so
+lib64/libMtkOmxVenc.so
+lib64/libMtkOmxVorbisEnc.so
 lib64/libcam.camadapter.so
 lib64/libcameracustom.so
 lib64/libcamalgo.so
@@ -149,7 +181,7 @@ lib64/libbluetoothem_mtk.so
 lib64/libcam.halsensor.so
 lib64/libcam.hal3a.v3.so
 lib64/libem_sensor_jni.so
-
+lib64/libjni_pq.so
 lib64/libBnMtkCodec.so
 lib64/libmdfx.so
 lib64/libaudiosetting.so
@@ -172,6 +204,7 @@ lib64/libimageio_FrmB.so
 lib64/libpq_cust.so
 lib64/libvcodec_cap.so
 lib64/libtz_uree.so
+lib64/libMTKAudioTimeStretch.so
 
 lib64/hw/audio.a2dp.default.so
 lib64/hw/audio_policy.stub.so
@@ -217,16 +250,25 @@ etc/.tp/thermal.conf
 etc/.tp/.ht120.mtc
 etc/.tp/thermal.off.conf
 
+
+lib/libMtkOmxAdpcmDec.so
+lib/libMtkOmxAdpcmEnc.so
+lib/libMtkOmxAlacDec.so
+lib/libMtkOmxApeDec.so
 lib/libMtkOmxFlacDec.so
+lib/libMtkOmxG711Dec.so
+lib/libMtkOmxGsmDec.so
+lib/libMtkOmxMp3Dec.so
+lib/libMtkOmxRawDec.so
+lib/libMtkOmxVdecEx.so
+lib/libMtkOmxVenc.so
+lib/libMtkOmxVorbisEnc.so
 lib/libcam.camadapter.so
 lib/libcameracustom.so
 lib/libcamalgo.so
-lib/libMtkOmxAdpcmEnc.so
 lib/libcam.exif.v3.so
-lib/libMtkOmxVdecEx.so
 lib/libmtkshifter.so
 lib/librilmtkmd2.so
-lib/libMtkOmxMp3Dec.so
 lib/libem_support_jni.so
 lib/libaudiodcrflt.so
 lib/libcam1_utils.so
@@ -250,6 +292,7 @@ lib/libgui_ext.so
 lib/libgralloc_extra.so
 lib/libmtcloader.so
 lib/mtk-ril.so
+lib/libMtkOmxCore.so
 lib/libcam_utils.so
 lib/libwebrtc_audio_preprocessing.so
 lib/libdpframework.so
@@ -272,9 +315,7 @@ lib/libcam.metadataprovider.so
 lib/libcustom_prop.so
 lib/libbluetooth_relayer.so
 lib/libblisrc.so
-lib/libMtkOmxVorbisEnc.so
 lib/libcustom_nvram.so
-lib/libMtkOmxRawDec.so
 lib/libcam_mmp.so
 lib/libJpgEncPipe.so
 lib/libnvram_daemon_callback.so
@@ -284,7 +325,6 @@ lib/libem_wifi_jni.so
 lib/libccci_util.so
 lib/libnvram_platform.so
 lib/libshowlogo.so
-lib/libMtkOmxCore.so
 lib/libvp8enc_sa.ca7.so
 lib/libmhalImageCodec.so
 lib/libaudio-resampler.so
@@ -293,7 +333,6 @@ lib/libvcodec_utility.so
 lib/libaed.so
 lib/mtk-rilmd2.so
 lib/libcam3_hwnode.so
-lib/libMtkOmxApeDec.so
 lib/libem_lte_jni.so
 lib/libcam_hwutils.so
 lib/libcam3_pipeline.so
@@ -301,7 +340,6 @@ lib/libbt-vendor.so
 lib/libcam_platform.so
 lib/libhwm.so
 lib/libcam.device1.so
-lib/libMtkOmxG711Dec.so
 lib/libcam.sdkclient.so
 lib/libmsbc_mtk.so
 lib/libnvram.so
@@ -315,7 +353,6 @@ lib/libbtcusttable.so
 lib/libmtkjpeg.so
 lib/libcurl.so
 lib/libem_bt_jni.so
-lib/libMtkOmxGsmDec.so
 lib/libblisrc32.so
 lib/libmtk_mmutils.so
 lib/libaudiocompensationfilter.so
@@ -331,8 +368,6 @@ lib/libnvram_sec.so
 lib/libcam3_hwpipeline.so
 lib/libcam.device3.so
 lib/libpq_prot.so
-lib/libMtkOmxAdpcmDec.so
-lib/libMtkOmxVenc.so
 lib/libcam.utils.so
 lib/libSwJpgCodec.so
 lib/libcam3_app.so
@@ -341,7 +376,6 @@ lib/libbluetooth_mtk.so
 lib/libcamdrv.so
 lib/libmtk_drvb.so
 lib/libcvsd_mtk.so
-lib/libMtkOmxAlacDec.so
 lib/libbluetoothem_mtk.so
 lib/libcam.halsensor.so
 lib/libcam.hal3a.v3.so
@@ -367,6 +401,8 @@ lib/libimageio_FrmB.so
 lib/libpq_cust.so
 lib/libvcodec_cap.so
 lib/libtz_uree.so
+lib/libjni_pq.so
+lib/libMTKAudioTimeStretch.so
 
 lib/soundfx/libaudiopreprocessing.so
 
