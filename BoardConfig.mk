@@ -135,6 +135,10 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 # Shims
 TARGET_LDPRELOAD += libmtk_symbols.so
 
+LINKER_FORCED_SHIM_LIBS := \
+	/system/lib/libcam_utils.so|libshim_mtkcam.so \
+	/system/lib64/libcam_utils.so|libshim_mtkcam.so
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.mt8163
 BOARD_HAS_NO_SELECT_BUTTON := true

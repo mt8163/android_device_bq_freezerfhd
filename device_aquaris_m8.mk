@@ -110,8 +110,8 @@ PRODUCT_PACKAGES += \
 
 # MediaTek Symbols
 PRODUCT_PACKAGES += \
-    libmtk_symbols
-
+    libmtk_symbols \
+    libshim_mtkcam \
 # Power
 PRODUCT_PACKAGES += \
     power.mt8163
