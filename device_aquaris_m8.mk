@@ -125,9 +125,11 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.debuggable=1 \
 	persist.service.acm.enable=0 \
 	ro.config.low_ram=false \
-        ro.zygote=zygote64_32 \
         persist.sys.usb.config=mtp,adb
 
+# Zygote (Needs separed override)
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.zygote=zygote64_32
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \

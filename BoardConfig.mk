@@ -136,8 +136,7 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 TARGET_LDPRELOAD += libmtk_symbols.so
 
 LINKER_FORCED_SHIM_LIBS := \
-	/system/lib/libcam_utils.so|libshim_mtkcam.so \
-	/system/lib64/libcam_utils.so|libshim_mtkcam.so
+	/system/vendor/lib/libwvm.so|libmtk_symbols.so
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.mt8163
