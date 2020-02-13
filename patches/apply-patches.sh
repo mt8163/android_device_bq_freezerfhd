@@ -16,4 +16,10 @@ git apply -v ../../$PATCHES_DIR/system/core/0002-FIX-MISSING-XLOG-SYMBOL.patch
 
 cd ../..
 
+cd system/sepolicy
+
+git apply -v ../../$PATCHES_DIR/system/sepolicy/0003-SEPOLICY-MTK.patch
+
+cd ../..
+
 echo "Patching complete!"
