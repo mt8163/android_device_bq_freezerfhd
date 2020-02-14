@@ -66,7 +66,8 @@
 ```
 
 - [ ] Fix null pointer reference (LiveDisplay):
-```02-14 03:11:01.397   669   779 W Tile.LiveDisplayTile: java.lang.NullPointerException: Attempt to invoke virtual method 'boolean cyanogenmod.hardware.LiveDisplayConfig.hasModeSupport()' on a null object reference
+```
+02-14 03:11:01.397   669   779 W Tile.LiveDisplayTile: java.lang.NullPointerException: Attempt to invoke virtual method 'boolean cyanogenmod.hardware.LiveDisplayConfig.hasModeSupport()' on a null object reference
 ```
 
 - [ ] Fix Wi-Fi:
