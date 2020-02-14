@@ -6,7 +6,7 @@ LOCAL_SRC_FILES := \
     mtk_audio.cpp \
     mtk_omx.cpp \
     mtk_ui.cpp \
-    mtk_ssl.c
+    mtk_ssl.cpp
 
 # only for 64bit libraries
 LOCAL_SRC_FILES_64 := mtk_parcel.cpp
