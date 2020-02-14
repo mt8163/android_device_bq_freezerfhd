@@ -23,7 +23,7 @@
 ```
 02-14 03:10:32.495   194   194 E AudioALSAVoiceWakeUpController: Error: Audio VOWCFG2 Data invalid value
 02-14 03:10:32.495   194   194 E AudioALSAVoiceWakeUpController: Error: Audio VOWCFG3 Data invalid value
-02-14 03:10:32.495   194   194 E AudioALSAVoiceWakeUpController: Error: Audio VOWCFG4 Data invalid value```
+02-14 03:10:32.495   194   194 E AudioALSAVoiceWakeUpController: Error: Audio VOWCFG4 Data invalid value
 ```
 
 - [ ] Fix nvram's fstab:
