@@ -29,3 +29,15 @@ lunch lineage_aquaris_m8-userdebug
 brunch lineage_aquaris_m8-userdebug -j12
 ```
 
+### WORKING/BUGS ###
+- [ ] Wi-Fi
+- [ ] Bluetooth
+- [ ] OMX
+- [ ] Radio FM
+- [x] Boots
+- [x] HWC
+- [x] Gralloc
+- [ ] GPS
+
+
+
