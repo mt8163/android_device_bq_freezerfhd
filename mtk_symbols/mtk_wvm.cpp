@@ -1,3 +1,5 @@
+#include <media/IMediaSource.h>
+
 extern "C" {
     /* MediaBufferGroup::MediaBufferGroup */
     int _ZN7android16MediaBufferGroupC1Ej(unsigned int);

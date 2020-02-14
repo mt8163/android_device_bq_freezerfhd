@@ -22,4 +22,10 @@ git apply -v ../../$PATCHES_DIR/system/sepolicy/0003-SEPOLICY-MTK.patch
 
 cd ../..
 
+cd frameworks/av
+
+git apply -v ../../$PATCHES_DIR/frameworks/av/0004-WVM-READOPTIONS-MTK.patch
+
+cd ../..
+
 echo "Patching complete!"
