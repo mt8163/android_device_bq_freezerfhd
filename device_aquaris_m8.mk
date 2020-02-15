@@ -81,15 +81,6 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libalsautils
 
-# WiFi
-PRODUCT_PACKAGES += \
-    dhcpcd.conf \
-    hostapd \
-    libwpa_client \
-    wpa_supplicant \
-    wpa_supplicant.conf \
-    lib_driver_cmd_mt66xx
-
 # MISC
 PRODUCT_PACKAGES += \
     librs_jni \
