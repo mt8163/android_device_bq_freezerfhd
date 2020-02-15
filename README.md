@@ -38,6 +38,7 @@ brunch lineage_aquaris_m8-userdebug -j12
 - [x] HWC
 - [x] Gralloc
 - [ ] GPS
+- [x] Offline charging
 
 
 
