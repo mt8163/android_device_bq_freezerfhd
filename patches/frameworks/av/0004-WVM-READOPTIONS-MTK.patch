@@ -35,7 +35,7 @@ index a17757a..b14f598 100644
 +    //return _ZNK7android12IMediaSource11ReadOptions9getSeekToEPxPNS1_8SeekModeE(readOptions, time_us, mode);
 +    ALOGW("[Decker] _ZNK7android11MediaSource11ReadOptions9getSeekToEPxPNS1_8SeekModeE");
 +    bool res = readOptions->getSeekTo(time_us, mode);
-+    ALOGW("[Decker] _ZNK7android11MediaSource11ReadOptions9getSeekToEPxPNS1_8SeekModeE %lld, %d, %d", *time_us, *mode, res);
++    ALOGW("[Decker] _ZNK7android11MediaSource11ReadOptions9getSeekToEPxPNS1_8SeekModeE, %d, %d", *mode, res);
 +    return res;
 +}
 +
@@ -43,7 +43,7 @@ index a17757a..b14f598 100644
 +    //return _ZNK7android12IMediaSource11ReadOptions9getLateByEv(readOptions);
 +    ALOGW("[Decker] _ZNK7android11MediaSource11ReadOptions9getLateByEv");
 +    int64_t res = readOptions->getLateBy();
-+    ALOGW("[Decker] _ZNK7android11MediaSource11ReadOptions9getLateByEv %lld", res);
++    ALOGW("[Decker] _ZNK7android11MediaSource11ReadOptions9getLateByEv");
 +    return res;
 +}
 +
