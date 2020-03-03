@@ -48,7 +48,7 @@ bin/netdiag
 bin/pq
 bin/aee
 bin/aee_archive
-bin/aee_aee_core_forwarder
+bin/aee_core_forwarder
 bin/aee_dumpstate
 bin/AcdApiDaemon
 bin/atci_service
@@ -70,18 +70,6 @@ bin/rtt
 bin/spm_loader
 bin/stp_dump3
 
-lib64/libMtkOmxAdpcmDec.so
-lib64/libMtkOmxAdpcmEnc.so
-lib64/libMtkOmxAlacDec.so
-lib64/libMtkOmxApeDec.so
-lib64/libMtkOmxFlacDec.so
-lib64/libMtkOmxG711Dec.so
-lib64/libMtkOmxGsmDec.so
-lib64/libMtkOmxMp3Dec.so
-lib64/libMtkOmxRawDec.so
-lib64/libMtkOmxVdecEx.so
-lib64/libMtkOmxVenc.so
-lib64/libMtkOmxVorbisEnc.so
 lib64/libcam.camadapter.so
 lib64/libcameracustom.so
 lib64/libcamalgo.so
@@ -97,15 +85,15 @@ lib64/libem_modem_jni.so
 lib64/libcam.utils.sensorlistener.so
 lib64/libvcodecdrv.so
 lib64/libstagefrighthw.so
-lib64/libui_ext.so
+#lib64/libui_ext.so
 lib64/libfeatureio.so
 lib64/libaudiocomponentengine.so
 lib64/egl/libGLES_mali.so
 lib64/libion_mtk.so
 lib64/libperfservicenative.so
 lib64/libem_gpio_jni.so
-lib64/libgui_ext.so
-lib64/libgralloc_extra.so
+#lib64/libgui_ext.so
+#lib64/libgralloc_extra.so
 lib64/mtk-ril.so
 lib64/libcam_utils.so
 lib64/libwebrtc_audio_preprocessing.so
@@ -211,7 +199,6 @@ lib64/libimageio_FrmB.so
 lib64/libpq_cust.so
 lib64/libvcodec_cap.so
 lib64/libtz_uree.so
-lib64/libMTKAudioTimeStretch.so
 
 lib64/hw/audio.a2dp.default.so
 lib64/hw/audio_policy.stub.so
@@ -283,7 +270,7 @@ lib/libcam.utils.sensorlistener.so
 lib/libmp4enc_sa.ca7.so
 lib/libvcodecdrv.so
 lib/libstagefrighthw.so
-lib/libui_ext.so
+#lib/libui_ext.so
 lib/libfeatureio.so
 lib/libaudiocomponentengine.so
 lib/egl/libGLES_mali.so
@@ -291,8 +278,8 @@ lib/libion_mtk.so
 lib/libperfservicenative.so
 lib/libem_gpio_jni.so
 lib/libaudiomtkdcremoval.so
-lib/libgui_ext.so
-lib/libgralloc_extra.so
+#lib/libgui_ext.so
+#lib/libgralloc_extra.so
 lib/libmtcloader.so
 lib/mtk-ril.so
 lib/libMtkOmxCore.so
