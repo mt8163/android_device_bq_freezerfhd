@@ -1,8 +1,3 @@
-# Inherit from LineageOS makefiles
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, vendor/cm/config/common_full_tablet_wifionly.mk)
-
 # Define local path
 LOCAL_PATH := device/bq/aquaris_m8
 
@@ -58,6 +53,14 @@ PRODUCT_COPY_FILES += \
 # Dalvik
 PRODUCT_TAGS += dalvik.gc.type-precise
 
+# Wi-Fi
+PRODUCT_PACKAGES += \
+    libwpa_client \
+    hostapd \
+    dhcpcd.conf \
+    wpa_supplicant \
+    wpa_supplicant.conf 
+
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/rootdir,root)
@@ -109,25 +112,39 @@ PRODUCT_PACKAGES += \
 
 # Default.prop
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-	ro.mount.fs=EXT4 \
-	ro.adb.secure=0 \
-	ro.secure=0 \
-	ro.allow.mock.location=0 \
-	ro.debuggable=1 \
-	persist.service.acm.enable=0 \
-	ro.config.low_ram=false \
-        persist.sys.usb.config=mtp,adb
+   ro.mount.fs=EXT4 \
+   ro.adb.secure=0 \
+   ro.secure=0 \
+   ro.allow.mock.location=0 \
+   ro.debuggable=1 \
+   persist.service.acm.enable=0 \
+   ro.config.low_ram=false \
+   persist.sys.usb.config=mtp,adb \
+   ro.zygote=zygote64_32 \
+   persist.service.adb.enable=1
 
-# Zygote (Needs separed override)
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
-    ro.zygote=zygote64_32
+# MediaTek Vendor
+PRODUCT_PACKAGES += \
+    lights.mt8163 \
+    power.mt8163 \
+    gps.mt8163
+
+# Graphic
+PRODUCT_PACKAGES += \
+    libGLES_android \
+    libgralloc_extra \
+    libgui_ext \
+    libui_ext
+
+# MTK Debugging
+PRODUCT_PACKAGES += \
+    EngineerMode \
+    YGPS
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.legacyencoder=0
 
-# Additional for default.prop
-ADDITIONAL_DEFAULT_PROPERTIES += ro.adb.secure=0
-ADDITIONAL_DEFAULT_PROPERTIES += ro.secure=0
-ADDITIONAL_DEFAULT_PROPERTIES += persist.service.adb.enable=1
+# Include core_64_bit.mk after setting default props.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 

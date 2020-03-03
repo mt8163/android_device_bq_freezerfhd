@@ -24,8 +24,9 @@ cd ../..
 
 cd frameworks/av
 
-git apply -v ../../$PATCHES_DIR/frameworks/av/0004-WVM-READOPTIONS-MTK.patch
+#git apply -v ../../$PATCHES_DIR/frameworks/av/0004-WVM-READOPTIONS-MTK.patch
 git apply -v ../../$PATCHES_DIR/frameworks/av/0005-MTK-AUDIO-PATCH.patch
+git apply -v ../../$PATCHES_DIR/frameworks/av/0006-AUDIOFLINGER-SPAM.patch
 
 cd ../..
 
