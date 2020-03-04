@@ -5,6 +5,7 @@
 
 /* This fixes access wvm to ReadOptions */
 /* Credits for the original patch to DeckerSU */
+/* I (R0rt1z2) just adapted the patch to a shim */
 
 extern "C" {
 
@@ -25,10 +26,19 @@ extern "C" {
        return result;
    }
 
+   /* android::MPEG2PSExtractor::Track:getPTS() */
    int64_t _ZNK7android11MediaSource11ReadOptions9getLateByEv(android::IMediaSource::ReadOptions *readOptions) {
        ALOGW("_ZNK7android11MediaSource11ReadOptions9getLateByEv");
        int64_t result = readOptions->getLateBy();
        ALOGW("_ZNK7android11MediaSource11ReadOptions9getLateByEv %d", result);
        return res;
    }
+   
+   /* android::MediaBufferGroup::MediaBufferGroup() */
+   int _ZN7android16MediaBufferGroupC1Ej(unsigned int);
+   
+   int _ZN7android16MediaBufferGroupC1Ev() {
+       return _ZN7android16MediaBufferGroupC1Ej(0);
+   }
+   
 }
