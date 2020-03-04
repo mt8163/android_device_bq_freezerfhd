@@ -102,13 +102,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Snap
 
-# MediaTek Symbols
+# Shims
 PRODUCT_PACKAGES += \
-    libmtk_symbols
-
-# Power
-PRODUCT_PACKAGES += \
-    power.mt8163
+    libmtk_symbols \
+    libshim_ui \
+    libshim_wvm
 
 # Default.prop
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -125,7 +123,9 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # MediaTek Vendor
 PRODUCT_PACKAGES += \
+    power.mt8163 \
     lights.mt8163 \
+    memtrack.mt8163 \
     power.mt8163 \
     gps.mt8163
 
@@ -138,7 +138,6 @@ PRODUCT_PACKAGES += \
 
 # MTK Debugging
 PRODUCT_PACKAGES += \
-    EngineerMode \
     YGPS
 
 # Media
@@ -147,4 +146,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Include core_64_bit.mk after setting default props.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-

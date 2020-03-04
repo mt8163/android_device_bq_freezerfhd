@@ -121,9 +121,6 @@ MALLOC_SVELTE := true
 # Charger
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 
-# Fonts
-#EXTENDED_FONT_FOOTPRINT := true
-
 # Resolution
 DEVICE_RESOLUTION := 800x1280
 
@@ -138,7 +135,13 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 TARGET_LDPRELOAD += libmtk_symbols.so
 
 LINKER_FORCED_SHIM_LIBS := \
-	/system/vendor/lib/libwvm.so|libmtk_symbols.so
+	/system/vendor/lib/libwvm.so|libshim_wvm.so \
+	/system/lib/libui_ext.so|libshim_ui.so \
+	/system/lib64/libui_ext.so|libshim_ui.so \
+	/system/lib/libgui_ext.so|libshim_ui.so \
+	/system/lib64/libgui_ext.so|libshim_ui.so \
+	/system/lib/libcam_utils.so|libshim_ui.so \
+	/system/lib/libcam_utils.so|libshim_ui.so
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.mt8163
