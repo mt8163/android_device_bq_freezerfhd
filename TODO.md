@@ -84,3 +84,5 @@
 ```
 02-14 03:26:54.265   174   224 W hwcomposer: [JOB] (0) Timed out waiting for vsync...
 ```
+
+- [x] Fix bluetooth.
