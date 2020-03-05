@@ -67,7 +67,6 @@ LOCAL_SHARED_LIBRARIES := \
     libui \
     libdl \
     libion \
-    libion_mtk \
     libgralloc_extra \
     libui_ext
 
