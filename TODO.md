@@ -14,7 +14,7 @@
 02-14 03:10:29.746   186   186 E MNLD    : hal_sock_mnld: bind failed path=[/data/gps_mnl/hal2mnld] reason=[Permission denied]
 ```
 
-- [ ] Build memtrack:
+- [x] Build memtrack:
 ```
 02-14 03:10:31.326   192   192 E memtrack: Couldn't load memtrack module (No such file or directory)
 ```
@@ -39,12 +39,12 @@
 02-14 03:10:32.497   194   194 E AudioALSAVolumeController: Error: SetSpeakerGain invalid value
 ```
 
-- [ ] Fix ALSA spam:
+- [x] Fix ALSA spam:
 ```
 02-14 03:10:32.512   194   323 E AudioALSAStreamOut: -getPresentationPosition(), no playback handler, *frames = 0, return
 ```
 
-- [ ] Fix missing effects libs:
+- [x] Fix missing effects libs:
 ```
 02-14 03:10:32.511   194   194 W EffectsFactory: loadLibrary() failed to open /system/vendor/lib/soundfx/libswdap.so
 02-14 03:10:32.511   194   194 W EffectsFactory: loadLibrary() failed to open /system/vendor/lib/soundfx/libhwdap.so
