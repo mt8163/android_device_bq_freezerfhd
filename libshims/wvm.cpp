@@ -1,4 +1,5 @@
 #include <media/stagefright/MediaSource.h>
+#include <log/log.h>
 #include <string.h>
 #include <stdio.h>
 #include <stdint.h>
@@ -31,11 +32,13 @@ extern "C" {
        ALOGW("_ZNK7android11MediaSource11ReadOptions9getLateByEv");
        int64_t result = readOptions->getLateBy();
        ALOGW("_ZNK7android11MediaSource11ReadOptions9getLateByEv %d", result);
-       return res;
+       return result;
    }
    
    /* android::MediaBufferGroup::MediaBufferGroup() */
-   int _ZN7android16MediaBufferGroupC1Ej(unsigned int);
+   int _ZN7android16MediaBufferGroupC1Ej(unsigned int group) {
+       ALOGI("_ZN7android16MediaBufferGroupC1Ej: %d", group);
+   }
    
    int _ZN7android16MediaBufferGroupC1Ev() {
        return _ZN7android16MediaBufferGroupC1Ej(0);
