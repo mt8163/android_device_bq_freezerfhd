@@ -578,6 +578,9 @@ on post-fs-data
     #Use uinput's default permission
     chown system net_bt_admin /dev/uinput
 
+    # Start bluetooth init helper
+    start bt_setup
+
     # UIBC
     chown system media /dev/uibc
     chmod 0660 /dev/uibc
@@ -1639,6 +1642,13 @@ service poad /system/bin/poad
     class main
     user system
     group system
+    oneshot
+
+service bt_setup /init.bluetooth.sh
+    class main
+    user root
+    group root system bluetooth
+    disabled
     oneshot
 
 #monitor battery status
