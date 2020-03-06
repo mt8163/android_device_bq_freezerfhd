@@ -1,5 +1,8 @@
+#define _GNU_SOURCE
+
 #include <string.h>
 #include <stdio.h>
+#include <dlfcn.h>
 #include <stdint.h>
 
 #include <log/log.h>
