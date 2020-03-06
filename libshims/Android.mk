@@ -18,4 +18,14 @@ LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
 
+# /system/lib/libdrmmtkutil.so
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := drm.cpp
+LOCAL_SHARED_LIBRARIES := liblog libdrmframework liblog libcrypto
+LOCAL_MODULE := libshim_drm
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_SHARED_LIBRARY)
+
+
 
