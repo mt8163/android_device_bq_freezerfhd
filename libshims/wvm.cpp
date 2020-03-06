@@ -1,10 +1,11 @@
-#include <media/stagefright/MediaSource.h>
-#include <android/log.h>
-#include <media/IMediaSource.h>
-#include <log/log.h>
 #include <string.h>
 #include <stdio.h>
 #include <stdint.h>
+
+#include <log/log.h>
+#include <media/IMediaSource.h>
+#include <media/stagefright/MediaSource.h>
+#include <media/stagefright/MediaBuffer.h>
 
 /* This fixes access wvm to ReadOptions */
 /* Credits for the original patch to DeckerSU */
