@@ -99,7 +99,7 @@ BOARD_USES_MTK_AUDIO := true
 # Charger
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 
-#Wifi
+# Wifi
 BOARD_WLAN_DEVICE := MediaTek
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 BOARD_HOSTAPD_DRIVER := NL80211

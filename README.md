@@ -30,14 +30,15 @@ brunch lineage_aquaris_m8-userdebug -j12
 ```
 
 ### WORKING/BUGS ###
-- [ ] Wi-Fi
-- [ ] Bluetooth
+- [x] Wi-Fi (Partially working, says "No internet")
+- [x] Bluetooth
 - [ ] OMX
-- [ ] Radio FM
+- [x] Radio FM
 - [x] Boots
 - [x] HWC
 - [x] Gralloc
 - [ ] GPS
+- [ ] Sound
 - [x] Offline charging
 
 

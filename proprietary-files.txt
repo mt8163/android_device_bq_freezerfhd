@@ -18,8 +18,8 @@ bin/nvram_daemon
 bin/mc6420d
 bin/lsm303md
 bin/wmt_loader
-bin/wpa_cli
-bin/wpa_supplicant
+#bin/wpa_cli
+#bin/wpa_supplicant
 bin/chat
 bin/hdcpkey
 bin/dhcpcd

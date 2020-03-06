@@ -5,7 +5,6 @@ LOCAL_SRC_FILES := \
     mtk_asc.cpp \
     mtk_audio.cpp \
     mtk_omx.cpp \
-    mtk_ssl.cpp \
     mtk_icu55.c \
     mtk_icu53.c
 

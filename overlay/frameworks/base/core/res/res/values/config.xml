@@ -54,8 +54,6 @@
      <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
          autodetected from the Configuration. -->
     <bool name="config_showNavigationBar">true</bool>
-
-
     <bool name="config_voice_capable">false</bool>
 
     <!-- Flag indicating whether the current device allows sms service.
@@ -67,7 +65,7 @@
                cell broadcasting sms, and MMS. -->
     <bool name="config_sms_capable">false</bool>
 
-  <!-- Disable lockscreen rotation by default -->
+    <!-- Disable lockscreen rotation by default -->
     <bool name="config_enableLockScreenRotation">true</bool>
 
     <!-- If true, the screen can be rotated via the accelerometer in all 4
@@ -77,7 +75,7 @@
     <!-- If supported, are dreams enabled? (by default) -->
     <bool name="config_dreamsEnabledByDefault">true</bool>
 
-  <!-- If this is true, the screen will come on when you plug/unplug usb/power/whatever. -->
+   <!-- If this is true, the screen will come on when you plug/unplug usb/power/whatever. -->
     <bool name="config_unplugTurnsOnScreen">true</bool>
 
     <!-- Indicate whether closing the lid causes the device to go to sleep and opening
@@ -85,13 +83,15 @@
          The default is false. -->
     <bool name="config_lidControlsSleep">true</bool>
         <!--  Maximum number of supported users -->
-    <integer name="config_multiuserMaximumUsers">4</integer>
+    <integer name="config_multiuserMaximumUsers">5</integer>
 
     <!--  Whether Multiuser UI should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
+	
     <!-- Enable doze mode
          ComponentName of a dream to show whenever the system would otherwise have gone to sleep. -->
     <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
+	
     <!-- If true, the doze component is not started until after the screen has been turned off
          and the screen off animation has been performed. -->
     <bool name="config_dozeAfterScreenOff">true</bool>
@@ -101,5 +101,24 @@
     <!-- Auto Power Modes is required for Doze and App Standby -->
     <bool name="config_enableAutoPowerModes">true</bool>
 
-    <bool name="config_supportDoubleTapWake">true</bool>
+    <!-- Disables double tap to wake the device -->
+    <bool name="config_supportDoubleTapWake">false</bool>
+	
+	<!-- Disables LiveDisplay as default at boot -->
+	<integer name="config_defaultLiveDisplayMode">0</integer>
+	
+	<!-- Whether WiFi display is supported by this device.
+         There are many prerequisites for this feature to work correctly.
+         Here are a few of them:
+         * The WiFi radio must support WiFi P2P.
+         * The WiFi radio must support concurrent connections to the WiFi display and
+           to an access point.
+         * The Audio Flinger audio_policy.conf file must specify a rule for the "r_submix"
+           remote submix module.  This module is used to record and stream system
+           audio output to the WiFi display encoder in the media server.
+         * The remote submix module "audio.r_submix.default" must be installed on the device.
+         * The device must be provisioned with HDCP keys (for protected content).
+    -->
+    <bool name="config_enableWifiDisplay">true</bool>
+
 </resources>

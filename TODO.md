@@ -70,7 +70,7 @@
 02-14 03:11:01.397   669   779 W Tile.LiveDisplayTile: java.lang.NullPointerException: Attempt to invoke virtual method 'boolean cyanogenmod.hardware.LiveDisplayConfig.hasModeSupport()' on a null object reference
 ```
 
-- [ ] Fix Wi-Fi:
+- [x] Fix Wi-Fi:
 ```
 02-14 03:26:51.996   340   353 D WifiService: setWifiEnabled: true pid=669, uid=10029
 02-14 03:26:51.996   340   600 E WifiMonitor: killSupplicant p2ptrue init.svc.wpa_supplicant=unknown init.svc.p2p_supplicant=unknown
@@ -80,7 +80,40 @@
 02-14 03:26:52.158   340   340 E WifiController: WifiControllerWifi turn on failed
 ```
 
-- [ ] Fix VSYNC:
+- [ ] Fix "No internet":
+```
+01-07 15:33:47.871   206   628 E Netd    : interface wlan0 not assigned to any netId
+01-07 15:33:47.871   379   631 E NetdConnector: NDC Command {267 bandwidth removeiquota wlan0} took too long (1243ms)
+01-07 15:33:47.872   379   638 E NetdConnector: NDC Command {268 network route add 106 wlan0 0.0.0.0/0 XXXXXXXX} took too long (1243ms)
+01-07 15:33:47.872   379   638 E ConnectivityService: Exception in addRoute for gateway: java.lang.IllegalStateException: command '268 network route add 106 wlan0 0.0.0.0/0 XXXXXXXX' failed with '400 268 addRoute() failed (No such device)'
+01-07 15:33:47.872   379   638 D ConnectivityService: Setting DNS servers for network 106 to [/XXXXXXXX]
+01-07 15:33:47.877   379   638 W ConnectivityExtension: ConnectivityExt jar file not present
+01-07 15:33:47.881   379   638 W ConnectivityExtension: ConnectivityExt jar file not present
+01-07 15:33:47.882   379   634 D WifiNetworkAgent: NetworkAgent: Received signal strength thresholds: []
+01-07 15:33:47.883   379   638 D ConnectivityService: Switching to new default network: NetworkAgentInfo{ ni{[type: WIFI[], state: CONNECTED/CONNECTED, reason: (unspecified), extra: "AndroidAP_7760", failover: false, available: true, roaming: false, metered: false]}  network{106}  nethandle{455282969310}  lp{{InterfaceName: wlan0 LinkAddresses: [fe80::208:22ff:fe3e:3d20/64,XXXXXXX,]  Routes: [fe80::/64 -> :: wlan0,XXXXXXXXX -> 0.0.0.0 wlan0,0.0.0.0/0 -> XXXXXXXX wlan0,] DnsAddresses: [XXXXXXX,] Domains: null MTU: 0 TcpBufferSizes: 524288,1048576,2097152,262144,524288,1048576}}  nc{[ Transports: WIFI Capabilities: INTERNET&NOT_RESTRICTED&TRUSTED&NOT_VPN&FOREGROUND LinkUpBandwidth>=1048576Kbps LinkDnBandwidth>=1048576Kbps SignalStrength: -37]}  Score{20}  everValidated{false}  lastValidated{false}  created{true} lingering{false} explicitlySelected{true} acceptUnvalidated{false} everCaptivePortalDetected{false} lastCaptivePortalDetected{false} }
+01-07 15:33:47.885   379  2946 D NetworkMonitor/NetworkAgentInfo [WIFI () - 106]: PROBE_DNS FAIL 2ms, connectivitycheck.gstatic.com
+01-07 15:33:47.886   379  2945 D NetworkMonitor/NetworkAgentInfo [WIFI () - 106]: PROBE_DNS FAIL 2ms, www.google.com
+01-07 15:33:47.886   379  2946 W System  : ClassLoader referenced unknown path: /system/framework/tcmclient.jar
+01-07 15:33:47.888   379  2945 D NetworkMonitor/NetworkAgentInfo [WIFI () - 106]: Probably not a portal: exception java.net.UnknownHostException: Unable to resolve host "www.google.com": No address associated with hostname
+01-07 15:33:47.888   379  2946 D NetworkMonitor/NetworkAgentInfo [WIFI () - 106]: Probably not a portal: exception java.net.UnknownHostException: Unable to resolve host "connectivitycheck.gstatic.com": No address associated with hostname
+01-07 15:33:47.890   379  2907 D NetworkMonitor/NetworkAgentInfo [WIFI () - 106]: Probably not a portal: exception java.net.UnknownHostException: Unable to resolve host "www.google.com": No address associated with hostname
+01-07 15:33:48.119   206   628 V IdletimerController: runCmd(/system/bin/ip6tables -w -t raw -A idletimer_raw_PREROUTING -i wlan0 -j IDLETIMER --timeout 15 --label 1 --send_nl_msg 1) res_ipv4=0, res_ipv6=0
+01-07 15:33:48.353   206   628 V IdletimerController: runCmd(/system/bin/ip6tables -w -t mangle -A idletimer_mangle_POSTROUTING -o wlan0 -j IDLETIMER --timeout 15 --label 1 --send_nl_msg 1) res_ipv4=0, res_ipv6=0
+01-07 15:33:48.356   379   638 D ConnectivityService: Sending CONNECTED broadcast for type 1 NetworkAgentInfo [WIFI () - 106] isDefaultNetwork=true
+01-07 15:33:48.357   379   638 D ConnectivityService: NetworkAgentInfo [WIFI () - 106] EVENT_NETWORK_INFO_CHANGED, going from CONNECTED to DISCONNECTED
+01-07 15:33:48.357   379   638 D ConnectivityService: NetworkAgentInfo [WIFI () - 106] validation failed
+01-07 15:33:48.357   379   638 D ConnectivityService: NetworkAgentInfo [WIFI () - 106] got DISCONNECTED, was satisfying 4
+01-07 15:33:48.359   379   634 D WifiNetworkAgent: NetworkAgent: NetworkAgent channel lost
+01-07 15:33:48.362  1225  1225 D WeatherUpdateService: onCreate
+01-07 15:33:48.363   379   638 W ConnectivityExtension: ConnectivityExt jar file not present
+01-07 15:33:48.364  1225  1225 D WeatherUpdateService: Service started, but shouldn't update ... stopping
+01-07 15:33:48.368  1225  1225 D WeatherUpdateService: onDestroy
+01-07 15:33:48.600   206   628 V IdletimerController: runCmd(/system/bin/ip6tables -w -t raw -D idletimer_raw_PREROUTING -i wlan0 -j IDLETIMER --timeout 15 --label 1 --send_nl_msg 1) res_ipv4=0, res_ipv6=0
+01-07 15:33:48.833   206   628 V IdletimerController: runCmd(/system/bin/ip6tables -w -t mangle -D idletimer_mangle_POSTROUTING -o wlan0 -j IDLETIMER --timeout 15 --label 1 --send_nl_msg 1) res_ipv4=0, res_ipv6=0
+01-07 15:33:48.833   379   638 D ConnectivityService: Sending DISCONNECTED broadcast for type 1 NetworkAgentInfo [WIFI () - 106] isDefaultNetwork=true
+```
+
+- [x] Fix VSYNC:
 ```
 02-14 03:26:54.265   174   224 W hwcomposer: [JOB] (0) Timed out waiting for vsync...
 ```

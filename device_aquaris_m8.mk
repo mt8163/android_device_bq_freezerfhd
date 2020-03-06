@@ -50,6 +50,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_em.xml:system/etc/audio_em.xml \
     $(LOCAL_PATH)/configs/AudioParamOptions.xml:system/etc/audio_param/AudioParamOptions.xml
 
+# Wifi Configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
+
 # Dalvik
 PRODUCT_TAGS += dalvik.gc.type-precise
 
@@ -59,7 +65,7 @@ PRODUCT_PACKAGES += \
     hostapd \
     dhcpcd.conf \
     wpa_supplicant \
-    wpa_supplicant.conf 
+    wpa_cli
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
@@ -111,15 +117,10 @@ PRODUCT_PACKAGES += \
 # Default.prop
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
    ro.mount.fs=EXT4 \
-   ro.adb.secure=0 \
-   ro.secure=0 \
-   ro.allow.mock.location=0 \
-   ro.debuggable=1 \
    persist.service.acm.enable=0 \
    ro.config.low_ram=false \
    persist.sys.usb.config=mtp,adb \
-   ro.zygote=zygote64_32 \
-   persist.service.adb.enable=1
+   ro.zygote=zygote64_32
 
 # MediaTek Vendor
 PRODUCT_PACKAGES += \
@@ -143,6 +144,14 @@ PRODUCT_PACKAGES += \
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     media.stagefright.legacyencoder=0
+
+# Enable ADB at boot
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    ro.secure=0 \
+    ro.adb.secure=0 \
+    ro.allow.mock.location=1 \
+    ro.debuggable=1 \
+    persist.service.adb.enable=1
 
 # Include core_64_bit.mk after setting default props.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
