@@ -152,6 +152,3 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.allow.mock.location=1 \
     ro.debuggable=1 \
     persist.service.adb.enable=1
-
-# Include core_64_bit.mk after setting default props.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)

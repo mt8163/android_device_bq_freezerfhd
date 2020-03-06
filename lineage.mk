@@ -3,9 +3,10 @@ PRODUCT_RELEASE_NAME := aquaris_m8
 CM_VENDOR := vendor/cm
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
-$(call inherit-product, $(CM_VENDOR)/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+$(call inherit-product, $(CM_VENDOR)/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/bq/aquaris_m8/device_aquaris_m8.mk)
@@ -25,7 +26,7 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 PRODUCT_DEVICE := aquaris_m8
 PRODUCT_NAME := lineage_aquaris_m8
 PRODUCT_BRAND := google
-PRODUCT_MODEL := Aquaris m8
+PRODUCT_MODEL := Aquaris M8
 PRODUCT_MANUFACTURER := bq
 
 # GMS

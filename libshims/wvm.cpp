@@ -6,6 +6,7 @@
 #include <media/IMediaSource.h>
 #include <media/stagefright/MediaSource.h>
 #include <media/stagefright/MediaBuffer.h>
+#include <media/stagefright/MediaBufferGroup.h>
 
 /* This fixes access wvm to ReadOptions */
 /* Credits for the original patch to DeckerSU */
@@ -34,8 +35,8 @@ extern "C" {
 
    /* MediaBufferGroup::acquire_buffer */
    android::status_t _ZN7android16MediaBufferGroup14acquire_bufferEPPNS_11MediaBufferEb(
-                    MediaBufferGroup* group, MediaBuffer **out, bool nonBlocking) {
-     ALOGD("_ZN7android16MediaBufferGroup14acquire_bufferEPPNS_11MediaBufferEb: %d," nonBlocking);
+                    android::MediaBufferGroup* group, android::MediaBuffer **out, bool nonBlocking) {
+     ALOGD("_ZN7android16MediaBufferGroup14acquire_bufferEPPNS_11MediaBufferEb: %d", nonBlocking);
      return group->acquire_buffer(out, nonBlocking, 0);
    }
 
@@ -46,15 +47,15 @@ extern "C" {
        ALOGW("_ZNK7android11MediaSource11ReadOptions9getLateByEv %d", result);
        return result;
    }
-   
+
    /* android::MediaBufferGroup::MediaBufferGroup() */
    int _ZN7android16MediaBufferGroupC1Ej(unsigned int group) {
        ALOGI("_ZN7android16MediaBufferGroupC1Ej: %d", group);
        return group;
    }
-   
+
    int _ZN7android16MediaBufferGroupC1Ev() {
        return _ZN7android16MediaBufferGroupC1Ej(0);
    }
-   
+
 }
