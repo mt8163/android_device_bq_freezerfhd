@@ -139,9 +139,7 @@ LINKER_FORCED_SHIM_LIBS := \
 	/system/lib/libui_ext.so|libshim_ui.so \
 	/system/lib64/libui_ext.so|libshim_ui.so \
 	/system/lib/libgui_ext.so|libshim_ui.so \
-	/system/lib64/libgui_ext.so|libshim_ui.so \
-	/system/lib/libcam_utils.so|libshim_ui.so \
-	/system/lib64/libcam_utils.so|libshim_ui.so
+	/system/lib64/libgui_ext.so|libshim_ui.so
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.mt8163
