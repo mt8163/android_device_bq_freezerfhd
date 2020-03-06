@@ -48,6 +48,7 @@ extern "C" {
    /* android::MediaBufferGroup::MediaBufferGroup() */
    int _ZN7android16MediaBufferGroupC1Ej(unsigned int group) {
        ALOGI("_ZN7android16MediaBufferGroupC1Ej: %d", group);
+       return group;
    }
    
    int _ZN7android16MediaBufferGroupC1Ev() {
