@@ -12,7 +12,9 @@
 
 extern "C" {
 
-   bool _ZNK7android12IMediaSource11ReadOptions9getSeekToEPxPNS1_8SeekModeE(void *readOptions, int64_t *time_us, android::IMediaSource::ReadOptions::SeekMode *mode);
+   bool _ZNK7android12IMediaSource11ReadOptions9getSeekToEPxPNS1_8SeekModeE(void *readOptions, int64_t *time_us,
+          android::IMediaSource::ReadOptions::SeekMode *mode);
+
    int64_t _ZNK7android12IMediaSource11ReadOptions9getLateByEv(void *readOptions);
 
    bool _ZNK7android11MediaSource11ReadOptions14getNonBlockingEv(android::IMediaSource::ReadOptions *readOptions) {
@@ -30,12 +32,11 @@ extern "C" {
    }
 
    /* MediaBufferGroup::acquire_buffer */
-    android::status_t _ZN7android16MediaBufferGroup14acquire_bufferEPPNS_11MediaBufferEbj(android::MediaBuffer**, bool, size_t);
-
-    android::status_t _ZN7android16MediaBufferGroup14acquire_bufferEPPNS_11MediaBufferEb(android::MediaBuffer **out, bool nonBlocking) {
-    ALOGE("MEDIABUFFER RANGE_LENGTH: %d", (**out).range_length()); 
-    return _ZN7android16MediaBufferGroup14acquire_bufferEPPNS_11MediaBufferEbj(out, nonBlocking, (**out).range_length());
-    }
+   android::status_t _ZN7android16MediaBufferGroup14acquire_bufferEPPNS_11MediaBufferEb(
+                    MediaBufferGroup* group, MediaBuffer **out, bool nonBlocking) {
+     ALOGD("_ZN7android16MediaBufferGroup14acquire_bufferEPPNS_11MediaBufferEb: %d," nonBlocking);
+     return group->acquire_buffer(out, nonBlocking, 0);
+   }
 
    /* android::MPEG2PSExtractor::Track:getPTS() */
    int64_t _ZNK7android11MediaSource11ReadOptions9getLateByEv(android::IMediaSource::ReadOptions *readOptions) {
