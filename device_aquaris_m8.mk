@@ -68,18 +68,13 @@ PRODUCT_PACKAGES += \
     libwpa_client \
     hostapd \
     dhcpcd.conf \
-    wpa_supplicant \
-    wpa_cli
+    ebtables \
+    ethertypes \
+    netd
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/rootdir,root)
-
-# Wi-Fi
-PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes \
-    netd
 
 # Audio
 PRODUCT_PACKAGES += \
