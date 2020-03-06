@@ -41,7 +41,9 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
     $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml
+    $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/configs/media_codecs_mediatek_video.xml:system/etc/media_codecs_mediatek_video.xml \
+    $(LOCAL_PATH)/configs/media_codecs_mediatek_audio.xml:system/etc/media_codecs_mediatek_audio.xml
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -54,7 +56,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
-    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
+    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/ecc_list.xml:system/etc/ecc_list.xml \
+    $(LOCAL_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml
 
 # Dalvik
 PRODUCT_TAGS += dalvik.gc.type-precise
@@ -112,7 +116,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libmtk_symbols \
     libshim_ui \
-    libshim_wvm
+    libshim_wvm \
+    libshim_drm
 
 # Default.prop
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
