@@ -70,7 +70,9 @@ PRODUCT_PACKAGES += \
     dhcpcd.conf \
     ebtables \
     ethertypes \
-    netd
+    netd \
+    wpa_supplicant \
+    wpa_cli
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
