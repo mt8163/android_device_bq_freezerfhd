@@ -63,16 +63,16 @@ PRODUCT_COPY_FILES += \
 # Dalvik
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-# Wi-Fi
+# network
 PRODUCT_PACKAGES += \
-    libwpa_client \
-    hostapd \
-    dhcpcd.conf \
-    ebtables \
-    ethertypes \
     netd \
     wpa_supplicant \
     wpa_cli
+    
+# IPv6 tethering
+PRODUCT_PACKAGES += \
+    ebtables \
+    ethertypes
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
