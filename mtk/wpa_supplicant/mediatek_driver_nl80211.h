@@ -265,12 +265,6 @@ struct wpa_driver_hotspot_params {
     u8  bssid[ETH_ALEN];
 };
 
-struct wpa_driver_hotspot_set_config_params {
-    struct wpa_driver_test_mode_info hdr;
-    u32 index;
-    u32 value;
-};
-
 #ifdef CONFIG_MTK_LTE_COEX
 enum nl80211_testmode_available_chan_attr{
     __NL80211_TESTMODE_AVAILABLE_CHAN_ATTR_INVALID,
@@ -394,14 +388,92 @@ enum nl80211_testmode_params {
     NL80211_TESTMODE_STATISTICS = 0x10,
     NL80211_TESTMODE_LINK_DETECT = 0x20,
 
-    // Hotspot manager testmode command
-    NL80211_TESTMODE_HS_SET_CONFIG = 51,
-
     /* New test mode command id, should greater than TESTMODE_CMD_ID_NEW_BEGIN */
     NL80211_TESTMODE_NEW_BEGIN = 100,
     NL80211_TESTMODE_SUSPEND = 101,
     NL80211_TESTMODE_STR_CMD = 102,
     NL80211_TESTMODE_RXFILTER = 103
 };
+
+#ifdef CONFIG_MTK_HS20R1
+enum TestModeCmdType {
+    TESTMODE_CMD_ID_SW_CMD = 1,
+    TESTMODE_CMD_ID_WAPI = 2,
+    TESTMODE_CMD_ID_HS20 = 3,
+    NUM_OF_TESTMODE_CMD_ID
+};
+
+enum Hs20CmdType {
+    HS20_CMD_ID_SET_BSSID_POOL = 0,
+    NUM_OF_HS20_CMD_ID
+};
+
+struct param_hs20_set_bssid_pool {
+    u8 fgBssidPoolIsEnable;
+    u8 ucNumBssidPool;
+    u8 arBssidPool[8][ETH_ALEN];
+};
+
+struct wpa_driver_hs20_data_s {
+    struct wpa_driver_test_mode_info hdr;
+    enum Hs20CmdType CmdType;
+    struct param_hs20_set_bssid_pool hs20_set_bssid_pool;
+};
+
+
+#define WFA_IF_NAME_LEN   16
+#define WFA_HS20_TYPE_LEN 16
+#define WFA_HS20_LEN_256  256
+#define WFA_HS20_LEN_32   32
+
+
+#ifdef CONFIG_MTK_HS20R1_SIGMA
+
+#define HS20_MAX_NUM_CREDENTIAL 8
+
+struct hs20_credential {
+    struct hs20_credential *prNext;
+
+    char intf[WFA_IF_NAME_LEN];
+    char type[WFA_HS20_TYPE_LEN];
+    char username[WFA_HS20_LEN_32];
+    char password[WFA_HS20_LEN_256];
+    char imsi[WFA_HS20_LEN_32];
+    char plmn_mnc[WFA_HS20_LEN_32];
+    char plmn_mcc[WFA_HS20_LEN_32];
+    char root_ca[WFA_HS20_LEN_32];
+    char realm[WFA_HS20_LEN_32];
+    u8   prefer;
+    char fqdn[WFA_HS20_LEN_32];
+    char clientCA[WFA_HS20_LEN_32];
+};
+
+struct sigma_cmd_sta_cred_list {
+    struct hs20_credential *prNext;
+    size_t cred_count;
+};
+
+struct hs20_sigma {
+    u8 **bssid_pool;
+    size_t bssid_pool_count;
+    // struct sigma_cmd_sta_bssid_pool *prBssidPool;
+    // struct sigma_cmd_sta_add_credential arCred[HS20_MAX_NUM_CREDENTIAL];
+    // size_t cred_count;
+    struct sigma_cmd_sta_cred_list *prCredLst;
+    u8 is_running;
+    u8 is_connected;
+    u8 assoc_backoff_time;
+    u8 is_force_reassoc;
+    // u8 *ns_ssid;
+    // int ns_ssid_len;
+    // u8 ns_bssid[ETH_ALEN];
+};
+
+int wpas_hs20_test_mode(struct wpa_supplicant *wpa_s, enum Hs20CmdType CmdType, const u8 *data);
+
+#endif /* CONFIG_MTK_HS20R1_SIGMA */
+
+#endif /* CONFIG_MTK_HS20R1 */
+
 
 #endif
