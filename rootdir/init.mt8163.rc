@@ -911,6 +911,9 @@ on post-fs-data
     chmod 0664 /sys/devices/platform/mt_usb/cmode
     chown root system /sys/devices/platform/mt_usb/cmode
 
+on property:ro.serial.helper.enabled=1
+    start manage_sn
+
     #usb
     chown system system /sys/class/android_usb/android0/f_acm/port_index
     chmod 0660 /sys/class/android_usb/android0/f_acm/port_index
@@ -1035,9 +1038,16 @@ on property:vold.decrypt=trigger_restart_framework
 on property:vold.decrypt=trigger_shutdown_framework
     start stop_modem
 
+service manage_sn /sbin/manage_sn
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
 service kisd /system/bin/kisd
-	user root
-	group system
+    user root
+    group system
 
 service stop_modem /system/bin/md_ctrl 0
     class main
