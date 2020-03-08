@@ -71,13 +71,13 @@ bin/spm_loader
 bin/stp_dump3
 bin/fsck_msdos_mtk
 bin/tertestclient
-bin/supermount
+bin/superumount
 bin/slpd
 bin/rild_dongle
-bin/dolged
+bin/dongled
 bin/perf_native_test
 bin/ntfs-3g
-bin/nanread
+bin/nandread
 bin/mmp
 bin/memorydumper
 bin/downloader
@@ -85,7 +85,6 @@ bin/boot_logo_updater
 bin/bstd
 bin/autobt
 bin/audiocmdservice_atci
-bin/
 
 lib64/liburee_meta_drmkeyinstall_v2.so
 lib64/libcam.camadapter.so
