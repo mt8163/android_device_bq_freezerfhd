@@ -30,7 +30,7 @@ brunch lineage_aquaris_m8-userdebug -j12
 ```
 
 ### WORKING/BUGS ###
-- [x] Wi-Fi (Partially working, says "No internet")
+- [x] Wi-Fi
 - [x] Bluetooth
 - [x] OMX
 - [x] Radio FM
@@ -38,6 +38,8 @@ brunch lineage_aquaris_m8-userdebug -j12
 - [x] HWC
 - [x] Gralloc
 - [ ] GPS
+- [ ] Camera
+- [ ] Video Recording
 - [x] Sound
 - [x] Offline charging
 
