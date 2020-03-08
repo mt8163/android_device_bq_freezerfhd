@@ -22,6 +22,12 @@ git apply -v ../../$PATCHES_DIR/system/sepolicy/0003-SEPOLICY-MTK.patch
 
 cd ../..
 
+cd system/netd
+
+git apply -v ../../$PATCHES_DIR/system/netd/0007-HOSTAPD-MTK.patch
+
+cd ../..
+
 cd frameworks/av
 
 #git apply -v ../../$PATCHES_DIR/frameworks/av/0004-WVM-READOPTIONS-MTK.patch
