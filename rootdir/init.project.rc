@@ -15,7 +15,7 @@ on post-fs-data
 #
 
 #/dev/ttyMT2 for Connectivity BT/FM/GPS usage
-    chmod 0666 /dev/ttyMT2
+    chmod 0660 /dev/ttyMT2
     chown system system /dev/ttyMT2
 
 
@@ -30,17 +30,18 @@ on post-fs-data
 
 
 # Create char device file for WMT, GPS, BT, FM, WIFI
-    mknod /dev/stpwmt c 190 0;
-    mknod /dev/stpgps c 191 0;
-    mknod /dev/stpbt  c 192 0;
-    chmod 0666 /dev/stpwmt
-    chown system system /dev/stpwmt
+#    mknod /dev/stpwmt c 190 0;
+#    mknod /dev/stpgps c 191 0;
+#    mknod /dev/stpbt  c 192 0;
 
-    chmod 0666 /dev/wmtdetect
-    chown system system /dev/wmtdetect
+#    chmod 0660 /dev/stpwmt
+#    chown system system /dev/stpwmt
+
+#    chmod 0660 /dev/wmtdetect
+#    chown system system /dev/wmtdetect
 
     mknod /dev/wmtWifi c 153 0
-    chmod 0666 /dev/wmtWifi
+    chmod 0660 /dev/wmtWifi
     chown system system /dev/wmtWifi
 
 #Camera
@@ -73,29 +74,29 @@ on post-fs-data
     chmod 0660 /proc/smb/ScreenComm
  
 # BT
-    chmod 0666 /dev/stpbt
-    chown system system /dev/stpbt
+#    chmod 0660 /dev/stpbt
+#    chown bluetooth radio /dev/stpbt
 
 # GPS
-    chown system system /dev/stpgps
-    chown system system /sys/class/gpsdrv/gps/pwrctl
-    chown system system /sys/class/gpsdrv/gps/suspend
-    chown system system /sys/class/gpsdrv/gps/state
-    chown system system  /sys/class/gpsdrv/gps/pwrsave
-    chown system system /sys/class/gpsdrv/gps/status
-    chmod 0666 /dev/stpgps
+#    chown gps gps /dev/stpgps
+    chown gps gps /sys/class/gpsdrv/gps/pwrctl
+    chown gps gps /sys/class/gpsdrv/gps/suspend
+    chown gps gps /sys/class/gpsdrv/gps/state
+    chown gps gps /sys/class/gpsdrv/gps/pwrsave
+    chown gps gps /sys/class/gpsdrv/gps/status
+#    chmod 0660 /dev/stpgps
 
 # WiFi
-    mkdir /data/misc/wifi 0777 wifi wifi
-    mkdir /data/misc/wifi/sockets 0777 wifi wifi
-    mkdir /data/misc/wpa_supplicant 0777 wifi wifi
-    chown system system /data/misc/wifi
+    mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    mkdir /data/misc/wpa_supplicant 0770 wifi wifi
+    chown wifi wifi /data/misc/wifi
 
 #Define device for ATCID
-    chmod 666 /dev/ttyGS0 
-    chown system system /dev/ttyGS0 
-    chmod 666 /dev/ttyGS1 
-    chown system system /dev/ttyGS1
+    chmod 660 /dev/ttyGS0 
+    chown system /dev/ttyGS0 
+    chmod 660 /dev/ttyGS1 
+    chown system /dev/ttyGS1
 
 #Disable for one Single loader
 # Load WiFi Driver
@@ -104,7 +105,7 @@ on post-fs-data
 # Char device for BT 3.0 HS
     mknod /dev/ampc0 c 151 0
     chown bluetooth bluetooth /dev/ampc0
-    chmod 0666 /dev/ampc0
+    chmod 0660 /dev/ampc0
 
 #
 # Connectivity related device nodes & configuration (end)
@@ -171,8 +172,8 @@ service wmtLoader /system/bin/wmt_loader
 
 
 service conn_launcher /system/bin/6620_launcher -p /system/etc/firmware/
-    user root
-    group root wifi
+    user system
+    group system
     class core
 
 on property:service.wcn.coredump.mode=2
@@ -188,4 +189,3 @@ service stp_dump /system/bin/stp_dump3
 #
 # Connectivity related services (End)
 #
-
