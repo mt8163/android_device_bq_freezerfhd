@@ -82,9 +82,11 @@ bin/mmp
 bin/memorydumper
 bin/downloader
 bin/boot_logo_updater
-bin/bstd
 bin/autobt
 bin/audiocmdservice_atci
+bin/kisd
+bin/iptables
+bin/ip6tables
 
 lib64/liburee_meta_drmkeyinstall_v2.so
 lib64/libcam.camadapter.so
@@ -235,6 +237,7 @@ lib64/hw/sensors.mt8163.so
 #lib64/hw/lights.mt8163.so
 lib64/hw/local_time.default.so
 lib64/hw/power.default.so
+lib64/hw/keystore.mt8163.so
 
 vendor/lib64/mediadrm/libmockdrmcryptoplugin.so
 vendor/lib64/mediadrm/libdrmclearkeyplugin.so
@@ -449,6 +452,7 @@ lib/hw/sensors.mt8163.so
 lib/hw/local_time.default.so
 #lib/hw/lights.mt8163.so
 lib/hw/power.default.so
+lib/hw/keystore.mt8163.so
 
 vendor/lib/libWVStreamControlAPI_L3.so
 vendor/lib/libwvm.so
