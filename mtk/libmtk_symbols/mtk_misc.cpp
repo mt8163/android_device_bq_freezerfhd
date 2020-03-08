@@ -9,4 +9,10 @@ extern "C" {
          return 0x0;
     }
 
+    /* android::IProgramBinaryService::descriptor */
+    int _ZN7android21IProgramBinaryService10descriptorE(void)
+    {
+        return 0x0;
+    }
+    
 }
