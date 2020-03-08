@@ -13,11 +13,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+###################################################################################
+##### This Makefile include Google pure SUPPLICANT and MTK Turnkey SUPPLICANT #####
+###################################################################################
 LOCAL_PATH := $(call my-dir)
 
 ##### For Google SUPPLICANT #####
-ifeq ($(MTKPATH),)
-    $(warning build BASIC wpa_supplicant)
+ifeq ($(WPA_SUPPLICANT_VERSION),VER_0_8_X)
+
     WPA_SUPPL_DIR = external/wpa_supplicant_8
     WPA_SRC_FILE :=
 
@@ -57,12 +60,16 @@ L_CFLAGS += -DCONFIG_ANDROID_LOG
 endif
 
 ########################
+
 include $(CLEAR_VARS)
 LOCAL_MODULE := lib_driver_cmd_mt66xx
+LOCAL_PROPRIETARY_MODULE := true
 LOCAL_SHARED_LIBRARIES := libc libcutils
 LOCAL_CFLAGS := $(L_CFLAGS)
 LOCAL_SRC_FILES := $(WPA_SRC_FILE)
 LOCAL_C_INCLUDES := $(WPA_SUPPL_DIR_INCLUDE)
 include $(BUILD_STATIC_LIBRARY)
+
 ########################
+
 endif

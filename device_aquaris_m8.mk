@@ -67,7 +67,10 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 PRODUCT_PACKAGES += \
     netd \
     wpa_supplicant \
-    wpa_cli
+    wpa_cli \
+    hostapd \
+    hostapd_cli \
+    libwpa_client
     
 # IPv6 tethering
 PRODUCT_PACKAGES += \
