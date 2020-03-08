@@ -69,7 +69,25 @@ bin/program_binary_service
 bin/rtt
 bin/spm_loader
 bin/stp_dump3
+bin/fsck_msdos_mtk
+bin/tertestclient
+bin/supermount
+bin/slpd
+bin/rild_dongle
+bin/dolged
+bin/perf_native_test
+bin/ntfs-3g
+bin/nanread
+bin/mmp
+bin/memorydumper
+bin/downloader
+bin/boot_logo_updater
+bin/bstd
+bin/autobt
+bin/audiocmdservice_atci
+bin/
 
+lib64/liburee_meta_drmkeyinstall_v2.so
 lib64/libcam.camadapter.so
 lib64/libcameracustom.so
 lib64/libcamalgo.so
@@ -182,6 +200,7 @@ lib64/libmdfx.so
 lib64/libaudiosetting.so
 lib64/libnvramagentclient.so
 lib64/libwapi.so
+lib64/libwifitest.so
 lib64/libmtkcamera_client.so
 lib64/libbluetooth_mtk_pure.so
 lib64/libcamdrv_FrmB.so
@@ -199,6 +218,9 @@ lib64/libimageio_FrmB.so
 lib64/libpq_cust.so
 lib64/libvcodec_cap.so
 lib64/libtz_uree.so
+lib64/libzteevdo-ril.so
+lib64/libzteevdo-ril.so
+lib64/lib_uree_mtk_video_secure_al.so
 
 lib64/hw/audio.a2dp.default.so
 lib64/hw/audio_policy.stub.so
@@ -206,7 +228,7 @@ lib64/hw/camera.mt8163.so
 lib64/hw/gralloc.default.so
 lib64/hw/keystore.default.so
 lib64/hw/hwcomposer.mt8163.so
-#lib64/hw/gps.mt8163.so
+lib64/hw/gps.mt8163.so
 lib64/hw/audio.primary.mt8163.so
 lib64/hw/vibrator.default.so
 lib64/hw/gralloc.mt8163.so
@@ -222,25 +244,38 @@ usr/keylayout/mtk-kpd.kl
 usr/keylayout/ACCDET.kl
 
 etc/audio_policy.conf
+etc/firmware/md32_d.bin
+etc/firmware/md32_p.bin
 etc/firmware/ROMv2_lm_patch_1_1_hdr.bin
 etc/firmware/ROMv2_lm_patch_1_0_hdr.bin
-etc/firmware/mt6627/mt6627_fm_v5_coeff.bin
-etc/firmware/mt6627/mt6627_fm_v5_patch.bin
 etc/firmware/mt6627/mt6627_fm_v1_coeff.bin
+etc/firmware/mt6627/mt6627_fm_v1_patch.bin
+etc/firmware/mt6627/mt6627_fm_v2_coeff.bin
 etc/firmware/mt6627/mt6627_fm_v2_patch.bin
 etc/firmware/mt6627/mt6627_fm_v3_coeff.bin
 etc/firmware/mt6627/mt6627_fm_v3_patch.bin
 etc/firmware/mt6627/mt6627_fm_v4_coeff.bin
 etc/firmware/mt6627/mt6627_fm_v4_patch.bin
-etc/firmware/mt6627/mt6627_fm_v2_coeff.bin
-etc/firmware/mt6627/mt6627_fm_v1_patch.bin
-etc/firmware/WMT_SOC.cfg
+etc/firmware/mt6627/mt6627_fm_v5_coeff.bin
+etc/firmware/mt6627/mt6627_fm_v5_patch.bin
 etc/firmware/WIFI_RAM_CODE_8163
+etc/firmware/WMT_SOC.cfg
 etc/mtk_omx_core.cfg
+etc/wide-dhcpv6/dhcp6s.conf
+etc/wide-dhcpv6/dhcp6c.conf
+etc/wide-dhcpv6/dhcp6cctlkey
+etc/wide-dhcpv6/dhcp6cDNS.conf
+etc/wide-dhcpv6/dhcp6c.script
+etc/mtklog-config.prop
+etc/custom.conf
+etc/clatd.conf
+etc/fmr/mt6627_fm_cust.cfg
+
 etc/.tp/thermal.conf
 etc/.tp/.ht120.mtc
 etc/.tp/thermal.off.conf
 
+lib/liburee_meta_drmkeyinstall_v2.so
 lib/libMtkOmxAdpcmDec.so
 lib/libMtkOmxAdpcmEnc.so
 lib/libMtkOmxAlacDec.so
@@ -393,6 +428,11 @@ lib/libvcodec_cap.so
 lib/libtz_uree.so
 lib/libjni_pq.so
 lib/libMTKAudioTimeStretch.so
+lib/libzte-ril.so
+lib/libzteevdo-ril.so
+lib/zterilPara
+lib/lib_uree_mtk_video_secure_al.so
+
 
 lib/soundfx/libaudiopreprocessing.so
 
@@ -402,7 +442,7 @@ lib/hw/camera.mt8163.so
 lib/hw/gralloc.default.so
 lib/hw/keystore.default.so
 lib/hw/hwcomposer.mt8163.so
-#lib/hw/gps.mt8163.so
+lib/hw/gps.mt8163.so
 lib/hw/audio.primary.mt8163.so
 lib/hw/vibrator.default.so
 lib/hw/gralloc.mt8163.so
