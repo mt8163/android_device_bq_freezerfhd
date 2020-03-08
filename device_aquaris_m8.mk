@@ -127,13 +127,12 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
    persist.sys.usb.config=mtp,adb \
    ro.zygote=zygote64_32
 
-# MediaTek Vendor
+# MediaTek HAL
 PRODUCT_PACKAGES += \
     power.mt8163 \
     lights.mt8163 \
     memtrack.mt8163 \
-    power.mt8163 \
-    gps.mt8163
+    power.mt8163
 
 # Graphic
 PRODUCT_PACKAGES += \
@@ -145,6 +144,10 @@ PRODUCT_PACKAGES += \
 # MTK Debugging
 PRODUCT_PACKAGES += \
     YGPS
+
+# Manage serial
+PRODUCT_PACKAGES += \
+    manage_sn
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
