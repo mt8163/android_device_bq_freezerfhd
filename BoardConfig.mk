@@ -96,6 +96,9 @@ TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 # Audio
 BOARD_USES_MTK_AUDIO := true
 
+# Lights
+TARGET_PROVIDES_LIBLIGHT := true
+
 # Charger
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 
