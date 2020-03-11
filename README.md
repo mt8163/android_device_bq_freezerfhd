@@ -19,7 +19,7 @@ Display | 1280 x 800 pixels, 8"
 Rear Camera  | 5.0 MP
 Front Camera | 2.0 MP
 
-This branch is for building CyanogenMod 13.0/LineageOS 13.0
+This branch is for building CyanogenMod 14.1/LineageOS 14.1 or any other Android 7.x based ROM.
 
 ### BUILD ###
 ```
@@ -42,6 +42,3 @@ brunch lineage_aquaris_m8-userdebug -j12
 - [ ] Video Recording
 - [x] Sound
 - [x] Offline charging
-
-
-
