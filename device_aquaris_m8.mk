@@ -139,7 +139,8 @@ PRODUCT_PACKAGES += \
     libGLES_android \
     libgralloc_extra \
     libgui_ext \
-    libui_ext
+    libui_ext \
+    libperfservicenative
 
 # MTK Debugging
 PRODUCT_PACKAGES += \
