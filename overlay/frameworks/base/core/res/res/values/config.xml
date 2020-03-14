@@ -87,19 +87,6 @@
 
     <!--  Whether Multiuser UI should be shown -->
     <bool name="config_enableMultiUserUI">true</bool>
-	
-    <!-- Enable doze mode
-         ComponentName of a dream to show whenever the system would otherwise have gone to sleep. -->
-    <string name="config_dozeComponent">com.android.systemui/com.android.systemui.doze.DozeService</string>
-	
-    <!-- If true, the doze component is not started until after the screen has been turned off
-         and the screen off animation has been performed. -->
-    <bool name="config_dozeAfterScreenOff">true</bool>
-    <!-- Specifies whether to decouple the interactive state of the device from the display on/off state. -->
-    <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
-    
-    <!-- Auto Power Modes is required for Doze and App Standby -->
-    <bool name="config_enableAutoPowerModes">true</bool>
 
     <!-- Disables double tap to wake the device -->
     <bool name="config_supportDoubleTapWake">false</bool>
