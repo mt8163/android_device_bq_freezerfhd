@@ -1,5 +1,4 @@
-xbin/mnld
-xbin/BGW
+# System binaries 
 bin/mtkrildmd2
 bin/xlog
 bin/muxreport
@@ -88,6 +87,7 @@ bin/kisd
 bin/iptables
 bin/ip6tables
 
+# 64 bit libraries
 lib64/liburee_meta_drmkeyinstall_v2.so
 lib64/libcam.camadapter.so
 lib64/libcameracustom.so
@@ -223,6 +223,7 @@ lib64/libzteevdo-ril.so
 lib64/libzteevdo-ril.so
 lib64/lib_uree_mtk_video_secure_al.so
 
+# 64 bit hardware libraries
 lib64/hw/audio.a2dp.default.so
 lib64/hw/audio_policy.stub.so
 lib64/hw/camera.mt8163.so
@@ -239,13 +240,10 @@ lib64/hw/local_time.default.so
 lib64/hw/power.default.so
 lib64/hw/keystore.mt8163.so
 
-vendor/lib64/mediadrm/libmockdrmcryptoplugin.so
-vendor/lib64/mediadrm/libdrmclearkeyplugin.so
-
-usr/keylayout/mtk-kpd.kl
-usr/keylayout/ACCDET.kl
-
+# Audio Config
 etc/audio_policy.conf
+
+# Firmware data
 etc/firmware/md32_d.bin
 etc/firmware/md32_p.bin
 etc/firmware/ROMv2_lm_patch_1_1_hdr.bin
@@ -262,24 +260,35 @@ etc/firmware/mt6627/mt6627_fm_v5_coeff.bin
 etc/firmware/mt6627/mt6627_fm_v5_patch.bin
 etc/firmware/WIFI_RAM_CODE_8163
 etc/firmware/WMT_SOC.cfg
+
+# OMX Config
 etc/mtk_omx_core.cfg
+etc/mtklog-config.prop
+
+# DHCP6 Configs
 etc/wide-dhcpv6/dhcp6s.conf
 etc/wide-dhcpv6/dhcp6c.conf
 etc/wide-dhcpv6/dhcp6cctlkey
 etc/wide-dhcpv6/dhcp6cDNS.conf
 etc/wide-dhcpv6/dhcp6c.script
-etc/mtklog-config.prop
+
+# Misc Configs
 etc/custom.conf
 etc/clatd.conf
+
+# Perfservice Configs
 etc/perfservtouchfilter.txt
 etc/perfservapplist.txt
 
+# FM Radio Config
 etc/fmr/mt6627_fm_cust.cfg
 
+# Thermal Configs
 etc/.tp/thermal.conf
 etc/.tp/.ht120.mtc
 etc/.tp/thermal.off.conf
 
+# 32 bit libraries
 lib/liburee_meta_drmkeyinstall_v2.so
 lib/libMtkOmxAdpcmDec.so
 lib/libMtkOmxAdpcmEnc.so
@@ -437,10 +446,9 @@ lib/libzte-ril.so
 lib/libzteevdo-ril.so
 lib/zterilPara
 lib/lib_uree_mtk_video_secure_al.so
-
-
 lib/soundfx/libaudiopreprocessing.so
 
+# 32 bit hardware libraries
 lib/hw/audio.a2dp.default.so
 lib/hw/audio_policy.stub.so
 lib/hw/camera.mt8163.so
@@ -457,6 +465,7 @@ lib/hw/local_time.default.so
 lib/hw/power.default.so
 lib/hw/keystore.mt8163.so
 
+# Vendor's 32 bit libraries
 vendor/lib/libWVStreamControlAPI_L3.so
 vendor/lib/libwvm.so
 vendor/lib/libdrmwvmplugin.so
@@ -464,5 +473,15 @@ vendor/lib/libwvdrm_L3.so
 vendor/lib/mediadrm/libdrmclearkeyplugin.so
 vendor/lib/mediadrm/libmockdrmcryptoplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
+
+# Vendor's 64 bit libraries
+vendor/lib64/mediadrm/libmockdrmcryptoplugin.so
+vendor/lib64/mediadrm/libdrmclearkeyplugin.so
+
+# Device's specific keylayouts
+usr/keylayout/mtk-kpd.kl
+usr/keylayout/ACCDET.kl
+
+# Vendor's firmware data
 vendor/firmware/DF_VERSION
 vendor/firmware/bq27520.dffs
