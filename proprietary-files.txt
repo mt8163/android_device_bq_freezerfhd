@@ -271,6 +271,9 @@ etc/wide-dhcpv6/dhcp6c.script
 etc/mtklog-config.prop
 etc/custom.conf
 etc/clatd.conf
+etc/perfservtouchfilter.txt
+etc/perfservapplist.txt
+
 etc/fmr/mt6627_fm_cust.cfg
 
 etc/.tp/thermal.conf
