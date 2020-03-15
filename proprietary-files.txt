@@ -38,7 +38,7 @@ bin/6620_wmt_concurrency
 bin/6620_wmt_lpbk
 bin/ami304d
 bin/gsm0710muxd
-bin/wifi2agps
+#bin/wifi2agps
 bin/memsicd
 bin/ccci_fsd
 bin/s62xd
