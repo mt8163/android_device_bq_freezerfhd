@@ -21,7 +21,8 @@ LOCAL_SRC_FILES := \
     mtk_omx.cpp \
     mtk_icu55.c \
     mtk_icu53.c \
-    mtk_misc.cpp
+    mtk_misc.cpp \
+    mtk_xlog.c
 
 # 64bit libraries
 LOCAL_SRC_FILES_64 := mtk_parcel.cpp
