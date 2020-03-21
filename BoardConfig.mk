@@ -144,6 +144,10 @@ LINKER_FORCED_SHIM_LIBS := \
 	/system/lib/libgui_ext.so|libshim_ui.so \
 	/system/lib64/libgui_ext.so|libshim_ui.so
 
+
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_aquaris_m8
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.mt8163
 BOARD_HAS_NO_SELECT_BUTTON := true
