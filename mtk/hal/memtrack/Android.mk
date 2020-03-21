@@ -19,8 +19,7 @@ LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_MODULE_RELATIVE_PATH := hw
-LOCAL_C_INCLUDES += hardware/libhardware/include \
-                    vendor/mediatek/proprietary/hardware/libmemtrack
+LOCAL_C_INCLUDES += hardware/libhardware/include
 
 LOCAL_SHARED_LIBRARIES := liblog
 LOCAL_SRC_FILES := memtrack_mtk.c memtrack_graphic.c
@@ -45,5 +44,3 @@ LOCAL_MODULE := memtrack.$(TARGET_BOARD_PLATFORM)
 
 LOCAL_MULTILIB := both
 include $(BUILD_SHARED_LIBRARY)
-
-

@@ -6,10 +6,6 @@ $(call inherit-product-if-exists, vendor/bq/aquaris_m8/aquaris_m8-vendor.mk)
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
-# Dalvik/HWUI
-$(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
-$(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
-
 # Set locales & aapt config.
 PRODUCT_AAPT_CONFIG := normal xhdpi xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
@@ -71,11 +67,15 @@ PRODUCT_PACKAGES += \
     hostapd \
     hostapd_cli \
     libwpa_client
-    
+
 # IPv6 tethering
 PRODUCT_PACKAGES += \
     ebtables \
-    ethertypes
+    ethertypes \
+    iptables \
+    ip6tables \
+    iptables-restore \
+    ip6tables-restore
 
 # Ramdisk
 PRODUCT_COPY_FILES += \
@@ -146,7 +146,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     YGPS
 
-# Manage serial
+# Manage Serial
 PRODUCT_PACKAGES += \
     manage_sn
 
@@ -161,3 +161,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.allow.mock.location=1 \
     ro.debuggable=1 \
     persist.service.adb.enable=1
+
+# Dalvik/HWUI
+$(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
+$(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)

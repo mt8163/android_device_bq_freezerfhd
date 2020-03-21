@@ -13,7 +13,9 @@ extern "C" long SSL_CTX_ctrl(int *ctx, int cmd, long larg, void *parg) {
     return -1;
 }
 
-extern "C" void CRYPTO_free(void *str) { }
+extern "C" void CRYPTO_free(void *str) {
+    free(str)
+}
 
 extern "C" void *CRYPTO_malloc(int num, const char *file, int line) {
     ALOGD("CRYPTO_malloc: num=%d file=%s line=%d", num, file, line);
