@@ -70,6 +70,7 @@ void write_serial(std::string serial) {
 void property_override(char const prop[], char const value[])
 {
     prop_info *pi;
+
     pi = (prop_info*) __system_property_find(prop);
     if (pi)
         __system_property_update(pi, value, strlen(value));
@@ -81,26 +82,22 @@ void vendor_load_properties()
 {
     LOG(ERROR) << "[#] This is libinit...\n";
 
-    system("touch /data/local/tmp/libinit_touch");
-
     const std::string override_serial = GetProperty("ro.override.serialno", "");
     const std::string device = GetProperty("ro.product.device", "");
 
     if (device.find("aquaris_m8") == 0) {
         LOG(ERROR) << "[?] Setting propreties for Aquaris M8...\n";
-        android::init::property_set("ro.build.fingerprint", "bq/Aquaris_M8/Aquaris_M8:6.0/MRA58K/1537280831:user/release-keys");
-        android::init::property_set("ro.build.description", "full_bq_aquaris_m8-user 6.0 MRA58K 1537280832 release-keys");
-        android::init::property_set("ro.product.device_is_m8", "true");
-        android::init::property_set("ro.product.model", "Aquaris M8");
-        android::init::property_set("ro.product.customer", "bq");
+        property_override("ro.build.fingerprint", "bq/Aquaris_M8/Aquaris_M8:6.0/MRA58K/1537280831:user/release-keys");
+        property_override("ro.build.description", "full_bq_aquaris_m8-user 6.0 MRA58K 1537280832 release-keys");
+        property_override("ro.product.device_is_m8", "true");
+        property_override("ro.product.model", "Aquaris M8");
+        property_override("ro.product.customer", "bq");
     } else {
         LOG(ERROR) << "[?] Setting propreties for unknown device...\n";
-        android::init::property_set("ro.product.device_is_m8", "false");
-        android::init::property_set("ro.product.model", "Unknown");
-        android::init::property_set("ro.product.customer", "unknown");
+        property_override("ro.product.device_is_m8", "false");
+        property_override("ro.product.model", "Unknown");
+        property_override("ro.product.customer", "unknown");
     }
-
-     GetProperty("ro.override.serialno", "");
 
     /* Not real NULL, just a string with word 'NULL' */
     if (override_serial.find("NULL") != 0) {
@@ -108,5 +105,5 @@ void vendor_load_properties()
         write_serial(override_serial);
     }
 
-    LOG(ERROR) << "[?] Exiting libinit...";
+    LOG(ERROR) << "\n[?] Exiting libinit...";
 }

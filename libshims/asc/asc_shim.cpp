@@ -15,6 +15,7 @@
 */
 
 #include <string.h>
+#include <stdint.h>
 #include <inttypes.h>
 #include <log/log.h>
 #include <cutils/native_handle.h>
@@ -26,9 +27,13 @@
 #include <utils/Log.h>
 #include <gui/Surface.h>
 #include <utils/String8.h>
+#include <gui/SurfaceControl.h>
 #include <cutils/properties.h>
 #include <utils/RefBase.h>
 #include <gui/SurfaceComposerClient.h>
+#include <system/window.h>
+#include <ui/PixelFormat.h>
+#include <ui/Rect.h>
 
 #define LOG_TAG "ASC_SHIM"
 
@@ -52,11 +57,12 @@ extern "C" {
         _ZN7android20DisplayEventReceiverC1ENS_16ISurfaceComposer11VsyncSourceE;	
     }
 
-    void _ZN7android14SurfaceControl8setLayerEj(uint32_t);
-
-    void _ZN7android14SurfaceControl8setLayerEi(int32_t layer){
-        _ZN7android14SurfaceControl8setLayerEj(static_cast<uint32_t>(layer));
-    }
+    /* status_t SurfaceControl::setLayer */
+    //status_t _ZN7android14SurfaceControl8setLayerEj(uint32_t layer);
+		
+    //status_t _ZN7android14SurfaceControl8setLayerEi(int32_t layer) {
+	//	return _ZN7android14SurfaceControl8setLayerEj((uint32_t)layer);
+	//}	
 
     void _ZN7android13GraphicBufferC1EjjijjjP13native_handleb(
         const native_handle_t* handle,

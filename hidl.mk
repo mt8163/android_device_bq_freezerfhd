@@ -35,11 +35,7 @@ PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
 
 # Camera HAL
-PRODUCT_PACKAGES += \
-    camera.device@1.0-impl \
-    camera.device@3.2-impl \
-    android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service
+PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-impl-legacy
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -92,3 +88,4 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.tetheroffload.config@1.0 \
     android.hardware.tetheroffload.control@1.0
+
