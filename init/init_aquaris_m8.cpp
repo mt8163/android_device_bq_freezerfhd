@@ -52,16 +52,16 @@ void property_override(char const prop[], char const value[])
 void vendor_load_properties()
 {
     std::string platform;
-    std::string model;
+    std::string device;
     std::string serial;
 
     platform = property_get("ro.board.platform");
     if (platform != "mt8163") {
-        INFO("Disabling libinit as platform is not mt8163: %s", platform);
+        INFO("Disabling libinit as platform is not mt8163");
         return;
     }
 
-    device = property_get("ro.product.model");
+    device = property_get("ro.product.device");
 
     if (device == "aquaris_m8") {
         property_set("ro.build.fingerprint", "bq/Aquaris_M8/Aquaris_M8:6.0/MRA58K/1537280831:user/release-keys");
