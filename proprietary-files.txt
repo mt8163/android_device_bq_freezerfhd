@@ -96,6 +96,7 @@ lib64/libcam.exif.v3.so
 lib64/libmtkshifter.so
 lib64/librilmtkmd2.so
 lib64/libem_support_jni.so
+lib64/libbluetooth_hw_test.so
 lib64/libaudiodcrflt.so
 lib64/libcam1_utils.so
 lib64/libm4u.so
@@ -222,6 +223,7 @@ lib64/libtz_uree.so
 lib64/libzteevdo-ril.so
 lib64/libzteevdo-ril.so
 lib64/lib_uree_mtk_video_secure_al.so
+lib64/libril_dongle.so
 
 # 64 bit hardware libraries
 lib64/hw/audio.a2dp.default.so
@@ -302,6 +304,8 @@ lib/libMtkOmxRawDec.so
 lib/libMtkOmxVdecEx.so
 lib/libMtkOmxVenc.so
 lib/libMtkOmxVorbisEnc.so
+lib/libbluetooth_hw_test.so
+lib/libril_dongle.so
 lib/libcam.camadapter.so
 lib/libcameracustom.so
 lib/libcamalgo.so
