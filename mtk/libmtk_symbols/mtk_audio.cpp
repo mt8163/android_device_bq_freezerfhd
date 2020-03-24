@@ -21,6 +21,10 @@ extern "C" {
         return 0;
     }
     
+    int _ZN7android11AudioSystem12SetAudioDataEijPv(int par1,size_t byte_len,void *ptr) {
+        return 0;
+    }
+    
     int _ZN7android11AudioSystem20GetVoiceUnlockULTimeEPv(void* DLtime) {
         return 0;
     }
