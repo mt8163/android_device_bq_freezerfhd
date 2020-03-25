@@ -1,4 +1,10 @@
 #include <stdint.h>
+#include <utils/Log.h>
+#include <binder/IServiceManager.h>
+#include <media/AudioSystem.h>
+#include <media/IAudioFlinger.h>
+#include <media/IAudioPolicyService.h>
+#include <system/audio.h>
 
 extern "C" {
     bool _ZN7android11AudioSystem24getVoiceUnlockDLInstanceEv(){
@@ -21,8 +27,15 @@ extern "C" {
         return 0;
     }
     
-    int _ZN7android11AudioSystem12SetAudioDataEijPv(int par1,size_t byte_len,void *ptr) {
-        return 0;
+    status_t AudioSystem::SetAudioData(int par1, size_t byte_len,void *ptr) {
+         ALOGD("SetAudioData");
+         const sp<IAudioFlinger>& af = AudioSystem::get_audio_flinger();
+         if (af == 0)
+         {
+             ALOGE("AudioSystem::SetAAudioData Error!! PERMISSION_DENIED");
+            return PERMISSION_DENIED;
+         }
+         return af->SetAudioData(par1,byte_len,ptr);
     }
     
     int _ZN7android11AudioSystem20GetVoiceUnlockULTimeEPv(void* DLtime) {
