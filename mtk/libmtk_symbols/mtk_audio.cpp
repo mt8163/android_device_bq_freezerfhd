@@ -27,7 +27,7 @@ extern "C" {
         return 0;
     }
     
-    status_t AudioSystem::SetAudioData(int par1, size_t byte_len,void *ptr) {
+    status_t _ZN7android11AudioSystem12SetAudioDataEijPv(int par1, size_t byte_len, void *ptr) {
          ALOGD("SetAudioData");
          const sp<IAudioFlinger>& af = AudioSystem::get_audio_flinger();
          if (af == 0)
