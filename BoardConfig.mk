@@ -4,7 +4,7 @@
 DEVICE_PATH := device/bq/aquaris_m8
 
 # Platform
-TARGET_BOARD_PLATFORM := mt8163b
+TARGET_BOARD_PLATFORM := mt8163
 TARGET_NO_BOOTLOADER := true
 
 # Architecture
