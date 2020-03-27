@@ -111,6 +111,9 @@ on post-fs
     chown system system /protect_s
     chmod 0770 /protect_s
 
+    # Allow writing to the kernel trace log.
+    chmod 0222 /sys/kernel/debug/tracing/trace_marker
+
 on post-fs-data
     chown system system /persist
     chmod 0771 /persist
