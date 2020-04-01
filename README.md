@@ -42,3 +42,10 @@ brunch lineage_aquaris_m8-userdebug -j12
 - [ ] Video Recording
 - [ ] Sound
 - [ ] Offline charging
+
+### Thanks To ###
+- Kaijones23
+- ibilux for the Hermes Device Tree
+- carlitos900 for the Kernel
+- huckleberrypie
+- JMPF6
