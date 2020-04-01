@@ -126,3 +126,25 @@ LOCAL_MODULE := libshim_drm
 LOCAL_MODULE_TAGS := optional
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
+
+# Program Binary Service Shim
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := misc/program_binary_service.cpp
+
+LOCAL_MODULE := libshim_program_binary_service
+
+LOCAL_MODULE_TAGS := optional
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_SHARED_LIBRARY)
+
+# WVM Shim
+include $(CLEAR_VARS)
+
+LOCAL_SRC_FILES := wvm/wmv_shim.cpp
+
+LOCAL_MODULE := libshim_wvm
+
+LOCAL_MODULE_TAGS := optional
+LOCAL_PROPRIETARY_MODULE := true
+include $(BUILD_SHARED_LIBRARY)
