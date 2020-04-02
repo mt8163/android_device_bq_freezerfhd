@@ -22,10 +22,10 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
-TARGET_USES_PREBUILT_KERNEL := true
+# Kernel
+KERNEL_PREBUILT := true
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-ifeq ($(TARGET_USES_PREBUILT_KERNEL),true)
-$(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
+ifeq ($(KERNEL_PREBUILT),true)
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
 PRODUCT_COPY_FILES += \
     $(TARGET_PREBUILT_KERNEL):kernel
@@ -33,12 +33,10 @@ else
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-TARGET_KERNEL_CONFIG := bq_aquaris_m8_defconfig
-TARGET_KERNEL_VERSION := kernel-3.18
-TARGET_KERNEL_SOURCE := kernel/bq/aquaris_m8
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
+TARGET_KERNEL_CONFIG := aquaris_m8_defconfig
+TARGET_KERNEL_SOURCE := aquaris_m8
 endif
-
-TARGET_USES_64_BIT_BINDER := true
 
 # Boot Image Args
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x03f88000 --second_offset 0x00e88000 --tags_offset 0x0df88000 --base 0x40078000 --cmdline "bootopt=64S3,32N2,64N2 androidboot.selinux=permissive"

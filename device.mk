@@ -60,13 +60,6 @@ PRODUCT_PACKAGES += \
     hostapd_cli \
     libwpa_client
 
-# IPv6 tethering
-PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes \
-    iptables-restore \
-    ip6tables-restore
-
 # Graphic
 PRODUCT_PACKAGES += \
     libGLES_android \

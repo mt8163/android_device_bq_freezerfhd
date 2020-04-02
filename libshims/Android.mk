@@ -130,7 +130,7 @@ include $(BUILD_SHARED_LIBRARY)
 # Program Binary Service Shim
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := misc/program_binary_service.cpp
+LOCAL_SRC_FILES := misc/program_binary_service_shim.cpp
 
 LOCAL_MODULE := libshim_program_binary_service
 
@@ -141,7 +141,7 @@ include $(BUILD_SHARED_LIBRARY)
 # WVM Shim
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := wvm/wmv_shim.cpp
+LOCAL_SRC_FILES := wvm/wvm_shim.cpp
 
 LOCAL_MODULE := libshim_wvm
 
