@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <log/log.h>
-
-#define LOG_TAG "ProgramBinaryService"
+#include <stdint.h>
 
 extern "C" {
 
@@ -31,32 +29,21 @@ extern "C" {
     }
 
     /* android::IprogramBinaryService::C2Ev */
-    int _ZN7android21IProgramBinaryServiceC2Ev(bool C2Ev)
+    bool _ZN7android21IProgramBinaryServiceC2Ev() 
     {
-        if (C2Ev) {
-           ALOGI("C2Ev is true");
-           return 0;
-        } else {
-           ALOGI("C2Ev is false, abort...");
-           return -1;
-        }
+        return 0x0;
     }
 
     /* android::IprogramBinaryService::D2Ev */
-    int _ZN7android21IProgramBinaryServiceD2Ev(bool D2Ev)
+    bool _ZN7android21IProgramBinaryServiceD2Ev() 
     {
-        if (D2Ev) {
-           ALOGI("D2Ev is true");
-           return 0;
-        } else {
-           ALOGI("D2Ev is false, abort...");
-           return -1;
-        }
+        return 0x0;
     }
 
-    int _ZN7android10uirenderer12ProgramAtlas14createProgramsEPlPi(uint32_t name)
+    /* android::IprogramBinaryService::uiRendererProgramAtlasCreatePrograms */
+    int _ZN7android10uirenderer12ProgramAtlas14createProgramsEPlPi(uint32_t program_name)
     {
-        return 0;
+        return 0x0;
     }
 
 }

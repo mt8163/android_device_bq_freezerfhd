@@ -36,7 +36,6 @@ include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
 	gui/SensorManager.cpp \
-	gui/asc_shim.cpp \
     gui/gui_shim.cpp
 
 LOCAL_SHARED_LIBRARIES := \
@@ -124,6 +123,8 @@ LOCAL_SHARED_LIBRARIES := \
 LOCAL_MODULE := libshim_drm
 
 LOCAL_MODULE_TAGS := optional
+LOCAL_SHARED_LIBRARIES := liblog libcrypto
+LOCAL_LDLIBS := -ldl
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
 
@@ -145,6 +146,7 @@ LOCAL_SRC_FILES := wvm/wvm_shim.cpp
 
 LOCAL_MODULE := libshim_wvm
 
+LOCAL_SHARED_LIBRARIES := liblog libstagefright_foundation libmedia libstagefright_omx libdrmframework libstagefright
 LOCAL_MODULE_TAGS := optional
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
