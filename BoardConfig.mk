@@ -38,6 +38,8 @@ TARGET_KERNEL_CONFIG := aquaris_m8_defconfig
 TARGET_KERNEL_SOURCE := aquaris_m8
 endif
 
+TARGET_USES_64_BIT_BINDER := true
+
 # Boot Image Args
 BOARD_MKBOOTIMG_ARGS := --kernel_offset 0x00008000 --ramdisk_offset 0x03f88000 --second_offset 0x00e88000 --tags_offset 0x0df88000 --base 0x40078000 --cmdline "bootopt=64S3,32N2,64N2 androidboot.selinux=permissive"
 
