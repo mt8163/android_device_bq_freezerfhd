@@ -1,4 +1,7 @@
 DEVICE_PATH := device/bq/aquaris_m8
+VENDOR_PATH := vendor/bq/aquaris_m8
+
+include vendor/bq/aquaris_m8/BoardConfigVendor.mk
 
 # Platform
 TARGET_BOOTLOADER_BOARD_NAME := Aquaris_M8
@@ -20,6 +23,7 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
 TARGET_USES_PREBUILT_KERNEL := true
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 ifeq ($(TARGET_USES_PREBUILT_KERNEL),true)
 $(shell mkdir -p $(OUT)/obj/KERNEL_OBJ/usr)
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
@@ -29,7 +33,6 @@ else
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
-BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_CONFIG := bq_aquaris_m8_defconfig
 TARGET_KERNEL_VERSION := kernel-3.18
 TARGET_KERNEL_SOURCE := kernel/bq/aquaris_m8

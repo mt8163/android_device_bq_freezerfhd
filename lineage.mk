@@ -14,12 +14,12 @@
 # limitations under the License.
 #
 
-CM_VENDOR := vendor/cm
+LINEAGE_VENDOR := vendor/lineage
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-$(call inherit-product, $(CM_VENDOR)/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, $(LINEAGE_VENDOR)/config/common_full_tablet_wifionly.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Inherit from device
