@@ -41,6 +41,3 @@
 
 # RPMB
 /dev/block/mmcblk0rpmb    0660   root       system
-
-# HWBinder
-/dev/hwbinder             0666   root       root
