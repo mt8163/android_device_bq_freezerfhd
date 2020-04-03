@@ -167,6 +167,3 @@ LEGACY_MTK_AV_BLOB := true
 
 # HIDL Manifest
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
-
-# ReleaseTools
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := $(DEVICE_PATH)/releasetools/ota_from_target_files

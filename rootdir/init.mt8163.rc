@@ -929,6 +929,8 @@ on boot
     # xlog
     start xlogboot
 
+    start bt_disable
+
     write /proc/sys/vm/dirty_writeback_centisecs 300
     chmod 0660 /sys/power/autosleep
 
@@ -1464,6 +1466,13 @@ service emdlogger6 /system/bin/emdlogger6
     class main
     user shell
     group system shell radio sdcard_rw inet sdcard_r media_rw
+    disabled
+    oneshot
+
+service bt_disable /system/bin/bt_disable.sh
+    class main
+    user root
+    group root system
     disabled
     oneshot
 
