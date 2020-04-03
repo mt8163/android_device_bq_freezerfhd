@@ -49,6 +49,9 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += power.mt8163
 
+# Lights
+PRODUCT_PACKAGES += lights.mt8163
+
 # MTK WPA Supplicant Libraries
 PRODUCT_PACKAGES += lib_driver_cmd_mt66xx
 
