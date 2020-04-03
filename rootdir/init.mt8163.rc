@@ -34,6 +34,8 @@ on init
     /system/lib/libgui_ext.so|libshim_gui.so: \
     /system/lib64/libgui_ext.so|libshim_gui.so: \
     /system/bin/guiext-server|libshim_gui.so: \
+	/system/bin/xlog|libshim_xlog.so: \
+	/system/bin/program_binary_service|libshim_program_binary_service.so: \
 	/system/bin/boot_logo_updater|libshim_cam.so: \
 	/system/lib/libshowlogo.so|libshim_cam.so"
 
