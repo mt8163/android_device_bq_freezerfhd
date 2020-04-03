@@ -144,7 +144,8 @@ TARGET_LD_SHIM_LIBS := \
     /system/bin/program_binary_service|libshim_program_binary_service.so \
     /system/lib/hw/audio.primary.mt8163.so|libshim_audio.so \
     /system/lib64/hw/audio.primary.mt8163.so|libshim_audio.so \
-    /system/bin/audiocmdservice_atci|libshim_audio.so
+    /system/bin/audiocmdservice_atci|libshim_audio.so \
+    /system/bin/wpa_supplicant|libshim_gps.so
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.mt8163

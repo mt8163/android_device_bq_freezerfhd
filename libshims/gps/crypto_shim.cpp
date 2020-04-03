@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <log/log.h>
 
-#define LOG_TAG "CRYPTO"
+#define LOG_TAG "CRYPTO_SHIM"
 
 extern "C"
 {

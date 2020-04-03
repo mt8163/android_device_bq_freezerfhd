@@ -61,10 +61,7 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_cli \
     hostapd \
-    hostapd_cli \
-    libwpa_client \
-    wpa_supplicant \
-    wpa_cli
+    hostapd_cli
 
 # Graphic
 PRODUCT_PACKAGES += \
