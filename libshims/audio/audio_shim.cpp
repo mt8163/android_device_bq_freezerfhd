@@ -36,7 +36,11 @@ extern "C" {
     int _ZN7android11AudioSystem15SetAudioCommandEii(uint32_t command) {
         return 0;
     }
-    
+
+    int _ZN7android11AudioSystem15GetAudioCommandEiPi(uint32_t command) {
+        return 0;
+    }
+
     int _ZN7android11AudioSystem20GetVoiceUnlockULTimeEPv(void* DLtime) {
         return 0;
     }

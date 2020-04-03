@@ -121,16 +121,8 @@ on post-fs-data
     chmod 0771 /persist
 
     # create basic filesystem structure
-    mkdir /data/nvram 2771 root system
-    chmod 0777 /data/nvram/APCFG/APRDCL/Audio_Buffer_DC_Calibration_Param
-    chmod 0777 /data/nvram/media/Voice_Recognize_Param
-    chmod 0777 /data/nvram/media/Audio_AudEnh_Control_Opt
-    chmod 0777 /data/nvram/APCFG/APRDCL/Audio_ver1_Vol_custom
-    chmod 0777 /data/nvram/APCFG/APRDCL/Audio_CompFlt
-    chmod 0777 /data/nvram/APCFG/APRDCL/Headphone_CompFlt
-    chmod 0777 /data/nvram/APCFG/APRDCL/VibSpk_CompFlt
-    chmod 0777 /data/nvram/APCFG/APRDCL/Audio_Wb_Sph
-    chmod 0777 /data/nvram/APCFG/APRDCL/HWMON_ACC
+    mkdir /data/nvram 0771 root system
+    mkdir /data/nvram/media 0771 media audio
     chmod 0777 /data/nvram/APCFG/APRDEB/BT_Addr
 
     chmod 0660 /data/misc/wifi/p2p_supplicant.conf
