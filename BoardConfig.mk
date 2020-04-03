@@ -91,11 +91,11 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 
 # Bluetooth
-BOARD_HAVE_BLUETOOTH := true
-BOARD_HAVE_BLUETOOTH_MTK := true
-BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
-BOARD_BLUETOOTH_BDROID_HCILP_INCLUDED := 0
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
+#BOARD_HAVE_BLUETOOTH := true
+#BOARD_HAVE_BLUETOOTH_MTK := true
+#BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
+#BOARD_BLUETOOTH_BDROID_HCILP_INCLUDED := 0
+#BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -144,8 +144,7 @@ TARGET_LD_SHIM_LIBS := \
     /system/bin/program_binary_service|libshim_program_binary_service.so \
     /system/lib/hw/audio.primary.mt8163.so|libshim_audio.so \
     /system/lib64/hw/audio.primary.mt8163.so|libshim_audio.so \
-    /system/bin/audiocmdservice_atci|libshim_audio.so \
-    /system/bin/wpa_supplicant|libshim_gps.so
+    /system/bin/audiocmdservice_atci|libshim_audio.so
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.mt8163

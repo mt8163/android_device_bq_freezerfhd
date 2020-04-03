@@ -84,8 +84,6 @@ bin/boot_logo_updater
 bin/autobt
 bin/audiocmdservice_atci
 bin/kisd
-bin/wpa_supplicant
-bin/wpa_cli
 
 # 64 bit libraries
 lib64/liburee_meta_drmkeyinstall_v2.so
