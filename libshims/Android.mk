@@ -158,7 +158,6 @@ LOCAL_SRC_FILES := cam/cam_shim.cpp
 
 LOCAL_MODULE := libshim_cam
 
-LOCAL_SHARED_LIBRARIES := libbase android.hidl.token@1.0-utils libmedia android.hardware.graphics.bufferqueue@1.0
 LOCAL_MODULE_TAGS := optional
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)

@@ -65,10 +65,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libGLES_android \
     libgralloc_extra \
-    libion \
-    libion_mtk \
-    libgui_ext \
-    libui_ext
+    libion
 
 # Bluetooth
 PRODUCT_PACKAGES += \
