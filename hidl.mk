@@ -29,11 +29,6 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.renderscript@1.0-impl
 
-# Memtrack
-PRODUCT_PACKAGES += \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service
-
 # Camera HAL
 PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-impl-legacy
 

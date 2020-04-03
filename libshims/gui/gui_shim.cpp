@@ -12,9 +12,7 @@ extern "C" {
             void *(pthis), uint32_t inWidth, uint32_t inHeight, int inFormat,
             uint32_t inUsage, std::string requestorName);
 
-   void _ZN7android11BufferQueue17createBufferQueueEPNS_2spINS_22IGraphicBufferProducerEEEPNS1_INS_22IGraphicBufferConsumerEEERKNS1_INS_19IGraphicBufferAllocEEE(
-            void *(pthis), uint32_t inWidth, uint32_t inHeight, int inFormat,
-            uint32_t inUsage, std::string requestorName);
+    void _ZN7android11BufferQueue17createBufferQueueEPNS_2spINS_22IGraphicBufferProducerEEEPNS1_INS_22IGraphicBufferConsumerEEERKNS1_INS_19IGraphicBufferAllocEEE() {}
 
     void _ZN7android13GraphicBufferC1Ejjij(void *(pthis), uint32_t inWidth, uint32_t inHeight, int inFormat, uint32_t inUsage) {
         ALOGI("_ZN7android13GraphicBufferC1Ejjij: begin ...\n");

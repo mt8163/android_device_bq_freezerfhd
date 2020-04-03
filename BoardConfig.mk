@@ -132,6 +132,20 @@ WIFI_DRIVER_STATE_CTRL_PARAM := /dev/wmtWifi
 WIFI_DRIVER_STATE_ON := 1
 WIFI_DRIVER_STATE_OFF := 0
 
+# Shims
+LINKER_FORCED_SHIM_LIBS := \
+	/system/vendor/lib/libwvm.so|libshim_wvm.so \
+	/system/lib/libgui_ext.so|libshim_gui.so \
+	/system/lib64/libgui_ext.so|libshim_gui.so \
+	/system/lib/libui_ext.so|libshim_ui.so \
+	/system/lib64/libui_ext.so|libshim_ui.so \
+    /system/bin/boot_logo_updater|libshim_asc.so \
+    /system/lib/libshowlogo.so|libshim_asc.so \
+    /system/bin/xlog|libshim_xlog.so \
+    /system/bin/program_binary_service|libshim_program_binary_service.so \
+    /system/lib/hw/audio.primary.mt8163.so|libshim_audio.so \
+    /system/lib64/hw/audio.primary.mt8163.so|libshim_audio.so \
+
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.mt8163
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
