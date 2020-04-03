@@ -34,13 +34,13 @@ brunch lineage_aquaris_m8-userdebug -j12
 - [ ] Bluetooth
 - [ ] OMX
 - [ ] Radio FM
-- [ ] Boots
-- [ ] HWC
-- [ ] Gralloc
+- [x] Boots
+- [x] HWC
+- [x] Gralloc
 - [ ] GPS
 - [ ] Camera
 - [ ] Video Recording
-- [ ] Sound
+- [x] Sound
 - [ ] Offline charging
 
 ### Thanks To ###
