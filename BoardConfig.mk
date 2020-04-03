@@ -84,7 +84,6 @@ MAX_EGL_CACHE_SIZE := 1024*1024
 TARGET_OMX_LEGACY_RESCALING:= true
 
 # Audio
-USE_XML_AUDIO_POLICY_CONF := 1
 BOARD_USES_MTK_AUDIO := true
 
 # Charger
@@ -144,7 +143,8 @@ TARGET_LD_SHIM_LIBS := \
     /system/bin/xlog|libshim_xlog.so \
     /system/bin/program_binary_service|libshim_program_binary_service.so \
     /system/lib/hw/audio.primary.mt8163.so|libshim_audio.so \
-    /system/lib64/hw/audio.primary.mt8163.so|libshim_audio.so
+    /system/lib64/hw/audio.primary.mt8163.so|libshim_audio.so \
+    /system/bin/audiocmdservice_atci|libshim_audio.so
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.mt8163

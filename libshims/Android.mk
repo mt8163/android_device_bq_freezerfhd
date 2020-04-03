@@ -151,18 +151,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
 
-# Camera Shim
-include $(CLEAR_VARS)
-
-LOCAL_SRC_FILES := cam/cam_shim.cpp
-
-LOCAL_MODULE := libshim_cam
-
-LOCAL_MODULE_TAGS := optional
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_SHARED_LIBRARY)
-
-# Camera Shim
+# ASC Shim
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := misc/asc_shim.cpp

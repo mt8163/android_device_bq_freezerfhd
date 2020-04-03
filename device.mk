@@ -44,7 +44,7 @@ PRODUCT_PACKAGES += \
     libshim_program_binary_service \
     libshim_wvm \
     libshim_drm \
-    libshim_cam
+    libshim_asc
 
 # Power
 PRODUCT_PACKAGES += power.mt8163
@@ -59,7 +59,9 @@ PRODUCT_PACKAGES += \
     wpa_cli \
     hostapd \
     hostapd_cli \
-    libwpa_client
+    libwpa_client \
+    wpa_supplicant \
+    wpa_cli
 
 # Graphic
 PRODUCT_PACKAGES += \
@@ -87,7 +89,6 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     libaudio-resampler \
     libtinyalsa \
-    libtinycompress \
     libtinyxml \
     tinymix
 
