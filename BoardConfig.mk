@@ -133,7 +133,7 @@ WIFI_DRIVER_STATE_ON := 1
 WIFI_DRIVER_STATE_OFF := 0
 
 # Shims
-LINKER_FORCED_SHIM_LIBS := \
+TARGET_LD_SHIM_LIBS := \
 	/system/vendor/lib/libwvm.so|libshim_wvm.so \
 	/system/lib/libgui_ext.so|libshim_gui.so \
 	/system/lib64/libgui_ext.so|libshim_gui.so \
@@ -144,7 +144,7 @@ LINKER_FORCED_SHIM_LIBS := \
     /system/bin/xlog|libshim_xlog.so \
     /system/bin/program_binary_service|libshim_program_binary_service.so \
     /system/lib/hw/audio.primary.mt8163.so|libshim_audio.so \
-    /system/lib64/hw/audio.primary.mt8163.so|libshim_audio.so \
+    /system/lib64/hw/audio.primary.mt8163.so|libshim_audio.so
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.mt8163
