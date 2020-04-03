@@ -30,9 +30,9 @@ brunch lineage_aquaris_m8-userdebug -j12
 ```
 
 ### WORKING/BUGS ###
-- [ ] Wi-Fi
+- [x] Wi-Fi
 - [ ] Bluetooth
-- [ ] OMX
+- [x] OMX
 - [ ] Radio FM
 - [x] Boots
 - [x] HWC
@@ -41,7 +41,7 @@ brunch lineage_aquaris_m8-userdebug -j12
 - [ ] Camera
 - [ ] Video Recording
 - [x] Sound
-- [ ] Offline charging
+- [x] Offline charging
 
 ### Thanks To ###
 - Kaijones23

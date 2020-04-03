@@ -18,7 +18,7 @@ extern "C"
     }
 
     int SSL_set_session_secret_cb(int *ssl, int	tls_session_secret_cb, void * arg) {
-        ALOGD("SSL_set_session_secret_cb: ssl=%p tls_session_secret_cb=%d", ssl, cmd);
+        ALOGD("SSL_set_session_secret_cb: ssl=%p tls_session_secret_cb=%d", ssl, tls_session_secret_cb);
         return -1;
     } 
 }
