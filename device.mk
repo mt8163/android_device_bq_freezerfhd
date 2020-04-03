@@ -43,7 +43,8 @@ PRODUCT_PACKAGES += \
     libshim_gps \
     libshim_program_binary_service \
     libshim_wvm \
-    libshim_drm
+    libshim_drm \
+    libshim_cam
 
 # Power
 PRODUCT_PACKAGES += power.mt8163
@@ -184,4 +185,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.zygote=zygote64_32 \
     ro.dalvik.vm.native.bridge=0 \
     persist.sys.usb.config=mtp,adb \
-    persist.debug.xlog.enable=0
+    persist.debug.xlog.enable=0 \
+    ro.adb.secure=0 \
+    ro.secure=0 \
+    ro.allow.mock.location=1
