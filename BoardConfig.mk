@@ -145,7 +145,11 @@ TARGET_LD_SHIM_LIBS := \
     /system/bin/program_binary_service|libshim_program_binary_service.so \
     /system/lib/hw/audio.primary.mt8163.so|libshim_audio.so \
     /system/lib64/hw/audio.primary.mt8163.so|libshim_audio.so \
-    /system/bin/audiocmdservice_atci|libshim_audio.so
+    /system/bin/audiocmdservice_atci|libshim_audio.so \
+    /system/lib/libcam_utils.so|libshim_asc.so \
+    /system/lib64/libcam_utils.so|libshim_asc.so \
+    /system/lib/libcam.utils.sensorlistener.so|libshim_gui.so \
+    /system/lib64/libcam.utils.sensorlistener.so|libshim_gui.so
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.mt8163
