@@ -18,7 +18,7 @@ extern "C" {
         ALOGI("_ZN7android13GraphicBufferC1Ejjij: begin ...\n");
         ALOGI("IN_WIDTH: %d, IN_HEIGHT: %d, IN_FORMAT: %d, IN_USAGE = %08X", inWidth, inHeight, (uint32_t)inFormat, inUsage);
         _ZN7android13GraphicBufferC1EjjijNSt3__112basic_stringIcNS1_11char_traitsIcEENS1_9allocatorIcEEEE(
-            pthis, inWidth, inHeight, inFormat, inUsage, "<Unknown>");
+             pthis, inWidth, inHeight, inFormat, inUsage, "<Unknown>");
     }
 
     void _ZN7android19GraphicBufferMapper9lockYCbCrEPK13native_handlejRKNS_4RectEP13android_ycbcr(
