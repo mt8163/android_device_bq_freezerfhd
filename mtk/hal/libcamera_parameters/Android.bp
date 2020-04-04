@@ -8,6 +8,6 @@ cc_library_static {
     export_include_dirs: ["."],
 
     include_dirs: [
-        "device/leeco/x3/include",
+        "device/bq/aquaris_m8/include",
     ]
 }
