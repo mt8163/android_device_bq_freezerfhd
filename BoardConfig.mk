@@ -139,6 +139,7 @@ TARGET_LD_SHIM_LIBS := \
 	/system/lib/libui_ext.so|libshim_ui.so \
 	/system/lib64/libui_ext.so|libshim_ui.so \
     /system/bin/boot_logo_updater|libshim_asc.so \
+    /system/bin/kpoc_charger|libshim_asc.so \
     /system/lib/libshowlogo.so|libshim_asc.so \
     /system/bin/xlog|libshim_xlog.so \
     /system/bin/program_binary_service|libshim_program_binary_service.so \

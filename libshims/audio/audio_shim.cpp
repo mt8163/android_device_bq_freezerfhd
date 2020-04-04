@@ -41,6 +41,10 @@ extern "C" {
         return 0;
     }
 
+    int _ZN7android13MediaRecorder13setOutputFileEixx(int a1, const char *a2, int a3) {
+        return 0;
+    }
+
     int _ZN7android11AudioSystem20GetVoiceUnlockULTimeEPv(void* DLtime) {
         return 0;
     }

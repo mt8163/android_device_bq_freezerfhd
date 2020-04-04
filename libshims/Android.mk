@@ -154,10 +154,15 @@ include $(BUILD_SHARED_LIBRARY)
 # ASC Shim
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := misc/asc_shim.cpp
+LOCAL_SRC_FILES := \
+	misc/asc_shim.cpp \
+	misc/MediaBuffer_shim.cpp
 
 LOCAL_MODULE := libshim_asc
 
+LOCAL_SHARED_LIBRARIES := liblog libui libgui libstagefright_foundation
+
+LOCAL_CFLAGS := -Wno-unused-variable -Wno-unused-parameter
 LOCAL_MODULE_TAGS := optional
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
