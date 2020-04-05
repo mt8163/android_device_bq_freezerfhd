@@ -32,6 +32,9 @@ TARGET_OTA_ASSERT_DEVICE := Aquaris_M8,aquaris_m8,karin
 # Camera
 PRODUCT_PACKAGES += Camera2
 
+# MediaTek's YGPS
+PRODUCT_PACKAGES += YGPS
+
 # Shim symbols
 PRODUCT_PACKAGES += \
     libshim_bionic \
@@ -129,18 +132,18 @@ PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:system/etc/media_codecs_google_audio.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_telephony.xml:system/etc/media_codecs_google_telephony.xml \
     frameworks/av/media/libstagefright/data/media_codecs_google_video_le.xml:system/etc/media_codecs_google_video_le.xml \
-    $(LOCAL_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml \
-    $(LOCAL_PATH)/configs/media_codecs.xml:system/etc/media_codecs.xml \
-    $(LOCAL_PATH)/configs/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
-    $(LOCAL_PATH)/configs/media_codecs_mediatek_video.xml:system/etc/media_codecs_mediatek_video.xml \
-    $(LOCAL_PATH)/configs/media_codecs_mediatek_audio.xml:system/etc/media_codecs_mediatek_audio.xml
+    $(LOCAL_PATH)/configs/media/media_profiles.xml:system/etc/media_profiles.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs.xml:system/etc/media_codecs.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_performance.xml:system/etc/media_codecs_performance.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_mediatek_video.xml:system/etc/media_codecs_mediatek_video.xml \
+    $(LOCAL_PATH)/configs/media/media_codecs_mediatek_audio.xml:system/etc/media_codecs_mediatek_audio.xml
 
 # Audio
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio_effects.conf:system/etc/audio_effects.conf \
-    $(LOCAL_PATH)/configs/audio_device.xml:system/etc/audio_device.xml \
-    $(LOCAL_PATH)/configs/audio_em.xml:system/etc/audio_em.xml \
-    $(LOCAL_PATH)/configs/AudioParamOptions.xml:system/etc/audio_param/AudioParamOptions.xml
+    $(LOCAL_PATH)/configs/audio/audio_effects.conf:system/etc/audio_effects.conf \
+    $(LOCAL_PATH)/configs/audio/audio_device.xml:system/etc/audio_device.xml \
+    $(LOCAL_PATH)/configs/audio/audio_em.xml:system/etc/audio_em.xml \
+    $(LOCAL_PATH)/configs/audio/AudioParamOptions.xml:system/etc/audio_param/AudioParamOptions.xml
 
 # Wifi Configs
 PRODUCT_COPY_FILES += \
@@ -196,4 +199,3 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
      media.stagefright.legacyencoder=true \
      media.stagefright.less-secure=true
-
