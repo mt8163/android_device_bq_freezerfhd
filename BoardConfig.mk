@@ -171,4 +171,4 @@ SUPPRESS_MTK_AUDIO_BLOB_ERR_MSG := true
 LEGACY_MTK_AV_BLOB := true
 
 # HIDL Manifest
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifest.xml
