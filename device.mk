@@ -30,7 +30,7 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 TARGET_OTA_ASSERT_DEVICE := Aquaris_M8,aquaris_m8,karin
 
 # Camera
-PRODUCT_PACKAGES += Snap
+PRODUCT_PACKAGES += Camera2
 
 # Shim symbols
 PRODUCT_PACKAGES += \
