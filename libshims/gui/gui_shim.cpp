@@ -39,5 +39,15 @@ extern "C" {
            handle, static_cast<uint32_t>(usage), bounds, vaddr);
     }
 
+    int _Z15getMMSdkServicev()
+    {
+        return 0;
+    }
+
+    int getMMSdkService()
+    {
+        return 0;
+    }
+
 }
 
