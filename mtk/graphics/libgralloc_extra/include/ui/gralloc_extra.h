@@ -5,7 +5,7 @@
 #include <sys/cdefs.h>
 #include <sys/types.h>
 
-//#include <system/window.h>
+#include <system/window.h>
 
 #include <hardware/gralloc.h>
 
@@ -54,7 +54,7 @@ typedef enum {
 	/* output: uint32_t */
 	GRALLOC_EXTRA_GET_SECURE_HANDLE_HWC,
 
-	/* output: gralloc_rotate_info_t */
+	/* output: ge_rotate_info_t */
 	GRALLOC_EXTRA_GET_ROTATE_INFO,
 
 	/* output: gralloc_gpu_compression_info_t */
@@ -63,7 +63,7 @@ typedef enum {
 	/* output: gralloc_gpu_yuyv rotation: int32_t */
 	GRALLOC_EXTRA_GET_ORIENTATION,
 
-	/* output: gralloc_extra_hdr_info_t */
+	/* output: ge_hdr_info_t */
 	GRALLOC_EXTRA_GET_HDR_INFO,
 
 } GRALLOC_EXTRA_ATTRIBUTE_QUERY;
@@ -85,7 +85,7 @@ typedef enum {
 	/* input: gralloc_gpu_yuyv rotation */
 	GRALLOC_EXTRA_SET_ORIENTATION,
 
-	/* input: gralloc_extra_hdr_info_t */
+	/* input: ge_hdr_info_t */
 	GRALLOC_EXTRA_SET_HDR_INFO,
 
 } GRALLOC_EXTRA_ATTRIBUTE_PERFORM;
@@ -93,8 +93,6 @@ typedef enum {
 int gralloc_extra_query(buffer_handle_t handle, GRALLOC_EXTRA_ATTRIBUTE_QUERY attribute, void *out_pointer);
 
 int gralloc_extra_perform(buffer_handle_t handle, GRALLOC_EXTRA_ATTRIBUTE_PERFORM attribute, void *in_pointer);
-
-int gralloc_extra_free_sec(buffer_handle_t handle);
 
 #define GRALLOC_EXTRA_MAKE_BIT(start_bit, index)        ( (index) << (start_bit) )
 #define GRALLOC_EXTRA_MAKE_MASK(start_bit, end_bit)     ( ( ((unsigned int)-1) >> (sizeof(int) * __CHAR_BIT__ - 1 - (end_bit) + (start_bit) ) ) << (start_bit) )
@@ -185,7 +183,7 @@ enum {
 	GRALLOC_EXTRA_BIT_YUV_BT709_NARROW  = GRALLOC_EXTRA_MAKE_BIT(29,3),
 	GRALLOC_EXTRA_BIT_YUV_BT709_FULL    = GRALLOC_EXTRA_MAKE_BIT(29,4),
 	GRALLOC_EXTRA_BIT_YUV_BT2020_NARROW = GRALLOC_EXTRA_MAKE_BIT(29,5),
-	GRALLOC_EXTRA_BIT_YUV_BT2020_FULL   = GRALLOC_EXTRA_MAKE_BIT(29,6),
+	GRALLOC_EXTRA_BIT_YUV_BT2020_FULL = GRALLOC_EXTRA_MAKE_BIT(29,6),
 	GRALLOC_EXTRA_MASK_YUV_COLORSPACE   = GRALLOC_EXTRA_MAKE_MASK(29,31),
 };
 
@@ -241,7 +239,7 @@ typedef struct _crop_t {
 } _crop_t;
 
 /* extension data */
-typedef struct gralloc_extra_ion_sf_info_t {
+typedef struct ge_sf_info_t {
 	/* magic number to make sure that obj is created by query() */
 	uint32_t magic;
 
@@ -291,16 +289,16 @@ typedef struct gralloc_extra_ion_sf_info_t {
 	 * bit 12: deinterlace 0 = no, 1 = yes
 	 */
 	int32_t videobuffer_status;
-} gralloc_extra_ion_sf_info_t;
+} ge_sf_info_t;
 
-int gralloc_extra_sf_set_status(gralloc_extra_ion_sf_info_t *sf_info, int32_t mask, int32_t value);
-int gralloc_extra_sf_set_status2(gralloc_extra_ion_sf_info_t *sf_info, int32_t mask, int32_t value);
+int gralloc_extra_sf_set_status(ge_sf_info_t *sf_info, int32_t mask, int32_t value);
+int gralloc_extra_sf_set_status2(ge_sf_info_t *sf_info, int32_t mask, int32_t value);
 
 /* debug data, to facilitate information while debugging */
-typedef struct gralloc_extra_ion_debug_t {
+typedef struct ge_ion_debug_t {
 	int data[4];
 	char name[16];
-} gralloc_extra_ion_debug_t;
+} ge_ion_debug_t;
 
 /* s* GPU */
 typedef struct gralloc_rotate_info_t {
@@ -319,7 +317,7 @@ typedef struct gralloc_gpu_compression_info_t {
 } gralloc_gpu_compression_info_t;
 
 /* HDR */
-typedef struct gralloc_extra_hdr_info_t {
+typedef struct ge_hdr_info_t {
 	uint32_t u4ColorPrimaries; /* colour_primaries emum */
 	uint32_t u4TransformCharacter; /* transfer_characteristics emum */
 	uint32_t u4MatrixCoeffs; /* matrix_coeffs emum */
@@ -329,11 +327,11 @@ typedef struct gralloc_extra_hdr_info_t {
 	uint32_t u4WhitePointY; /* white_point_y */
 	uint32_t u4MaxDisplayMasteringLuminance; /* max_display_mastering_luminance */
 	uint32_t u4MinDisplayMasteringLuminance; /* min_display_mastering_luminance */
-} gralloc_extra_hdr_info_t;
+} ge_hdr_info_t;
 
 typedef struct {
 	uint32_t orientation; /* camera specify */
-} gralloc_extra_misc_info_t;
+} ge_misc_info_t;
 
 /* Deprecated methods and struct. START */
 typedef struct gralloc_buffer_info_t {
@@ -348,13 +346,14 @@ typedef struct gralloc_buffer_info_t {
 	/* change by setBufParameter() */
 	int status;
 } gralloc_buffer_info_t;
-
 int gralloc_extra_getIonFd(buffer_handle_t handle, int *idx, int *num);
 int gralloc_extra_getBufInfo(buffer_handle_t handle, gralloc_buffer_info_t* bufInfo);
 int gralloc_extra_getSecureBuffer(buffer_handle_t handle, int *type, int *hBuffer);
 int gralloc_extra_setBufParameter(buffer_handle_t handle, int mask, int value);
 int gralloc_extra_getMVA(buffer_handle_t handle, int32_t *mvaddr);
 int gralloc_extra_setBufInfo(buffer_handle_t handle, const char * str);
+typedef ge_sf_info_t gralloc_extra_ion_sf_info_t;
+typedef ge_ion_debug_t gralloc_extra_ion_debug_t;
 /* Deprecated methods and struct. END */
 
 __END_DECLS
