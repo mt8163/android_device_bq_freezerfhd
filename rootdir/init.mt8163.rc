@@ -932,8 +932,6 @@ on boot
     # xlog
     start xlogboot
 
-    start bt_disable
-
     write /proc/sys/vm/dirty_writeback_centisecs 300
     chmod 0660 /sys/power/autosleep
 
