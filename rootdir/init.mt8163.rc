@@ -975,8 +975,8 @@ on boot
     chown system /dev/ttyGS1
 
     # BT relayer mode used VCOM
-    chmod 0660 /dev/ttyGS2
-    chown bluetooth radio /dev/ttyGS2
+    chmod 0666 /dev/ttyGS2
+    chown bluetooth bluetooth /dev/ttyGS2
 
     # Define device for EMCSMDLOGGER
     chmod 0660 /dev/ttyGS3
