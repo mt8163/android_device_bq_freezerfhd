@@ -51,6 +51,10 @@ debug.hwui.use_partial_updates=false
 ro.radio.noril=1
 ro.carrier=wifi-only
 
+# BT
+persist.sys.bt.unsupport.states=000000000000000000000011111
+persist.sys.bt.unsupport.features=00000001
+
 # MediaTek Chip Info
 service.wcn.driver.ready=no
 ro.mediatek.chip_ver=S01

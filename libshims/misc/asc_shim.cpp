@@ -17,6 +17,8 @@
 #include <string.h>
 #include <inttypes.h>
 #include <log/log.h>
+#include <cutils/native_handle.h>
+#include <ui/GraphicBuffer.h>
 
 #define LOG_TAG "ASC_SHIM"
 
@@ -31,16 +33,6 @@ extern "C" {
     {
         ALOGI("_ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8Ejjij begin...");
         return _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8EjjijPNS_14SurfaceControlEjj(s, w, h, fmt, flags, NULL, 0, 0);
-    }
-
-    int _ZN7android13GraphicBufferC1EjjijjjP13native_handleb(char handle, const char method, uint32_t width, uint32_t height, int format, uint32_t layerCount, uint64_t usage, uint32_t stride)
-    {
-        return 0;
-    }
-
-    int _ZN7android13GraphicBufferC1EjjijjP13native_handleb(uint32_t inWidth, uint32_t inHeight, int inFormat, uint32_t inUsage, uint32_t inStride, char inHandle, bool keepOwnership)
-    {
-        return 0;
     }
 
     int _ZN7android20DisplayEventReceiverC1ENS_16ISurfaceComposer11VsyncSourceE()
@@ -61,6 +53,22 @@ extern "C" {
 
     int _ZN7android14SurfaceControl8setLayerEi(int32_t layer){
         return _ZN7android14SurfaceControl8setLayerEj(static_cast<uint32_t>(layer));
+    }
+
+    void _ZN7android13GraphicBufferC1EjjijjjP13native_handleb(
+        const native_handle_t* handle,
+        android::GraphicBuffer::HandleWrapMethod method,
+        uint32_t width,
+        uint32_t height,
+        int format,
+        uint32_t layerCount,
+        uint64_t usage,
+        uint32_t stride);
+
+    void _ZN7android13GraphicBufferC1EjjijjP13native_handleb(uint32_t inWidth, uint32_t inHeight, int inFormat, uint32_t inUsage, uint32_t inStride, native_handle_t* inHandle, bool keepOwnership)
+    {
+        android::GraphicBuffer::HandleWrapMethod inMethod = (keepOwnership ? android::GraphicBuffer::TAKE_HANDLE : android::GraphicBuffer::WRAP_HANDLE);
+        _ZN7android13GraphicBufferC1EjjijjjP13native_handleb(inHandle, inMethod, inWidth, inHeight, inFormat, static_cast<uint32_t>(1), static_cast<uint64_t>(inUsage), inStride);
     }
 }
 
