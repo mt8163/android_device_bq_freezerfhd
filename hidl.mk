@@ -1,3 +1,8 @@
+# HIDL
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0 \
+    android.hidl.manager@1.0
+
 # Power (non-lineage imp)
 PRODUCT_PACKAGES += android.hardware.power@1.0-impl
 
@@ -32,10 +37,10 @@ PRODUCT_PACKAGES += \
 # Camera HAL
 PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-impl-legacy
 
-# Bluetooth HAL
+# Bluetooth HAL (MTK)
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl \
-    android.hardware.bluetooth@1.0-service
+    android.hardware.bluetooth@1.0-impl-mediatek \
+    android.hardware.bluetooth@1.0-service-mediatek
 
 # Memtrack
 PRODUCT_PACKAGES += \
@@ -58,10 +63,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl
 
-# Lights
+# Lights (MTK)
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl \
-    android.hardware.light@2.0-service
+    android.hardware.light@2.0-impl-mediatek \
+    android.hardware.light@2.0-service-mediatek 
 
 # Sensors
 PRODUCT_PACKAGES += \
