@@ -161,6 +161,7 @@ LOCAL_SRC_FILES := \
 LOCAL_MODULE := libshim_asc
 
 LOCAL_SHARED_LIBRARIES := liblog libui libgui libstagefright_foundation
+LOCAL_C_INCLUDES += frameworks/native/include frameworks/av/include/
 
 LOCAL_CFLAGS := -Wno-unused-variable -Wno-unused-parameter
 LOCAL_MODULE_TAGS := optional
