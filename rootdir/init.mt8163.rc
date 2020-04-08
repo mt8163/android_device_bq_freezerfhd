@@ -903,9 +903,6 @@ on post-fs-data
     chmod 0664 /sys/devices/platform/mt_usb/cmode
     chown root system /sys/devices/platform/mt_usb/cmode
 
-on property:ro.serial.helper.enabled=1
-    start manage_sn
-
     #usb
     chown system system /sys/class/android_usb/android0/f_acm/port_index
     chmod 0660 /sys/class/android_usb/android0/f_acm/port_index
@@ -931,6 +928,9 @@ on boot
 
     # xlog
     start xlogboot
+
+    # As bluetooth keeps crashing disable it until we find a working fix
+    start disable_bt
 
     write /proc/sys/vm/dirty_writeback_centisecs 300
     chmod 0660 /sys/power/autosleep
@@ -1030,13 +1030,6 @@ on property:vold.decrypt=trigger_restart_framework
 on property:vold.decrypt=trigger_shutdown_framework
     start stop_modem
 
-service manage_sn /sbin/manage_sn
-    class main
-    user root
-    group root system
-    disabled
-    oneshot
-
 service kisd /system/bin/kisd
     user root
     group system
@@ -1050,6 +1043,7 @@ service start_modem /system/bin/md_ctrl 1
     class main
     disabled
     oneshot
+
 # Define TCP buffer sizes for various networks
 #   ReadMin, ReadInitial, ReadMax, WriteMin, WriteInitial, WriteMax,
     setprop net.tcp.buffersize.default 4096,87380,524288,4096,16384,524288
@@ -1470,7 +1464,14 @@ service emdlogger6 /system/bin/emdlogger6
     disabled
     oneshot
 
-service bt_disable /system/bin/bt_disable.sh
+service disable_bt /system/bin/manage_bt disable
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+service enable_bt /system/bin/manage_bt enable
     class main
     user root
     group root system
