@@ -1032,7 +1032,7 @@ on property:vold.decrypt=trigger_shutdown_framework
 
 service kisd /system/bin/kisd
     user root
-    group system
+    group root
 
 service stop_modem /system/bin/md_ctrl 0
     class main
@@ -1769,7 +1769,8 @@ service zpppd_gprs /system/bin/init.gprs-pppd
 
 service rpmb_svc /system/bin/rpmb_svc
         class main
-        group system drmrpc
+        user root
+        group root system drmrpc
         disabled
         
 # BEGIN,xmxl@20140915: for gsensor cali
