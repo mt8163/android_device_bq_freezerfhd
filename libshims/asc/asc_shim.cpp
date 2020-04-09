@@ -22,6 +22,7 @@
 #include <media/stagefright/foundation/AHandler.h>
 #include <media/stagefright/CameraSource.h>
 #include <media/stagefright/CameraSourceTimeLapse.h>
+#include <camera/CameraBase.h>
 #include <utils/Log.h>
 #include <gui/Surface.h>
 #include <utils/String8.h>
@@ -95,15 +96,18 @@ extern "C" {
         ALOGI("CreateFromCamera: size=%zu clientUid=%ld, clientName=%s", videoSize, (long)clientUid, clientName_str);
     }
 
-    /* NO FUNCTION FOR THOSE */
-    int _ZN7android10DataSource23RegisterDefaultSniffersEv()
+    int _ZN7android10CameraBaseINS_6CameraENS_12CameraTraitsIS1_EEE13getCameraInfoEiPNS_10CameraInfoE(int a1, int a2, int a3)
     {
-        return 0;
-    }
+        int v3;
+        int v5 = a2;
+        int v6 = a3;
 
-    int _ZNK7android16NuMediaExtractor14getTrackFormatEmPNS_2spINS_8AMessageEEE()
-    {
-        return 0;
+        if (v5) {
+            v3 = v5 + 24;
+        } else {
+            v3 = 2147483648;
+        }
+        return v3;
     }
 }
 

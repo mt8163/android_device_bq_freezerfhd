@@ -157,11 +157,12 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := \
 	asc/asc_shim.cpp \
 	asc/MediaBuffer_shim.cpp \
-    asc/MediaCodec_shim.cpp
+    asc/MediaCodec_shim.cpp \
+    asc/sink_shim.cpp
 
 LOCAL_MODULE := libshim_asc
 
-LOCAL_SHARED_LIBRARIES := liblog libui libgui libstagefright_foundation libmedia libstagefright libutils
+LOCAL_SHARED_LIBRARIES := liblog libui libgui libstagefright_foundation libmedia libstagefright libutils libcamera_client
 LOCAL_C_INCLUDES += frameworks/native/include frameworks/av/include/ frameworks/av/media/libstagefright/include system/core/include
 
 LOCAL_CFLAGS := -Wno-unused-variable -Wno-unused-parameter -Wall -Wextra
