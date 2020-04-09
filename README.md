@@ -38,10 +38,10 @@ brunch lineage_aquaris_m8-userdebug -j12
 - Gralloc
 - Sound
 - Offline charging
+- FM Radio
 
 ### NOT WORKING ###
 - Bluetooth (Consider this as an unsupported feature as seems impossible to fix)
-- FM Radio
 - GPS
 - Camera (Photos/Videos)
 - Encryption
