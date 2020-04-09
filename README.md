@@ -29,23 +29,25 @@ lunch lineage_aquaris_m8-userdebug
 brunch lineage_aquaris_m8-userdebug -j12
 ```
 
-### WORKING/BUGS ###
-- [x] Wi-Fi
-- [ ] Bluetooth
-- [x] OMX
-- [ ] Radio FM
-- [x] Boots
-- [x] HWC
-- [x] Gralloc
-- [ ] GPS
-- [ ] Camera
-- [ ] Video Recording
-- [x] Sound
-- [x] Offline charging
+### WORKING ###
+- Wi-Fi
+- OMX
+- Boots
+- Hardware Composer
+- Gralloc
+- Sound
+- Offline charging
+
+### NOT WORKING ###
+- Bluetooth
+- FM Radio
+- GPS
+- Camera (Photos/Videos)
+- Encryption
 
 ### Thanks To ###
 - Kaijones23
-- ibilux for the Hermes Device Tree
+- ibilux for the Hermes Device Tree and the patches
 - carlitos900 for the Kernel
 - huckleberrypie
 - JMPF6

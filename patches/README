@@ -1,5 +1,4 @@
 This is patch directory
-Originally took from Xiaomi Hermes Repo (ibilux)
 
 cd WORKING_DIR
 sh device/bq/aquaris_m8/patches/install.sh
