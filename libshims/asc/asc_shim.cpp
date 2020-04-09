@@ -96,7 +96,7 @@ extern "C" {
         ALOGI("CreateFromCamera: size=%zu clientUid=%ld, clientName=%s", videoSize, (long)clientUid, clientName_str);
     }
 
-    int _ZN7android10CameraBaseINS_6CameraENS_12CameraTraitsIS1_EEE13getCameraInfoEiPNS_10CameraInfoE(int a1, int a2, int a3)
+    int _ZN7android10CameraBaseINS_6CameraENS_12CameraTraitsIS1_EEE13getCameraInfoEiPNS_10CameraInfoE(long a1, int a2, int a3)
     {
         int v3;
         int v5 = a2;

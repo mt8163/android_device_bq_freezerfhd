@@ -37,10 +37,9 @@ PRODUCT_PACKAGES += \
 # Camera HAL
 PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-impl-legacy
 
-# Bluetooth HAL
+# Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl \
-    android.hardware.bluetooth@1.0-service
+    android.hardware.bluetooth@1.0-impl
 
 # Memtrack
 PRODUCT_PACKAGES += \
