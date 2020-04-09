@@ -1,4 +1,4 @@
-Android Device Tree For BQ Aquaris M8
+Android Device Tree For BQ Aquaris M8 (aquaris_m8/karin)
 =================================================
 About Device:
 ![alt text](http://i1.wp.com/www.blogtecnologia.es/wp-content/uploads/2017/02/bq.jpg)
@@ -23,9 +23,10 @@ This branch is for building LineageOS 15.1 or any other Android 8.1 based ROM.
 
 ### BUILD ###
 ```
-export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
 source ./build/envsetup.sh
+export ANDROID_JACK_VM_ARGS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx4G"
 lunch lineage_aquaris_m8-userdebug
+croot
 brunch lineage_aquaris_m8-userdebug -j12
 ```
 
@@ -45,9 +46,7 @@ brunch lineage_aquaris_m8-userdebug -j12
 - Camera (Photos/Videos)
 - Encryption
 
-### Thanks To ###
-- Kaijones23
+### SPECIAL THANKS ###
+- Kaijones23, huckleberrypie, JMPF6 and t0x1cSH for the help.
 - ibilux for the Hermes Device Tree and the patches
 - carlitos900 for the Kernel
-- huckleberrypie
-- JMPF6

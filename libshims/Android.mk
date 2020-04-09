@@ -164,7 +164,7 @@ LOCAL_MODULE := libshim_asc
 LOCAL_SHARED_LIBRARIES := liblog libui libgui libstagefright_foundation libmedia libstagefright
 LOCAL_C_INCLUDES += frameworks/native/include frameworks/av/include/ frameworks/av/media/libstagefright/include
 
-LOCAL_CFLAGS := -Wno-unused-variable -Wno-unused-parameter
+LOCAL_CFLAGS := -Wno-unused-variable -Wno-unused-parameter -Wall -Wextra
 LOCAL_MODULE_TAGS := optional
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
