@@ -74,11 +74,6 @@ PRODUCT_PACKAGES += \
     libgui_ext \
     libui_ext
 
-# Bluetooth
-PRODUCT_PACKAGES += \
-    libbt-vendor \
-    libbluetooth_mtk
-
 # DRM
 PRODUCT_PACKAGES += libmockdrmcryptoplugin
 

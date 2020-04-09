@@ -115,6 +115,7 @@ on post-fs-data
     mkdir /data/nvram 0771 root system
     mkdir /data/nvram/media 0771 media audio
     chmod 0777 /data/nvram/APCFG/APRDEB/BT_Addr
+    chown system system /data/nvram/APCFG/APRDEB/BT_Addr
 
     chmod 0660 /data/misc/wifi/p2p_supplicant.conf
 
@@ -1064,7 +1065,7 @@ service netdiag /system/bin/netdiag
 service nvram_daemon /system/bin/nvram_daemon
     class core
     user root
-    group system
+    group system audio bluetooth net_bt wifi inet
     oneshot
 
 service atci_service /system/bin/atci_service

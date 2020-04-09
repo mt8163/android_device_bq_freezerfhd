@@ -19,8 +19,17 @@
 #include <log/log.h>
 #include <cutils/native_handle.h>
 #include <ui/GraphicBuffer.h>
+#include <media/stagefright/foundation/AHandler.h>
+#include <media/stagefright/CameraSource.h>
+#include <media/stagefright/CameraSourceTimeLapse.h>
+#include <utils/Log.h>
+#include <gui/Surface.h>
+#include <utils/String8.h>
+#include <cutils/properties.h>
 
 #define LOG_TAG "ASC_SHIM"
+
+using namespace android;
 
 extern "C" {
     int _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8EjjijPNS_14SurfaceControlEjj(const char s, uint32_t w, uint32_t h, uint32_t fmt, uint32_t flags, void *parent, uint32_t windowType, uint32_t ownerUid) 
@@ -69,6 +78,32 @@ extern "C" {
     {
         android::GraphicBuffer::HandleWrapMethod inMethod = (keepOwnership ? android::GraphicBuffer::TAKE_HANDLE : android::GraphicBuffer::WRAP_HANDLE);
         _ZN7android13GraphicBufferC1EjjijjjP13native_handleb(inHandle, inMethod, inWidth, inHeight, inFormat, static_cast<uint32_t>(1), static_cast<uint64_t>(inUsage), inStride);
+    }
+
+    void _ZN7android12CameraSource16CreateFromCameraERKNS_2spINS_7ICameraEEERKNS1_INS_21ICameraRecordingProxyEEEiRKNS_8String16EjNS_4SizeEiRKNS1_INS_22IGraphicBufferProducerEEEb(
+        const sp<Camera>& camera,
+        const sp<ICameraRecordingProxy>& proxy,
+        int32_t cameraId,
+        const String16& clientName,
+        uid_t clientUid,
+        Size videoSize,
+        int32_t frameRate,
+        const sp<IGraphicBufferProducer>& surface,
+        bool storeMetaDataInVideoBuffers)
+    {
+        const char* clientName_str = String8(clientName).string();
+        ALOGI("CreateFromCamera: size=%zu clientUid=%ld, clientName=%s", videoSize, (long)clientUid, clientName_str);
+    }
+
+    /* NO FUNCTION FOR THOSE */
+    int _ZN7android10DataSource23RegisterDefaultSniffersEv()
+    {
+        return 0;
+    }
+
+    int _ZNK7android16NuMediaExtractor14getTrackFormatEmPNS_2spINS_8AMessageEEE()
+    {
+        return 0;
     }
 }
 

@@ -28,9 +28,4 @@ extern "C"
     {
 	    _ZNK7android10MediaCodec16getOutputBuffersEPNS_6VectorINS_2spINS_16MediaCodecBufferEEEEE(buffers);
     }
-
-    int _ZN7android10DataSource23RegisterDefaultSniffersEv()
-    {
-        return 0;
-    } 
 }
