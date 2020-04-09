@@ -109,5 +109,12 @@ extern "C" {
         }
         return v3;
     }
+
+    /* Fix this */
+    int _ZNK7android12CameraSource30isMetaDataStoredInVideoBuffersEv(uint32_t video)
+    {
+        return 0;
+    }
+        
 }
 

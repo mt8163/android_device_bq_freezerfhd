@@ -30,7 +30,9 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 TARGET_OTA_ASSERT_DEVICE := Aquaris_M8,aquaris_m8,karin
 
 # Camera
-PRODUCT_PACKAGES += Camera2
+PRODUCT_PACKAGES += \
+    Camera2 \
+    libcamera_parameters_mtk
 
 # MediaTek's YGPS
 PRODUCT_PACKAGES += YGPS
@@ -38,6 +40,7 @@ PRODUCT_PACKAGES += YGPS
 # Shim symbols
 PRODUCT_PACKAGES += \
     libshim_bionic \
+    libshim_atomic \
     libshim_audio \
     libshim_omx \
     libshim_ui \
@@ -73,6 +76,12 @@ PRODUCT_PACKAGES += \
     libion \
     libgui_ext \
     libui_ext
+
+# Bluetooth
+PRODUCT_PACKAGES += \
+    RemovePackages \
+    libbluetooth_mtk \
+    libbt-vendor
 
 # DRM
 PRODUCT_PACKAGES += libmockdrmcryptoplugin
@@ -118,6 +127,14 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
     frameworks/native/data/etc/tablet_core_hardware.xml:system/etc/permissions/tablet_core_hardware.xml
+
+# Audio Policy
+PRODUCT_COPY_FILES += \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:system/vendor/etc/a2dp_audio_policy_configuration.xml \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:system/vendor/etc/audio_policy_volumes.xml \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/default_volume_tables.xml:system/vendor/etc/default_volume_tables.xml \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:system/vendor/etc/r_submix_audio_policy_configuration.xml \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:system/vendor/etc/usb_audio_policy_configuration.xml
 
 # Camera
 PRODUCT_COPY_FILES += $(DEVICE_PATH)/configs/init/mediaserver.rc:system/etc/init/mediaserver.rc

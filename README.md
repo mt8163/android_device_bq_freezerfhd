@@ -40,7 +40,7 @@ brunch lineage_aquaris_m8-userdebug -j12
 - Offline charging
 
 ### NOT WORKING ###
-- Bluetooth
+- Bluetooth (Consider this as an unsupported feature as seems impossible to fix)
 - FM Radio
 - GPS
 - Camera (Photos/Videos)

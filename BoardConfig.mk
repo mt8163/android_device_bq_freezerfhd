@@ -152,7 +152,9 @@ TARGET_LD_SHIM_LIBS := \
     /system/lib64/libcam.utils.sensorlistener.so|libshim_gui.so \
     /system/lib/libsource.so|libshim_asc.so \
     /system/lib64/libsource.so|libshim_asc.so \
-    /system/bin/sink|libshim_asc.so
+    /system/bin/sink|libshim_asc.so \
+    /system/lib/libsink.so|libshim_asc.so \
+    /system/lib64/libsink.so|libshim_asc.so
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.mt8163

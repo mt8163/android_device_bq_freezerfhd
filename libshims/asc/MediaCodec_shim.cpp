@@ -28,4 +28,14 @@ extern "C"
     {
 	    _ZNK7android10MediaCodec16getOutputBuffersEPNS_6VectorINS_2spINS_16MediaCodecBufferEEEEE(buffers);
     }
+
+    int _ZN7android11QueryCodecsERKNS_2spINS_4IOMXEEEPKcbbPNS_6VectorINS_17CodecCapabilitiesEEE(int a1, int a2, int a3, signed int a4, int a5)
+    {
+        int v13;
+        int v9 = a3 ^ 1;
+        //android::VectorImpl::VectorImpl(&v13, 8, 0);
+        v13 = 8;
+        //android::VectorImpl::clear(a5);
+        return v9;
+    }
 }

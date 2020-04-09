@@ -2,6 +2,13 @@
 #include <sys/types.h>
 #include <log/log.h>
 #include <media/AudioTrack.h>
+#include <media/stagefright/MPEG4Writer.h>
+#include <media/stagefright/MediaBuffer.h>
+#include <media/stagefright/MetaData.h>
+#include <media/stagefright/MediaDefs.h>
+#include <media/stagefright/MediaErrors.h>
+#include <media/stagefright/MediaSource.h>
+#include <media/stagefright/Utils.h>
 
 #define LOG_TAG "IMS_SHIM"
 
@@ -105,5 +112,13 @@ extern "C"
         ALOGI("CameraServiceInterfaceBinder: Camera ID=%u, Client ID=%u", cameraid, clientid);
         return 0;
     }
-        
+
+    /* android::MPEG4Writer::reset */
+    int _ZN7android11MPEG4Writer5resetEv(int thread)
+    {
+        ALOGI("MPEG4Writer: reset ++ thread=%d", thread);
+        //android::MPEG4Writer::stopWriterThread(thread);
+        return 0;
+    }
+
 }
