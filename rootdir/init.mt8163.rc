@@ -888,15 +888,17 @@ on post-fs-data
     chown system system /proc/secmem0
 
     # AGPS
-    mkdir /data/agps_supl 0771 gps gps
+    mkdir /data/agps_supl 0777 gps gps
     mkdir /data/mpe_mnl 0771 gps gps
+    chmod 666 /data/agps_supl/agps_to_mnl
+    chmod 666 /data/agps_supl/mnl_to_agps
     chown gps inet /data/agps_supl/agps_to_mnl
     chown gps inet /data/agps_supl/mnl_to_agps
 
-    #Thermal
+    # Thermal
     mkdir /data/.tp/ 0775 system system
 
-    # reate directory /data/subt for subtitle
+    # Create directory /data/subt for subtitle
     mkdir /mnt/subt/ 0770 media media
 
     # RPMB service

@@ -75,7 +75,8 @@ PRODUCT_PACKAGES += \
     libgralloc_extra \
     libion \
     libgui_ext \
-    libui_ext
+    libui_ext \
+    libion_mtk
 
 # Bluetooth
 PRODUCT_PACKAGES += \
