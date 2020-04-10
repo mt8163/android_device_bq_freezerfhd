@@ -28,13 +28,11 @@
             android:windowSoftInputMode="adjustPan" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.ALTERNATIVE" />
                 <category android:name="android.intent.category.SELECTED_ALTERNATIVE" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.ygps" />
-
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

@@ -34,8 +34,14 @@ PRODUCT_PACKAGES += \
     Camera2 \
     libcamera_parameters_mtk
 
-# MediaTek's YGPS
-PRODUCT_PACKAGES += YGPS
+# GPS
+PRODUCT_PACKAGES += \
+    YGPS \
+    libcurl
+
+# GPS force mode
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.force.gps.mode=gnss
 
 # Shim symbols
 PRODUCT_PACKAGES += \

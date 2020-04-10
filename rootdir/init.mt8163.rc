@@ -73,6 +73,10 @@ on fs
     mount_all /fstab.mt8163
     write /proc/bootprof "INIT:Mount_END"
 
+    # GPS
+    mkdir /data/agps_supl 0771 gps system
+    mkdir /data/gps_mnl 0771 gps system
+
 on fs
    mount iso9660 loop@/system/etc/iAmCdRom.iso /mnt/cd-rom ro
 
@@ -887,14 +891,6 @@ on post-fs-data
     # Secure memory
     chown system system /proc/secmem0
 
-    # AGPS
-    mkdir /data/agps_supl 0777 gps gps
-    mkdir /data/mpe_mnl 0771 gps gps
-    chmod 666 /data/agps_supl/agps_to_mnl
-    chmod 666 /data/agps_supl/mnl_to_agps
-    chown gps inet /data/agps_supl/agps_to_mnl
-    chown gps inet /data/agps_supl/mnl_to_agps
-
     # Thermal
     mkdir /data/.tp/ 0775 system system
 
@@ -1323,12 +1319,13 @@ service slpd /system/bin/slpd
 
 service wifi2agps /system/bin/wifi2agps
     class main
-    user wifi
+    user root
     group gps inet
+    oneshot
 
 service mnld /system/xbin/mnld
     class main
-    user gps
+    user root
     group gps inet misc sdcard_rw sdcard_r media_rw system
     socket mnld stream 660 gps system
 
@@ -1574,10 +1571,11 @@ service backuprestore /system/bin/br_app_data_service
 	socket backuprestore stream 0660 root sdcard_rw
 	user root
 
-#service BGW /system/xbin/BGW
-#	user system
-#	group gps system radio
-#	class main
+service BGW /system/xbin/BGW
+	user root
+	group gps system radio
+	class main
+    oneshot
 
 service MtkCodecService /system/bin/MtkCodecService
     class main
