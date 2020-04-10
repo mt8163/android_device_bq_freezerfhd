@@ -32,7 +32,7 @@ brunch lineage_aquaris_m8-userdebug -j12
 
 ### WORKING ###
 - Wi-Fi
-- OMX
+- OMX (Partially Working)
 - Boots
 - Hardware Composer
 - Gralloc
