@@ -31,13 +31,16 @@ brunch lineage_aquaris_m8-userdebug -j12
 ```
 
 ### WORKING ###
-- Wi-Fi
-- OMX
 - Boots
+- Wi-Fi
 - Hardware Composer
 - Gralloc
-- Sound
-- Offline charging
+- Sensors (Light & Accelerometer)
+- Lights (LEDs, etc)
+- MTP/ADB
+- OMX
+- Sound/Audio
+- Online/Offline charging
 - FM Radio
 
 ### NOT WORKING ###
@@ -45,6 +48,7 @@ brunch lineage_aquaris_m8-userdebug -j12
 - GPS
 - Camera (Photos/Videos)
 - Encryption
+- HDMI (To be tested)
 
 ### SPECIAL THANKS ###
 - Kaijones23, huckleberrypie, JMPF6 and t0x1cSH for the help.

@@ -230,11 +230,11 @@ on post-fs-data
     chown system system /dev/gyroscope
     chown system system /dev/aal_als
 
-    chmod 0660 /sys/class/misc/m_acc_misc/accenablenodata
-    chmod 0660 /sys/class/misc/m_acc_misc/accactive
-    chmod 0660 /sys/class/misc/m_acc_misc/accdelay
-    chmod 0660 /sys/class/misc/m_acc_misc/accbatch
-    chmod 0660 /sys/class/misc/m_acc_misc/accflush
+    chmod 0666 /sys/class/misc/m_acc_misc/accenablenodata
+    chmod 0666 /sys/class/misc/m_acc_misc/accactive
+    chmod 0666 /sys/class/misc/m_acc_misc/accdelay
+    chmod 0666 /sys/class/misc/m_acc_misc/accbatch
+    chmod 0666 /sys/class/misc/m_acc_misc/accflush
     chown system system /sys/class/misc/m_acc_misc/accenablenodata
     chown system system /sys/class/misc/m_acc_misc/accactive
     chown system system /sys/class/misc/m_acc_misc/accdelay
