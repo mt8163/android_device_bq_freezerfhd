@@ -48,6 +48,8 @@ brunch lineage_aquaris_m8-userdebug -j12
 - GPS
 - Camera (Photos/Videos)
 - Encryption
+- D2TW
+- LiveDisplay
 - HDMI (To be tested)
 
 ### SPECIAL THANKS ###
