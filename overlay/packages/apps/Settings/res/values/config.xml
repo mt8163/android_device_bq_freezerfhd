@@ -19,6 +19,8 @@
     <!-- Does the device allow updating the recovery. -->
     <bool name="config_enableRecoveryUpdater">false</bool>
     <bool name="config_gesture_settings_enabled">true</bool>
+    <!-- Whether to add AGPS parameter settings --> 
+    <bool name="config_agps_enabled">true</bool>
 
 </resources>
  
