@@ -29,6 +29,9 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Recovery allowed devices
 TARGET_OTA_ASSERT_DEVICE := Aquaris_M8,aquaris_m8,karin
 
+# Bluetooth Address
+PRODUCT_PROPERTY_OVERRIDES += ro.boot.btmacaddr=00:00:00:00:00:00
+
 # Camera
 PRODUCT_PACKAGES += \
     Camera2 \
