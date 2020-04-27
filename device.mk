@@ -85,12 +85,15 @@ PRODUCT_PACKAGES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    RemovePackages \
+    #RemovePackages \
     libbluetooth_mtk \
     libbt-vendor
 
 # DRM
-PRODUCT_PACKAGES += libmockdrmcryptoplugin
+PRODUCT_PACKAGES += \
+    libdrm \
+    libmockdrmcryptoplugin \
+    libdrmclearkeyplugin
 
 # FM Radio
 PRODUCT_PACKAGES += \
