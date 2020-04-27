@@ -51,7 +51,7 @@ PRODUCT_PACKAGES += \
     libshim_omx \
     libshim_ui \
     libshim_gui \
-    libshim_xlog \
+    libxlog \
     libshim_gps \
     libshim_program_binary_service \
     libshim_wvm \
