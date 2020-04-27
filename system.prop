@@ -1,64 +1,66 @@
-# set default USB configuration
-persist.sys.usb.config=mtp,adb
+#
+# system.prop for Aquaris M8
+#
 
-# add support for USB storage type
-persist.sys.isUsbOtgEnabled=1
-
-# MTK, Infinity, 20090720 {
-wifi.interface=wlan0
-# MTK, Infinity, 20090720 }
-
-# MTK, mtk03034, 20101210 {
-ro.mediatek.wlan.wsc=1
-# MTK, mtk03034 20101210}
-# MTK, mtk03034, 20110318 {
-ro.mediatek.wlan.p2p=1
-# MTK, mtk03034 20110318}
-
-# MTK, mtk03034, 20101213 {
+# MediaTek WLAN
 mediatek.wlan.ctia=0
-# MTK, mtk03034 20101213}
+ro.mediatek.wlan.p2p=1
+ro.mediatek.wlan.wsc=1
 
+# Wi-Fi interface
+wifi.interface=wlan0
 
-#
-wifi.tethering.interface=ap0
-#
-
+# Gralloc/OpenGL
 #ro.hardware.gralloc=mt8163.mali
 ro.opengles.version=196608
 
+# P2P
 wifi.direct.interface=p2p0
-dalvik.vm.heapgrowthlimit=128m
-dalvik.vm.heapsize=256m
 
-# USB MTP WHQL
+# USB
 ro.sys.usb.mtp.whql.enable=0
+ro.sys.usb.storage.type=mtp,adb
+persist.sys.usb.config=mtp,adb
+ro.sys.usb.bicr=no
+ro.sys.usb.charging.only=yes
+
+# Add support for OTG
+persist.sys.isUsbOtgEnabled=1
 
 # Audio
 ro.camera.sound.forced=0
 ro.audio.silent=0
 
+# Enable NavBar
+qemu.hw.mainkeys=0
+
+# Preload Zygote
+ro.zygote.preload.enable=0
+
+# Kernel ZIO
 ro.kernel.zio=38,108,105,16
 
+# HDCP
 persist.service.hdcpkey.enable=1
+
+# BSTD
 persist.service.bstd.enable=0
 
-# LCD Density
-ro.sf.lcd_density=213
-
-# wifi rssi->bar thresholds
+# RSSI
 persist.wifi.rssi.thresholds=-92,-79,-70,-60
 
-# Disable partial updates (formerly known as 'dirty region') for Mali
+# HWUI/Dalvik
+dalvik.vm.heapgrowthlimit=128m
+dalvik.vm.heapsize=256m
 debug.hwui.use_partial_updates=false
 
-# Power off opt in IPO
-sys.ipo.pwrdncap=2
+# Screen/LCM/LCD
+ro.sf.hwrotation=0
+ro.sf.lcd_density=213
 
-ro.sys.usb.storage.type=mtp
-
-# USB BICR function
-ro.sys.usb.bicr=no
+# RILD
+rild.libpath=mtk-ril.so
+rild.libargs=-d /dev/ttyC0
 
 # RIL
 ro.radio.noril=1
@@ -71,8 +73,10 @@ ro.gemini.smart_sim_switch=false
 ril.specific.sm_cause=0
 bgw.current3gband=0
 ril.external.md=0
-rild.libpath=mtk-ril.so
-rild.libargs=-d /dev/ttyC0
+ro.operator.optr=CUST
+
+# Bluetooth
+ro.btstack=blueangel
 
 # FM Radio
 fmradio.driver.enable=1
@@ -80,12 +84,19 @@ fmradio.driver.enable=1
 # Media
 media.settings.xml=/system/etc/media_profiles_V1_0.xml
 
-# MediaTek Chip Info
+# MediaTek SoC Info
 service.wcn.driver.ready=no
 service.wcn.coredump.mode=2
 ro.mediatek.chip_ver=S01
 ro.mediatek.version.release=ALPS.W10.24.p0
 ro.mediatek.platform=MT8163
+
+# Tethering
+wifi.tethering.interface=ap0
+ro.tether.denied=false
+
+# Device-Specific prop
+ro.product.device_is_m8=true
 
 # DRM
 drm.service.enabled=true
@@ -94,6 +105,9 @@ drm.service.enabled=true
 persist.mtk.wcn.combo.chipid=-1
 mediatek.wlan.chip=CONSYS_MT8163
 mediatek.wlan.module.postfix=_consys_mt8163
+
+# MediaTek's TEE In-house extension
+mtk_in_house_tee_support=true
 
 # MediaTek Props
 ro.mtk_deinterlace_support=1
@@ -167,4 +181,3 @@ ro.mtk_dual_mic_support=0
 ro.mtk_is_tablet=1
 ro.mtk_voice_extension_support=1
 ro.mediatek.gemini_support=false
-mtk_in_house_tee_support=true
