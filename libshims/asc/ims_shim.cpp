@@ -14,16 +14,6 @@
 
 extern "C"
 {
-    int _ZN7android10MediaCodec12CreateByTypeERKNS_2spINS_7ALooperEEERKNS_7AStringEbPii(
-		void*, void*, int, int*, pid_t);
-
-    int _ZN7android10MediaCodec12CreateByTypeERKNS_2spINS_7ALooperEEEPKcbPii(
-		void *looper, void *mime, int encoder, int *err, pid_t pid)
-    {
-	    return _ZN7android10MediaCodec12CreateByTypeERKNS_2spINS_7ALooperEEERKNS_7AStringEbPii(
-			looper, mime, encoder, err, pid);
-    }
-
     int _ZN7android10DataSource23RegisterDefaultSniffersEv()
     {
         return 0;
