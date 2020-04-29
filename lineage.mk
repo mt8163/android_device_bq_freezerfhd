@@ -37,10 +37,5 @@ PRODUCT_MANUFACTURER := bq
 # GMS
 PRODUCT_GMS_CLIENTID_BASE := android-bq
 
-# Fingerprint
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=bq/Aquaris_M8/Aquaris_M8:6.0/MRA58K/1537280831:user/release-keys \
-    PRIVATE_BUILD_DESC="full_bq_aquaris_m8-user 6.0 MRA58K 1537280832 release-keys"
-
 # Available languages
 PRODUCT_LOCALES := en_US en_GB ru_RU uk_UA tr_TR sk_SK vi_VN fr_FR ar_EG

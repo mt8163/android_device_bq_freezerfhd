@@ -109,6 +109,9 @@ mediatek.wlan.module.postfix=_consys_mt8163
 # MediaTek's TEE In-house extension
 mtk_in_house_tee_support=true
 
+# Serial S/N to override. If you don't want to override the serial, leave this as "NULL"
+ro.override.serialno=NULL
+
 # MediaTek Props
 ro.mtk_deinterlace_support=1
 ro.mtk_sensorhub_support=1

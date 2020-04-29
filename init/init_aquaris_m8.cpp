@@ -47,6 +47,7 @@ int write_serial(char *serial) {
 
     if (sn_class == NULL) {
         ERROR("[-] Could not open serial class!");
+        property_override("ro.serial.helper.status", "failed");
         return -1;
     }
 
@@ -55,6 +56,7 @@ int write_serial(char *serial) {
     fflush(sn_class);
 
     INFO("[+] Wrote %s to the serial class...", serial);
+    property_override("ro.serial.helper.status", "success");
 
     /* Close the serial class */
     fclose(sn_class);
@@ -82,6 +84,7 @@ void vendor_load_properties()
 
     if (device == "aquaris_m8") {
         property_set("ro.build.fingerprint", "bq/Aquaris_M8/Aquaris_M8:6.0/MRA58K/1537280831:user/release-keys");
+        property_set("ro.build.description", "full_bq_aquaris_m8-user 6.0 MRA58K 1537280832 release-keys");
         property_set("ro.product.device_is_m8", "true");
         property_set("ro.product.model", "Aquaris M8");
         property_set("ro.product.customer", "bq");
@@ -93,7 +96,8 @@ void vendor_load_properties()
 
     override_serial = property_get("ro.override.serialno");
 
-    if (override_serial[0] != '\0') {
+    /* Not real NULL, just a string with word 'NULL' */
+    if (strstr(override_serial, "NULL") != 0) {
         INFO("[?] Attempt to override the serial...");
         write_serial(override_serial);
     }
