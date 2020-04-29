@@ -135,6 +135,9 @@ WIFI_DRIVER_STATE_OFF := 0
 BOARD_USES_LINEAGE_HARDWARE := true
 BOARD_HARDWARE_CLASS := $(DEVICE_PATH)/lineagehw
 
+# Init
+TARGET_INIT_VENDOR_LIB := libinit_aquaris_m8
+
 # Shims
 TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libwvm.so|libshim_wvm.so \
