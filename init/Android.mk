@@ -17,10 +17,18 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
+
 LOCAL_MODULE_TAGS := optional
-LOCAL_C_INCLUDES := system/core/init
-LOCAL_CFLAGS := -Wall
+
+LOCAL_C_INCLUDES := \
+    system/core/base/include \
+    system/core/init
+
 LOCAL_SRC_FILES := init_aquaris_m8.cpp
 LOCAL_MODULE := libinit_aquaris_m8
-include $(BUILD_STATIC_LIBRARY)
 
+LOCAL_SHARED_LIBRARIES := liblog libbase libcutils
+LOCAL_STATIC_LIBRARIES += liblog libbase libcutils
+
+
+include $(BUILD_STATIC_LIBRARY)

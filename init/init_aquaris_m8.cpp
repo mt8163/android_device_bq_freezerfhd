@@ -28,45 +28,48 @@
  */
 
 #include <stdlib.h>
-
+#include <log/log.h>
 #include "vendor_init.h"
 #include "property_service.h"
-#include "log.h"
-#include "util.h"
+#include <android-base/file.h>
+#include <android-base/logging.h>
+#include <android-base/strings.h>
+#include <android-base/properties.h>
+#include <cutils/properties.h>
 #include <sys/sysinfo.h>
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
 #define SERIAL_CLASS "/sys/class/android_usb/android0/iSerial"
+#define LOG_TAG "init_aquaris_m8"
 
-int write_serial(char *serial) {
-    FILE *sn_class
+using android::init::property_set;
+using android::base::GetProperty;
+
+void write_serial(std::string serial) {
+    FILE *sn_class;
 
     /* Open the serial class */
     sn_class = fopen(SERIAL_CLASS, "w");
 
     if (sn_class == NULL) {
-        ERROR("[-] Could not open serial class!");
-        property_override("ro.serial.helper.status", "failed");
-        return -1;
+        ALOGE("[-] Could not open serial class!");
+        android::init::property_set("ro.serial.helper.status", "failed");
     }
 
     /* Write the serial */
-    fprintf(sn_class, "%s" , serial);
+    fprintf(sn_class, "%s" , serial.c_str());
     fflush(sn_class);
 
-    INFO("[+] Wrote %s to the serial class...", serial);
-    property_override("ro.serial.helper.status", "success");
+    android::init::property_set("ro.serial.helper.status", "success");
 
     /* Close the serial class */
     fclose(sn_class);
-    return 0;
 } 
 
 void property_override(char const prop[], char const value[])
 {
     prop_info *pi;
-
     pi = (prop_info*) __system_property_find(prop);
     if (pi)
         __system_property_update(pi, value, strlen(value));
@@ -76,31 +79,30 @@ void property_override(char const prop[], char const value[])
 
 void vendor_load_properties()
 {
-    std::string platform;
-    std::string device;
-    std::string override_serial;
+    const std::string override_serial = GetProperty("ro.override.serialno", "");
+    const std::string device = GetProperty("ro.product.device", "");
 
-    device = property_get("ro.product.device");
-
-    if (device == "aquaris_m8") {
-        property_set("ro.build.fingerprint", "bq/Aquaris_M8/Aquaris_M8:6.0/MRA58K/1537280831:user/release-keys");
-        property_set("ro.build.description", "full_bq_aquaris_m8-user 6.0 MRA58K 1537280832 release-keys");
-        property_set("ro.product.device_is_m8", "true");
-        property_set("ro.product.model", "Aquaris M8");
-        property_set("ro.product.customer", "bq");
+    if (device.find("aquaris_m8") == 0) {
+        ALOGI("[?] Setting propreties for Aquaris M8...");
+        android::init::property_set("ro.build.fingerprint", "bq/Aquaris_M8/Aquaris_M8:6.0/MRA58K/1537280831:user/release-keys");
+        android::init::property_set("ro.build.description", "full_bq_aquaris_m8-user 6.0 MRA58K 1537280832 release-keys");
+        android::init::property_set("ro.product.device_is_m8", "true");
+        android::init::property_set("ro.product.model", "Aquaris M8");
+        android::init::property_set("ro.product.customer", "bq");
     } else {
-        property_set("ro.product.device_is_m8", "false");
-        property_set("ro.product.model", "Unknown");
-        property_set("ro.product.customer", "unknown");
+        ALOGI("[?] Setting propreties for unknown device...");
+        android::init::property_set("ro.product.device_is_m8", "false");
+        android::init::property_set("ro.product.model", "Unknown");
+        android::init::property_set("ro.product.customer", "unknown");
     }
 
-    override_serial = property_get("ro.override.serialno");
+     GetProperty("ro.override.serialno", "");
 
     /* Not real NULL, just a string with word 'NULL' */
-    if (strstr(override_serial, "NULL") != 0) {
-        INFO("[?] Attempt to override the serial...");
+    if (override_serial.find("NULL") != 0) {
+        ALOGI("[?] Attempt to override the serial...");
         write_serial(override_serial);
     }
 
-    INFO("[?] Exiting libinit...");
+    ALOGI("[?] Exiting libinit...");
 }
