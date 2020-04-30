@@ -83,9 +83,12 @@ PRODUCT_PACKAGES += \
     libgui_ext \
     libui_ext
 
+# Remove Useless Packages
+PRODUCT_PACKAGES += \
+    RemovePackages
+
 # Bluetooth
 PRODUCT_PACKAGES += \
-    #RemovePackages \
     libbluetooth_mtk \
     libbt-vendor
 
