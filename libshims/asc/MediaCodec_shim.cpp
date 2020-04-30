@@ -29,16 +29,6 @@ extern "C"
 	    _ZNK7android10MediaCodec16getOutputBuffersEPNS_6VectorINS_2spINS_16MediaCodecBufferEEEEE(buffers);
     }
 
-    int _ZN7android10MediaCodec12CreateByTypeERKNS_2spINS_7ALooperEEERKNS_7AStringEbPii(
-		void*, void*, int, int*, pid_t);
-
-    int _ZN7android10MediaCodec12CreateByTypeERKNS_2spINS_7ALooperEEEPKcbPii(
-		void *looper, void *mime, int encoder, int *err, pid_t pid)
-    {
-	    return _ZN7android10MediaCodec12CreateByTypeERKNS_2spINS_7ALooperEEERKNS_7AStringEbPii(
-			looper, mime, encoder, err, pid);
-    }
-
     int _ZN7android11QueryCodecsERKNS_2spINS_4IOMXEEEPKcbbPNS_6VectorINS_17CodecCapabilitiesEEE(int a1, int a2, int a3, signed int a4, int a5)
     {
         int v13;
