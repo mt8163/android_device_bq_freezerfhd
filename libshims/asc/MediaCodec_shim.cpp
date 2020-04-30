@@ -13,7 +13,10 @@ extern "C"
     void _ZNK7android10MediaCodec16getOutputBuffersEPNS_6VectorINS_2spINS_16MediaCodecBufferEEEEE(Vector<sp<ABuffer> > *buffers); /* Vector<sp<MediaCodecBuffer> > *buffers */
 
     int _ZN7android10MediaCodec12CreateByTypeERKNS_2spINS_7ALooperEEERKNS_7AStringEbPii(
-		void*, void*, int, int*, pid_t);
+		void*, void*, int, int*, pid_t) 
+    {
+        return 0;
+    }
 
     int _ZN7android10MediaCodec12CreateByTypeERKNS_2spINS_7ALooperEEEPKcbPii(
 		void *looper, void *mime, int encoder, int *err, pid_t pid)
