@@ -79,7 +79,7 @@
     <bool name="config_enableMultiUserUI">true</bool>
 
     <!-- Disables double tap to wake the device -->
-    <bool name="config_supportDoubleTapWake">true</bool>
+    <bool name="config_supportDoubleTapWake">false</bool>
 
     <!-- Control the behavior when the user long presses the home button.
             0 - Nothing

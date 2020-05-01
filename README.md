@@ -42,13 +42,13 @@ brunch lineage_aquaris_m8-userdebug -j12
 - Sound/Audio
 - Online/Offline charging
 - FM Radio
+- D2TW (Working but ugly workaround)
 
 ### NOT WORKING ###
 - Bluetooth (Consider this as an unsupported feature as seems impossible to fix)
 - GPS
 - Camera (Photos/Videos)
 - Encryption
-- D2TW
 - LiveDisplay
 - HDMI (To be tested)
 
