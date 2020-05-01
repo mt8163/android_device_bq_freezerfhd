@@ -27,19 +27,20 @@
 #include <gui/Surface.h>
 #include <utils/String8.h>
 #include <cutils/properties.h>
+#include <utils/RefBase.h>
+#include <gui/SurfaceComposerClient.h>
 
 #define LOG_TAG "ASC_SHIM"
 
 using namespace android;
 
 extern "C" {
-    int _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8EjjijPNS_14SurfaceControlEjj(const char s, uint32_t w, uint32_t h, uint32_t fmt, uint32_t flags, void *parent, uint32_t windowType, uint32_t ownerUid) 
-    {
-        ALOGI("CreateSurface: s=%c, w=%u, h=%u, fmt=%u, flags=%u, parent=%p, windowType=%u, ownerUid=%u", s, w, h, fmt, flags, parent, windowType, ownerUid);
-        return 0;
-    }
- 
-    int _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8Ejjij(const char s, uint32_t w, uint32_t h, uint32_t fmt, uint32_t flags)
+    void* _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8EjjijPNS_14SurfaceControlEjj(android::String8 const & s, uint32_t w, uint32_t h,
+        android::PixelFormat fmt, uint32_t flags, void *parent, uint32_t windowType, uint32_t ownerUid);
+	
+    /* sp<SurfaceControl> android::SurfaceComposerClient::createSurface(android::String8 const&, unsigned int, unsigned int, int, unsigned int) */
+	
+    void* _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8Ejjij(android::String8 const& s, uint32_t w, uint32_t h, android::PixelFormat fmt, uint32_t flags) 
     {
         ALOGI("_ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8Ejjij begin...");
         return _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8EjjijPNS_14SurfaceControlEjj(s, w, h, fmt, flags, NULL, 0, 0);

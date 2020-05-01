@@ -162,7 +162,25 @@ LOCAL_SRC_FILES := \
 
 LOCAL_MODULE := libshim_asc
 
-LOCAL_SHARED_LIBRARIES := liblog libui libgui libstagefright_foundation libmedia libstagefright libcutils libutils libcamera_client libbinder libssl libaudiomanager libaudioutils libaudioclient
+LOCAL_SHARED_LIBRARIES := \
+    liblog \
+    libui \
+    libgui \
+    libstagefright_foundation \
+    libmedia \
+    libstagefright \
+    libcutils \
+    libutils \
+    libcamera_client \
+    libbinder \
+    libssl \
+    libaudiomanager \
+    libaudioutils \
+    libaudioclient \
+    libbase \
+    android.hidl.token@1.0-utils \
+    android.hardware.graphics.bufferqueue@1.0
+
 LOCAL_C_INCLUDES += frameworks/native/include frameworks/av/include/ frameworks/av/media/libstagefright/include system/core/include
 
 LOCAL_CFLAGS := -Wno-unused-variable -Wno-unused-parameter -Wall -Wextra
