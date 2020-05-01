@@ -23,7 +23,7 @@ import org.lineageos.internal.util.FileUtils;
  */
 public class HighTouchSensitivity {
 
-    private static String GLOVE_PATH = "/proc/gesture_open";
+    private static String GLOVE_PATH = "/sys/lenovo_tp_gestures/tpd_glove_status";
 
     /**
      * Whether device supports high touch sensitivity.
