@@ -46,24 +46,16 @@ extern "C" {
         return _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8EjjijPNS_14SurfaceControlEjj(s, w, h, fmt, flags, NULL, 0, 0);
     }
 
-    int _ZN7android20DisplayEventReceiverC1ENS_16ISurfaceComposer11VsyncSourceE()
-    {
-        return 0;
+    void _ZN7android20DisplayEventReceiverC1ENS_16ISurfaceComposer11VsyncSourceE();
+	
+    void _ZN7android20DisplayEventReceiverC1Ev() {
+        _ZN7android20DisplayEventReceiverC1ENS_16ISurfaceComposer11VsyncSourceE;	
     }
 
-    int _ZN7android20DisplayEventReceiverC1Ev() 
-    {
-        return _ZN7android20DisplayEventReceiverC1ENS_16ISurfaceComposer11VsyncSourceE();
-    }
+    void _ZN7android14SurfaceControl8setLayerEj(uint32_t);
 
-    int _ZN7android14SurfaceControl8setLayerEj(uint32_t layer)
-    {
-        ALOGI("SetLayer: %u", layer);
-        return 0;
-    }
-
-    int _ZN7android14SurfaceControl8setLayerEi(int32_t layer){
-        return _ZN7android14SurfaceControl8setLayerEj(static_cast<uint32_t>(layer));
+    void _ZN7android14SurfaceControl8setLayerEi(int32_t layer){
+        _ZN7android14SurfaceControl8setLayerEj(static_cast<uint32_t>(layer));
     }
 
     void _ZN7android13GraphicBufferC1EjjijjjP13native_handleb(
