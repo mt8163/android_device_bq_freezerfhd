@@ -43,6 +43,7 @@ brunch lineage_aquaris_m8-userdebug -j12
 - Online/Offline charging
 - FM Radio
 - D2TW (Working but ugly workaround)
+- LiveDisplay
 
 ### NOT WORKING ###
 - Bluetooth (Consider this as an unsupported feature as seems impossible to fix)
@@ -50,7 +51,6 @@ brunch lineage_aquaris_m8-userdebug -j12
 - Gatekeeper (Lockscreen protection)
 - Camera (Photos/Videos)
 - Encryption
-- LiveDisplay
 - HDMI (To be tested)
 
 ### SPECIAL THANKS ###
