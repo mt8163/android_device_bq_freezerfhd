@@ -33,6 +33,7 @@ brunch lineage_aquaris_m8-userdebug -j12
 ### WORKING ###
 - Boots
 - Wi-Fi
+- Camera
 - Hardware Composer
 - Gralloc
 - Sensors (Light & Accelerometer)
@@ -49,7 +50,7 @@ brunch lineage_aquaris_m8-userdebug -j12
 - Bluetooth (Consider this as an unsupported feature as seems impossible to fix)
 - GPS
 - Gatekeeper (Lockscreen protection)
-- Camera (Photos/Videos)
+- Video Recording
 - Encryption
 - HDMI (To be tested)
 

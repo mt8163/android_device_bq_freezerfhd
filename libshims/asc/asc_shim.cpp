@@ -57,13 +57,6 @@ extern "C" {
         _ZN7android20DisplayEventReceiverC1ENS_16ISurfaceComposer11VsyncSourceE;	
     }
 
-    /* status_t SurfaceControl::setLayer */
-    //status_t _ZN7android14SurfaceControl8setLayerEj(uint32_t layer);
-		
-    //status_t _ZN7android14SurfaceControl8setLayerEi(int32_t layer) {
-	//	return _ZN7android14SurfaceControl8setLayerEj((uint32_t)layer);
-	//}	
-
     void _ZN7android13GraphicBufferC1EjjijjjP13native_handleb(
         const native_handle_t* handle,
         android::GraphicBuffer::HandleWrapMethod method,

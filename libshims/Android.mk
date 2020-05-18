@@ -158,7 +158,8 @@ LOCAL_SRC_FILES := \
 	asc/asc_shim.cpp \
 	asc/MediaBuffer_shim.cpp \
     asc/MediaCodec_shim.cpp \
-    asc/ims_shim.cpp
+    asc/ims_shim.cpp \
+    asc/SurfaceControl_shim.cpp
 
 LOCAL_MODULE := libshim_asc
 
