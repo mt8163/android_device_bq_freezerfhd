@@ -185,7 +185,7 @@ lib64/libcam.utils.so
 lib64/libSwJpgCodec.so
 lib64/libcam3_app.so
 lib64/libGdmaScalerPipe.so
-lib64/libbluetooth_mtk.so
+#lib64/libbluetooth_mtk.so
 lib64/libcamdrv.so
 lib64/libmtk_drvb.so
 lib64/libcvsd_mtk.so
@@ -376,7 +376,7 @@ lib/libcam3_hwnode.so
 lib/libem_lte_jni.so
 lib/libcam_hwutils.so
 lib/libcam3_pipeline.so
-lib/libbt-vendor.so
+#lib/libbt-vendor.so
 lib/libcam_platform.so
 lib/libhwm.so
 lib/libcam.device1.so
@@ -412,7 +412,7 @@ lib/libcam.utils.so
 lib/libSwJpgCodec.so
 lib/libcam3_app.so
 lib/libGdmaScalerPipe.so
-lib/libbluetooth_mtk.so
+#lib/libbluetooth_mtk.so
 lib/libcamdrv.so
 lib/libmtk_drvb.so
 lib/libcvsd_mtk.so
