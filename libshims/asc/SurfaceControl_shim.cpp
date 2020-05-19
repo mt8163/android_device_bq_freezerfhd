@@ -60,8 +60,8 @@ status_t _ZN7android14SurfaceControl8setLayerEj(int32_t layer) {
     return client->setLayer(handle, layer);
 }
 
-void _ZN7android14SurfaceControl8setLayerEi(int32_t layer){
-    _ZN7android14SurfaceControl8setLayerEj(static_cast<uint32_t>(layer));
+status_t _ZN7android14SurfaceControl8setLayerEi(int32_t layer){
+    return _ZN7android14SurfaceControl8setLayerEj(static_cast<uint32_t>(layer));
 }
 
 }; // namespace android
