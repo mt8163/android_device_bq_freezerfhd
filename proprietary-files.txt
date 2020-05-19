@@ -228,7 +228,7 @@ lib64/hw/audio.a2dp.default.so
 lib64/hw/audio_policy.stub.so
 lib64/hw/camera.mt8163.so
 lib64/hw/gralloc.default.so
-lib64/hw/keystore.default.so
+#lib64/hw/keystore.default.so
 lib64/hw/keystore.mt8163.so
 lib64/hw/hwcomposer.mt8163.so
 lib64/hw/gatekeeper.mt8163.so
@@ -240,7 +240,6 @@ lib64/hw/sensors.mt8163.so
 #lib64/hw/lights.mt8163.so
 lib64/hw/local_time.default.so
 lib64/hw/power.default.so
-lib64/hw/keystore.mt8163.so
 
 # Audio Config
 etc/audio_policy.conf
@@ -455,7 +454,7 @@ lib/hw/audio.a2dp.default.so
 lib/hw/audio_policy.stub.so
 lib/hw/camera.mt8163.so
 lib/hw/gralloc.default.so
-lib/hw/keystore.default.so
+#lib/hw/keystore.default.so
 lib/hw/keystore.mt8163.so
 lib/hw/hwcomposer.mt8163.so
 lib/hw/gatekeeper.mt8163.so
@@ -467,7 +466,6 @@ lib/hw/sensors.mt8163.so
 lib/hw/local_time.default.so
 #lib/hw/lights.mt8163.so
 lib/hw/power.default.so
-lib/hw/keystore.mt8163.so
 
 # Vendor's 32 bit libraries
 vendor/lib/libWVStreamControlAPI_L3.so
