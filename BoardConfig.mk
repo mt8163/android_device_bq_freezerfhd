@@ -177,9 +177,6 @@ BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 SELINUX_IGNORE_NEVERALLOWS := true
 
-# Gatekeeper
-BOARD_USE_SOFT_GATEKEEPER := true
-
 # Suppress MTK audio blob error message flag
 SUPPRESS_MTK_AUDIO_BLOB_ERR_MSG := true
 
