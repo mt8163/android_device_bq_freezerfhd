@@ -73,9 +73,10 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl-mediatek \
     android.hardware.sensors@1.0-service-mediatek
 
-# Drm
+# DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service.widevine \
     android.hardware.drm@1.0-service
 
 # Health
