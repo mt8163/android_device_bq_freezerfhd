@@ -73,21 +73,6 @@ extern "C" {
         _ZN7android13GraphicBufferC1EjjijjjP13native_handleb(inHandle, inMethod, inWidth, inHeight, inFormat, static_cast<uint32_t>(1), static_cast<uint64_t>(inUsage), inStride);
     }
 
-    void _ZN7android12CameraSource16CreateFromCameraERKNS_2spINS_7ICameraEEERKNS1_INS_21ICameraRecordingProxyEEEiRKNS_8String16EjNS_4SizeEiRKNS1_INS_22IGraphicBufferProducerEEEb(
-        const sp<Camera>& camera,
-        const sp<ICameraRecordingProxy>& proxy,
-        int32_t cameraId,
-        const String16& clientName,
-        uid_t clientUid,
-        Size videoSize,
-        int32_t frameRate,
-        const sp<IGraphicBufferProducer>& surface,
-        bool storeMetaDataInVideoBuffers)
-    {
-        const char* clientName_str = String8(clientName).string();
-        ALOGI("CreateFromCamera: size=%zu clientUid=%ld, clientName=%s", videoSize, (long)clientUid, clientName_str);
-    }
-
     int _ZN7android10CameraBaseINS_6CameraENS_12CameraTraitsIS1_EEE13getCameraInfoEiPNS_10CameraInfoE(long a1, int a2, int a3)
     {
         int v3;
@@ -100,12 +85,6 @@ extern "C" {
             v3 = 2147483648;
         }
         return v3;
-    }
-
-    /* Fix this */
-    int _ZNK7android12CameraSource30isMetaDataStoredInVideoBuffersEv(uint32_t video)
-    {
-        return 0;
     }
         
 }
