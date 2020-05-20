@@ -227,7 +227,8 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.secure=0 \
     ro.allow.mock.location=1
 
-# Camera Legacy
+# Media
 PRODUCT_PROPERTY_OVERRIDES += \
      media.stagefright.legacyencoder=true \
-     media.stagefright.less-secure=true
+     media.stagefright.less-secure=true \
+     persist.media.treble_omx=false
