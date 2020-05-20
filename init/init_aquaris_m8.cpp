@@ -113,8 +113,8 @@ void vendor_load_properties()
 
     if (device.find("aquaris_m8") == 0) {
         LOG(ERROR) << "[?] Setting propreties for Aquaris M8...\n";
-        property_override("ro.build.fingerprint", "bq/Aquaris_M8/Aquaris_M8:6.0/MRA58K/1537280831:user/release-keys");
-        property_override("ro.build.description", "full_bq_aquaris_m8-user 6.0 MRA58K 1537280832 release-keys");
+        //property_override("ro.build.fingerprint", "bq/Aquaris_M8/Aquaris_M8:6.0/MRA58K/1537280831:user/release-keys");
+        //property_override("ro.build.description", "full_bq_aquaris_m8-user 6.0 MRA58K 1537280832 release-keys");
         property_override("ro.product.device_is_m8", "true");
         property_override("ro.product.model", "Aquaris M8");
         property_override("ro.product.customer", "bq");
