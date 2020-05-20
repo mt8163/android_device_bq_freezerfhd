@@ -83,6 +83,7 @@ PRODUCT_PACKAGES += \
     libGLES_android \
     libgralloc_extra \
     libion \
+    libion_mtk \
     libgui_ext \
     libui_ext
 
