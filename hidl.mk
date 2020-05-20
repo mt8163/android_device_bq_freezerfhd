@@ -59,10 +59,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl
 
-# Gatekeeper HIDL
-PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl
-
 # Lights (MTK)
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl-mediatek \
