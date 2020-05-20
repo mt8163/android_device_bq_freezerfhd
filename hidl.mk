@@ -55,9 +55,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.media.omx@1.0
 
-# Keymaster HIDL
+# Keymaster
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl
+   android.hardware.keymaster@3.0-impl \
+   android.hardware.keymaster@3.0-service
 
 # Lights (MTK)
 PRODUCT_PACKAGES += \
