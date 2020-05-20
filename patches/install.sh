@@ -4,7 +4,7 @@ echo $1
 rootdirectory="$PWD"
 # ---------------------------------
 
-dirs="bionic build/make/core build/soong frameworks/av frameworks/base frameworks/native hardware/interfaces packages/apps/Settings system/core system/sepolicy"
+dirs="bionic build/make/core build/soong frameworks/av frameworks/base frameworks/native hardware/interfaces packages/apps/Settings system/core system/sepolicy system/bt"
 
 # red + nocolor
 RED='\033[0;31m'
