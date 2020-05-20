@@ -3,12 +3,16 @@
 #include <media/stagefright/MediaCodec.h>
 #include <media/stagefright/MediaCodecSource.h>
 #include <media/stagefright/MediaCodecList.h>
+#include <media/stagefright/ACodec.h>
 #include <utils/Vector.h>
 
 using namespace android;
 
 extern "C"
 {
+    extern void* _ZN7android6ACodec17queryCapabilitiesEPKcS2_S2_bPNS_14MediaCodecInfo18CapabilitiesWriterE(const char* owner, const char* name, const char* mime, bool isEncoder,
+        MediaCodecInfo::CapabilitiesWriter* caps);
+
     void _ZNK7android10MediaCodec15getInputBuffersEPNS_6VectorINS_2spINS_16MediaCodecBufferEEEEE(Vector<sp<ABuffer> > *buffers); /* Vector<sp<MediaCodecBuffer> > *buffers */
     void _ZNK7android10MediaCodec16getOutputBuffersEPNS_6VectorINS_2spINS_16MediaCodecBufferEEEEE(Vector<sp<ABuffer> > *buffers); /* Vector<sp<MediaCodecBuffer> > *buffers */
 
@@ -35,13 +39,9 @@ extern "C"
 	    _ZNK7android10MediaCodec16getOutputBuffersEPNS_6VectorINS_2spINS_16MediaCodecBufferEEEEE(buffers);
     }
 
-    int _ZN7android11QueryCodecsERKNS_2spINS_4IOMXEEEPKcbbPNS_6VectorINS_17CodecCapabilitiesEEE(int a1, int a2, int a3, signed int a4, int a5)
+    void* _ZN7android11QueryCodecsERKNS_2spINS_4IOMXEEEPKcbbPNS_6VectorINS_17CodecCapabilitiesEEE(const char* owner, const char* name, const char* mime, bool isEncoder,
+        MediaCodecInfo::CapabilitiesWriter* caps)
     {
-        int v13;
-        int v9 = a3 ^ 1;
-        //android::VectorImpl::VectorImpl(&v13, 8, 0);
-        v13 = 8;
-        //android::VectorImpl::clear(a5);
-        return v9;
+        return _ZN7android6ACodec17queryCapabilitiesEPKcS2_S2_bPNS_14MediaCodecInfo18CapabilitiesWriterE(owner, name, mime, isEncoder, caps);
     }
 }
