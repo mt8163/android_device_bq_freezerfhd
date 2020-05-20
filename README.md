@@ -32,6 +32,7 @@ brunch lineage_aquaris_m8-userdebug -j12
 
 ### WORKING ###
 - Boots
+- Bluetooth
 - Wi-Fi
 - Camera
 - Hardware Composer
@@ -47,7 +48,6 @@ brunch lineage_aquaris_m8-userdebug -j12
 - LiveDisplay
 
 ### NOT WORKING ###
-- Bluetooth (Consider this as an unsupported feature as seems impossible to fix)
 - GPS
 - Gatekeeper (Lockscreen protection)
 - Video Recording

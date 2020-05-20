@@ -39,8 +39,8 @@ PRODUCT_PACKAGES += android.hardware.camera.provider@2.4-impl-legacy
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-impl-mediatek \
-    android.hardware.bluetooth@1.0-service-mediatek
+    android.hardware.bluetooth@1.0-impl \
+    android.hardware.bluetooth@1.0-service
 
 # Memtrack
 PRODUCT_PACKAGES += \

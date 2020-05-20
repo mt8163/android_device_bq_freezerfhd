@@ -1432,7 +1432,7 @@ static BOOL WriteBDAddrToNvram(UCHAR *pucBDAddr)
         LOG_ERR("Unexpected record size %d ap_nvram_btradio_struct %d\n",
                 rec_size, sizeof(ap_nvram_btradio_struct));
         NVM_CloseFileDesc(bt_nvram_fd);
-        return FALSE;
+        return TRUE;
     }
 
     lseek(bt_nvram_fd.iFileDesc, 0, 0);
