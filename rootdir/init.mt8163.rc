@@ -1,13 +1,6 @@
 # MTK platform .rc configure
 
 import init.project.rc
-import /FWUpgradeInit.rc
-import init.xlog.rc
-import init.aee.rc
-import init.fon.rc
-import init.volte.rc
-import init.mal.rc
-import init.modem.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
