@@ -165,7 +165,11 @@ TARGET_LD_SHIM_LIBS := \
     /system/bin/sink|libshim_asc.so \
     /system/lib/libsink.so|libshim_asc.so \
     /system/lib64/libsink.so|libshim_asc.so \
-    /system/lib/libstagefright_soft_ddpdec.so|libshim_omx.so
+    /system/lib/libstagefright_soft_ddpdec.so|libshim_omx.so \
+    /system/lib/libMtkOmxVdecEx.so|libshim_omx.so \
+    /system/lib/libMtkOmxVenc.so|libshim_omx.so \
+    /system/lib/libfeatureio.so|libshim_omx.so \
+    /system/lib64/libfeatureio.so|libshim_omx.so
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.mt8163
