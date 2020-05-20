@@ -155,7 +155,7 @@ include $(BUILD_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
-	asc/asc_shim.cpp \
+	asc/DisplayEvent_shim.cpp \
 	asc/MediaBuffer_shim.cpp \
     asc/MediaCodec_shim.cpp \
     asc/ims_shim.cpp \
@@ -183,7 +183,7 @@ LOCAL_SHARED_LIBRARIES := \
     android.hidl.token@1.0-utils \
     android.hardware.graphics.bufferqueue@1.0
 
-LOCAL_C_INCLUDES += frameworks/native/include frameworks/av/include/ frameworks/av/media/libstagefright/include system/core/include
+#LOCAL_C_INCLUDES += frameworks/native/include frameworks/av/include/ frameworks/av/media/libstagefright/include system/core/include
 
 LOCAL_CFLAGS := -Wno-unused-variable -Wno-unused-parameter -Wall -Wextra
 LOCAL_MODULE_TAGS := optional

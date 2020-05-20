@@ -111,4 +111,17 @@ extern "C"
         return 0;
     }
 
+    int _ZN7android10CameraBaseINS_6CameraENS_12CameraTraitsIS1_EEE13getCameraInfoEiPNS_10CameraInfoE(long a1, int a2, int a3)
+    {
+        int v3;
+        int v5 = a2;
+        int v6 = a3;
+
+        if (v5) {
+            v3 = v5 + 24;
+        } else {
+            v3 = 2147483648;
+        }
+        return v3;
+    }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2007 The Android Open Source Project
+ * Copyright (C) 2020 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,38 +31,66 @@
 #include <ui/GraphicBuffer.h>
 #include <ui/Rect.h>
 
-#include <gui/ISurfaceComposer.h>
-#include <gui/Surface.h>
 #include <gui/SurfaceComposerClient.h>
-#include <gui/SurfaceControl.h>
 
-#define LOG_TAG "SurfaceControl_Shim"
+#include "SurfaceControl_shim.h"
 
-/* Let's assume the validate checks passes */
-#define NO_ERROR 0
+#define LOG_TAG "SurfaceControl_shim"
 
-namespace android {
+using namespace android;
+using android::sp;
+using android::status_t;
+using android::IBinder;
+using android::IGraphicBufferConsumer;
+using android::IGraphicBufferProducer;
+using android::PixelFormat;
+using android::Rect;
+//using android::SurfaceControl;
 
-SurfaceControl::SurfaceControl(
-        const sp<SurfaceComposerClient>& client, 
-        const sp<IBinder>& handle,
-        const sp<IGraphicBufferProducer>& gbp)
-    : mClient(client), mHandle(handle), mGraphicBufferProducer(gbp)
-{
+/* Android N exports */
+extern "C" {
+    extern void _ZN7android14SurfaceControl8setLayerEi(int32_t);
+    extern void* _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8EjjijPNS_14SurfaceControlEjj(
+        const android::String8& name, uint32_t w, uint32_t h, PixelFormat format,
+        uint32_t flags, SurfaceControl* parent, uint32_t windowType,
+        uint32_t ownerUid);
+
+    /* 
+    * FUNCTION NAME: SurfaceComposerClient::CreateSurface::SurfaceControl.
+    * USE: Creates a surface.
+    * NOTES: It looks like this function was renamed in N. Stub out to the correct call.
+    */
+
+    void* _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8EjjijPNS_14SurfaceControlEii(
+        const android::String8& name, // surface name.
+        uint32_t w, // width in pixel
+        uint32_t h, // height in pixel
+        PixelFormat format, // pixel-format desired
+        uint32_t flags, // usage flags
+        SurfaceControl* parent, // parent
+        uint32_t windowType, // from WindowManager.java (STATUS_BAR, INPUT_METHOD, etc.)
+        uint32_t ownerUid) // UID of the task
+    {
+        /* sp<SurfaceControl> android::SurfaceComposerClient::createSurface(android::String8 const&, unsigned int, unsigned int, int, unsigned int) */
+        return _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8EjjijPNS_14SurfaceControlEjj(name, w, h, format, flags, nullptr, 0, 0);
+    }
+
+    /* 
+    * FUNCTION NAME: SurfaceComposerClient::CreateSurface.
+    * USE: Creates a surface.
+    * NOTES: It looks like this function was renamed in N. Stub out to the correct call.
+    */
+    void* _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8Ejjij(android::String8 const& s, uint32_t w, uint32_t h,
+        android::PixelFormat fmt, uint32_t flags) {
+            return _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8EjjijPNS_14SurfaceControlEjj(s, w, h, fmt, flags, NULL, 0, 0);
+    }
+
+    /* 
+     * FUNCTION NAME: SurfaceControl::setLayer.
+     * USE: Sets a layer to the Surface.
+     * NOTES: It looks like this function was renamed in N. Stub out to the correct call.
+     */
+    void _ZN7android14SurfaceControl8setLayerEj(void* obj, uint32_t layer) {
+        _ZN7android14SurfaceControl8setLayerEi(static_cast<uint32_t>(layer));
+    }
 }
-
-status_t _ZN7android14SurfaceControl8setLayerEj(int32_t layer) {
-    //status_t mHandle = NO_ERROR;
-    const sp<IBinder>& handle = NULL;
-    status_t err = NO_ERROR; /* We assume the validate check just passed */
-    if (err < 0) return err;
-    const sp<SurfaceComposerClient>& client((client));
-    return client->setLayer(handle, layer);
-}
-
-void _ZN7android14SurfaceControl8setLayerEi(int32_t layer){
-    _ZN7android14SurfaceControl8setLayerEj(static_cast<uint32_t>(layer));
-}
-
-}; // namespace android
-
