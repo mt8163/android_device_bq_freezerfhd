@@ -28,43 +28,69 @@
  */
 
 #include <stdlib.h>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <cstdio>
+#include <sstream>
+#include <ctime>
+
+#include <sys/sysinfo.h>
+
 #include <log/log.h>
+#include <cutils/properties.h>
+
 #include "vendor_init.h"
 #include "property_service.h"
+
 #include <android-base/file.h>
 #include <android-base/logging.h>
 #include <android-base/strings.h>
 #include <android-base/properties.h>
-#include <cutils/properties.h>
-#include <sys/sysinfo.h>
+
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
-#define SERIAL_CLASS "/sys/class/android_usb/android0/iSerial"
-#define LOG_TAG "init_aquaris_m8"
+#define SERIAL_LENGTH 17
 
 using android::init::property_set;
 using android::base::GetProperty;
 
 void write_serial(std::string serial) {
-    FILE *sn_class;
 
-    /* Open the serial class */
-    sn_class = fopen(SERIAL_CLASS, "w");
+    const std::string proinfo = "/dev/block/platform/soc/11230000.mmc/by-name/proinfo";
 
-    if (sn_class == NULL) {
-        LOG(ERROR) << "[-] Could not open serial class!\n";
-        android::init::property_set("ro.serial.helper.status", "failed");
+    /* Sanity check of the serial length */
+    if (serial.length() != SERIAL_LENGTH) {
+        LOG(ERROR) << "[!] Serial lenght is invalid. Expected 17 but got " << serial.length() <<std::endl;
+        exit(1);
     }
 
+    /* Before overwriting the PRO_INFO block create a copy in /data/local/tmp so user can restore it if the overwriting was not expected */
+    LOG(ERROR) << "[!] WARNING WARNING WARNING WARNING: You're about to overwrite the PRO_INFO block";
+    LOG(ERROR) << "[!] If this is not expected, restore the backup of PRO_INFO (/data/local/tmp/proinfo_backup) in next boot";
+    LOG(ERROR) << "[!] And disable the serial overwriting in the build prop!\n";
+
+    /* Copy backup */
+    std::ifstream srce(proinfo, std::ios::binary);
+    std::ofstream dest("/data/local/tmp/proinfo_backup", std::ios::binary);
+    dest << srce.rdbuf();
+
+    /* Open PRO_INFO block */
+    std::fstream processedFile(proinfo.c_str());
+    std::stringstream fileData;
+
     /* Write the serial */
-    fprintf(sn_class, "%s" , serial.c_str());
-    fflush(sn_class);
+    LOG(ERROR) << "[?] Writing " << serial << " with length of " << serial.length() << " to the PRO_INFO block...";
+    fileData << serial;
+
+    fileData << processedFile.rdbuf();
+    processedFile.close();
+
+    processedFile.open(proinfo.c_str(), std::fstream::out | std::fstream::trunc); 
+    processedFile << fileData.rdbuf();
 
     android::init::property_set("ro.serial.helper.status", "success");
-
-    /* Close the serial class */
-    fclose(sn_class);
 } 
 
 void property_override(char const prop[], char const value[])
@@ -100,8 +126,9 @@ void vendor_load_properties()
     }
 
     /* Not real NULL, just a string with word 'NULL' */
+    /* Serial overwriting is not recommended as may mess up PRO_INFO block. THIS IS ONLY FOR TESTING. You have been warned.. */
     if (override_serial.find("NULL") != 0) {
-        LOG(ERROR) << "[?] Attempt to override the serial...";
+        LOG(ERROR) << "[?] Attempt to override the serial...\n";
         write_serial(override_serial);
     }
 
