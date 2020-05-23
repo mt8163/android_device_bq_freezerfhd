@@ -216,7 +216,7 @@ lib64/libcam.campipe.so
 lib64/libimageio_FrmB.so
 lib64/libpq_cust.so
 lib64/libvcodec_cap.so
-lib64/libtz_uree.so
+#lib64/libtz_uree.so
 lib64/libtinycompress.so
 lib64/libzteevdo-ril.so
 lib64/libzteevdo-ril.so
@@ -229,7 +229,7 @@ lib64/hw/audio_policy.stub.so
 lib64/hw/camera.mt8163.so
 lib64/hw/gralloc.default.so
 #lib64/hw/keystore.default.so
-lib64/hw/keystore.mt8163.so
+#lib64/hw/keystore.mt8163.so
 lib64/hw/hwcomposer.mt8163.so
 lib64/hw/gatekeeper.mt8163.so
 lib64/hw/gps.mt8163.so
@@ -440,7 +440,7 @@ lib/libimageio_FrmB.so
 lib/libpq_cust.so
 lib/libvcodec_cap.so
 lib/libtinycompress.so
-lib/libtz_uree.so
+#lib/libtz_uree.so
 lib/libjni_pq.so
 lib/libMTKAudioTimeStretch.so
 lib/libzte-ril.so
@@ -455,7 +455,7 @@ lib/hw/audio_policy.stub.so
 lib/hw/camera.mt8163.so
 lib/hw/gralloc.default.so
 #lib/hw/keystore.default.so
-lib/hw/keystore.mt8163.so
+#lib/hw/keystore.mt8163.so
 lib/hw/hwcomposer.mt8163.so
 lib/hw/gatekeeper.mt8163.so
 lib/hw/gps.mt8163.so

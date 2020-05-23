@@ -70,6 +70,11 @@ PRODUCT_PACKAGES += power.mt8163
 # Lights
 PRODUCT_PACKAGES += lights.mt8163
 
+# Keymaster
+PRODUCT_PACKAGES += \
+    keystore.mt8163
+    libtz_uree
+
 # MTK WPA Supplicant Libraries
 PRODUCT_PACKAGES += lib_driver_cmd_mt66xx
 
