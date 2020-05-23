@@ -90,10 +90,6 @@ PRODUCT_PACKAGES += \
     libgui_ext \
     libui_ext
 
-# Remove Useless Packages
-PRODUCT_PACKAGES += \
-    RemovePackages
-
 # Bluetooth
 PRODUCT_PACKAGES += \
     libbluetooth_mtk \
@@ -154,12 +150,6 @@ PRODUCT_COPY_FILES += \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/default_volume_tables.xml:system/vendor/etc/default_volume_tables.xml \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:system/vendor/etc/r_submix_audio_policy_configuration.xml \
     $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:system/vendor/etc/usb_audio_policy_configuration.xml
-
-# Camera
-PRODUCT_COPY_FILES += $(DEVICE_PATH)/configs/init/mediaserver.rc:system/etc/init/mediaserver.rc
-
-# Audio Wakelock
-PRODUCT_COPY_FILES += $(DEVICE_PATH)/configs/init/audioserver.rc:system/etc/init/audioserver.rc
 
 # Media
 PRODUCT_COPY_FILES += \
