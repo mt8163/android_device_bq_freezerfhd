@@ -3,6 +3,9 @@ DEVICE_PATH := device/bq/aquaris_m8
 # Call the Vendor Makefile
 $(call inherit-product, vendor/bq/aquaris_m8/aquaris_m8-vendor.mk)
 
+# Call the mt8163-common Vendor Makefile
+include vendor/bq/mt8163/mt8163-vendor.mk
+
 # Dalvik/HWUI
 $(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
