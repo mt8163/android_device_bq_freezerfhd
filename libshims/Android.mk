@@ -152,18 +152,18 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
 
-# ASC Shim
+# Media Shim
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
-	asc/DisplayEvent_shim.cpp \
-	asc/MediaBuffer_shim.cpp \
-    asc/MediaCodec_shim.cpp \
-    asc/ims_shim.cpp \
-    asc/SurfaceControl_shim.cpp \
-    asc/CameraSource_shim.cpp
+    media/Media_shim.cpp \
+	media/DisplayEvent_shim.cpp \
+	media/MediaBuffer_shim.cpp \
+    media/MediaCodec_shim.cpp \
+    media/SurfaceControl_shim.cpp \
+    media/CameraSource_shim.cpp
 
-LOCAL_MODULE := libshim_asc
+LOCAL_MODULE := libshim_media
 
 LOCAL_SHARED_LIBRARIES := \
     liblog \
@@ -183,8 +183,6 @@ LOCAL_SHARED_LIBRARIES := \
     libbase \
     android.hidl.token@1.0-utils \
     android.hardware.graphics.bufferqueue@1.0
-
-#LOCAL_C_INCLUDES += frameworks/native/include frameworks/av/include/ frameworks/av/media/libstagefright/include system/core/include
 
 LOCAL_CFLAGS := -Wno-unused-variable -Wno-unused-parameter -Wall -Wextra
 LOCAL_MODULE_TAGS := optional

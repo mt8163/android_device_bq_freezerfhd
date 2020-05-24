@@ -33,7 +33,7 @@
 
 #include <gui/SurfaceComposerClient.h>
 
-#include "SurfaceControl_shim.h"
+#include "include/SurfaceControl_shim.h"
 
 #define LOG_TAG "SurfaceControl_shim"
 

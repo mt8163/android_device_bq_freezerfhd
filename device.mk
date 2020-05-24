@@ -62,7 +62,7 @@ PRODUCT_PACKAGES += \
     libshim_program_binary_service \
     libshim_wvm \
     libshim_drm \
-    libshim_asc
+    libshim_media
 
 # Power
 PRODUCT_PACKAGES += power.mt8163
@@ -72,7 +72,7 @@ PRODUCT_PACKAGES += lights.mt8163
 
 # Keymaster
 PRODUCT_PACKAGES += \
-    keystore.mt8163
+    keystore.mt8163 \
     libtz_uree
 
 # MTK WPA Supplicant Libraries

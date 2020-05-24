@@ -28,8 +28,8 @@ using namespace android;
 
 extern "C" {
 
-    /* Android N/O exports */
-    int _ZN7android12CameraSource16CreateFromCameraERKNS_2spINS_8hardware7ICameraEEERKNS1_INS_21ICameraRecordingProxyEEEiRKNS_8String16EjiNS_4SizeEiRKNS1_INS_22IGraphicBufferProducerEEEb(const sp<hardware::ICamera>& camera, const sp<ICameraRecordingProxy>& proxy, int32_t cameraId, const String16& clientName, uid_t clientUid, pid_t clientPid, Size videoSize, int32_t frameRate, const sp<IGraphicBufferProducer>& surface, bool storeMetaDataInVideoBuffers);
+    /* Android N */
+    extern int _ZN7android12CameraSource16CreateFromCameraERKNS_2spINS_8hardware7ICameraEEERKNS1_INS_21ICameraRecordingProxyEEEiRKNS_8String16EjiNS_4SizeEiRKNS1_INS_22IGraphicBufferProducerEEEb(const sp<hardware::ICamera>& camera, const sp<ICameraRecordingProxy>& proxy, int32_t cameraId, const String16& clientName, uid_t clientUid, pid_t clientPid, Size videoSize, int32_t frameRate, const sp<IGraphicBufferProducer>& surface, bool storeMetaDataInVideoBuffers);
 
     /* 
      * FUNCTION NAME: CameraSource::CreateFromSource.

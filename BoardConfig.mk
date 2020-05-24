@@ -148,23 +148,23 @@ TARGET_LD_SHIM_LIBS := \
     /system/lib64/libgui_ext.so|libshim_gui.so \
     /system/lib/libui_ext.so|libshim_ui.so \
     /system/lib64/libui_ext.so|libshim_ui.so \
-    /system/bin/boot_logo_updater|libshim_asc.so \
-    /system/bin/kpoc_charger|libshim_asc.so \
-    /system/lib/libshowlogo.so|libshim_asc.so \
+    /system/bin/boot_logo_updater|libshim_media.so \
+    /system/bin/kpoc_charger|libshim_media.so \
+    /system/lib/libshowlogo.so|libshim_media.so \
     /system/bin/xlog|libxlog.so \
     /system/bin/program_binary_service|libshim_program_binary_service.so \
     /system/lib/hw/audio.primary.mt8163.so|libshim_audio.so \
     /system/lib64/hw/audio.primary.mt8163.so|libshim_audio.so \
     /system/bin/audiocmdservice_atci|libshim_audio.so \
-    /system/lib/libcam_utils.so|libshim_asc.so \
-    /system/lib64/libcam_utils.so|libshim_asc.so \
+    /system/lib/libcam_utils.so|libshim_media.so \
+    /system/lib64/libcam_utils.so|libshim_media.so \
     /system/lib/libcam.utils.sensorlistener.so|libshim_gui.so \
     /system/lib64/libcam.utils.sensorlistener.so|libshim_gui.so \
-    /system/lib/libsource.so|libshim_asc.so \
-    /system/lib64/libsource.so|libshim_asc.so \
-    /system/bin/sink|libshim_asc.so \
-    /system/lib/libsink.so|libshim_asc.so \
-    /system/lib64/libsink.so|libshim_asc.so \
+    /system/lib/libsource.so|libshim_media.so \
+    /system/lib64/libsource.so|libshim_media.so \
+    /system/bin/sink|libshim_media.so \
+    /system/lib/libsink.so|libshim_media.so \
+    /system/lib64/libsink.so|libshim_media.so \
     /system/lib/libstagefright_soft_ddpdec.so|libshim_omx.so \
     /system/lib/libMtkOmxVdecEx.so|libshim_omx.so \
     /system/lib/libMtkOmxVenc.so|libshim_omx.so \
