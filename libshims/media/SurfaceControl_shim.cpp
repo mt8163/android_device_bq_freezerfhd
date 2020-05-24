@@ -90,7 +90,7 @@ extern "C" {
      * USE: Sets a layer to the Surface.
      * NOTES: It looks like this function was renamed in N. Stub out to the correct call.
      */
-    void _ZN7android14SurfaceControl8setLayerEj(void* obj, uint32_t layer) {
+    void _ZN7android14SurfaceControl8setLayerEj(uint32_t layer) {
         _ZN7android14SurfaceControl8setLayerEi(static_cast<uint32_t>(layer));
     }
 }

@@ -162,7 +162,6 @@ TARGET_LD_SHIM_LIBS := \
     /system/lib64/libcam.utils.sensorlistener.so|libshim_gui.so \
     /system/lib/libsource.so|libshim_media.so \
     /system/lib64/libsource.so|libshim_media.so \
-    /system/bin/sink|libshim_media.so \
     /system/lib/libsink.so|libshim_media.so \
     /system/lib64/libsink.so|libshim_media.so \
     /system/lib/libstagefright_soft_ddpdec.so|libshim_omx.so \
