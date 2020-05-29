@@ -16,6 +16,11 @@
 
 #define LOG_TAG "xlog"
 
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 struct xlog_entry {
 	char name[XLOG_NAME_MAX_LEN];
 	uint32_t level;
@@ -63,3 +68,7 @@ int xlogf_tag_set_level(const char *name, uint32_t level)
     }
     return ret;
 }
+
+#ifdef __cplusplus
+}
+#endif

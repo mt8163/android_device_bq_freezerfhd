@@ -88,7 +88,7 @@ include $(BUILD_SHARED_LIBRARY)
 # XLOG Shim
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := misc/xlog_shim.c
+LOCAL_SRC_FILES := misc/xlog_shim.cpp
 
 LOCAL_SHARED_LIBRARIES := liblog
 
