@@ -168,7 +168,8 @@ TARGET_LD_SHIM_LIBS := \
     /system/lib/libMtkOmxVdecEx.so|libshim_omx.so \
     /system/lib/libMtkOmxVenc.so|libshim_omx.so \
     /system/lib/libfeatureio.so|libshim_omx.so \
-    /system/lib64/libfeatureio.so|libshim_omx.so
+    /system/lib64/libfeatureio.so|libshim_omx.so \
+    /system/bin/nandread|libshim_bionic.so
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.mt8163
