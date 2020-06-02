@@ -184,6 +184,9 @@ SELINUX_IGNORE_NEVERALLOWS := true
 # Gatekeeper
 BOARD_USE_SOFT_GATEKEEPER := true
 
+# KeyMaster
+TARGET_PROVIDES_KEYMASTER_HAL = true
+
 # Suppress MTK audio blob error message flag
 SUPPRESS_MTK_AUDIO_BLOB_ERR_MSG := true
 
