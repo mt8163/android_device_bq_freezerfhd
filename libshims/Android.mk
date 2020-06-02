@@ -21,11 +21,16 @@ include $(BUILD_SHARED_LIBRARY)
 # Audio Shim
 include $(CLEAR_VARS)
 
-LOCAL_SRC_FILES := audio/audio_shim.cpp
+LOCAL_SRC_FILES := \
+    audio/audio_shim.cpp \
+    audio/MediaTekAudioStubs_shim.cpp
 
 LOCAL_SHARED_LIBRARIES := \
 	libbinder \
-	libmedia
+	libmedia \
+    libutils
+
+LOCAL_C_INCLUDES += frameworks/av/media/mtp/ frameworks/rs/server/ frameworks/av/include/ hardware/libhardware/include/ system/core/include/
 
 LOCAL_MODULE := libshim_audio
 LOCAL_PROPRIETARY_MODULE := true

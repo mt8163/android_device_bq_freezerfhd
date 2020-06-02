@@ -67,9 +67,9 @@ extern "C" {
         uint32_t h, // height in pixel
         PixelFormat format, // pixel-format desired
         uint32_t flags, // usage flags
-        SurfaceControl* parent, // parent
-        uint32_t windowType, // from WindowManager.java (STATUS_BAR, INPUT_METHOD, etc.)
-        uint32_t ownerUid) // UID of the task
+        SurfaceControl* /* parent */, // parent
+        uint32_t /* windowtype */, // from WindowManager.java (STATUS_BAR, INPUT_METHOD, etc.)
+        uint32_t /* ownerUID */) // UID of the task
     {
         /* sp<SurfaceControl> android::SurfaceComposerClient::createSurface(android::String8 const&, unsigned int, unsigned int, int, unsigned int) */
         return _ZN7android21SurfaceComposerClient13createSurfaceERKNS_7String8EjjijPNS_14SurfaceControlEjj(name, w, h, format, flags, nullptr, 0, 0);

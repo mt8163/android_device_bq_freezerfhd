@@ -15,6 +15,7 @@
 #include <camera/android/hardware/ICameraClient.h>
 
 #include <media/AudioTrack.h>
+#include <media/mediarecorder.h>
 
 #include "include/Media_shim.h"
 
@@ -26,7 +27,7 @@ extern "C"
 #endif
 
 /* Android N exports */
-extern void _ZNK7android16NuMediaExtractor14getTrackFormatEjPNS_2spINS_8AMessageEEEj(size_t index, sp<AMessage> *format, uint32_t flags) {} //FIXME
+extern void _ZNK7android16NuMediaExtractor14getTrackFormatEjPNS_2spINS_8AMessageEEEj(size_t index, sp<AMessage> *format, uint32_t) {} //FIXME
 /*----------------------------------------------------*/
 extern int _ZN7android6Camera7connectEiRKNS_8String16Eii(void *, int, void **, int, int);
 /*----------------------------------------------------*/
@@ -39,7 +40,7 @@ extern void _ZN7android10AudioTrackC1E19audio_stream_type_tj14audio_format_tjj20
     audio_output_flags_t flags,
     AudioTrack::callback_t cbf,
     void* user,
-    int32_t notificationFrames,
+    int32_t,
     audio_session_t sessionId,
     AudioTrack::transfer_type transferType,
     const audio_offload_info_t *offloadInfo,
@@ -47,7 +48,7 @@ extern void _ZN7android10AudioTrackC1E19audio_stream_type_tj14audio_format_tjj20
     pid_t pid,
     const audio_attributes_t* pAttributes,
     bool doNotReconnect,
-    float maxRequiredSpeed) {} //FIXME
+    float maxRequiredSpeed){} //FIXME
 /*----------------------------------------------------*/
 extern int _ZN7android11AudioSourceC1E14audio_source_tRKNS_8String16Ejjjji(uint32_t inputSource, const String16 &opPackageName,
     uint32_t sampleRate, uint32_t channelCount, uint32_t outSampleRate,
@@ -65,13 +66,21 @@ extern status_t _ZN7android11MPEG4Writer5resetEb(bool stopSource);
 /*----------------------------------------------------*/
 extern int _ZN7android8hardware15BpCameraService13getCameraInfoEiPNS0_10CameraInfoE(int cameraId,
     struct hardware::CameraInfo* cameraInfo);
+/*----------------------------------------------------*/
+extern status_t _ZN7android13MediaRecorder13setOutputFileEi(int fd);
+/*----------------------------------------------------*/
+extern void _ZN7android14MediaExtractor23RegisterDefaultSniffersEv();
+/*----------------------------------------------------*/
 
 /* 
 * FUNCTION NAME: DataSource::RegisterDefaultSniffers.
 * USE: Register Default Sniffer (?).
-* NOTES: This is a proprietary function from MediaTek.
+* NOTES: It looks like this function was renamed in N. Stub out to the correct call.
 */
-void _ZN7android10DataSource23RegisterDefaultSniffersEv() {}
+void _ZN7android10DataSource23RegisterDefaultSniffersEv()
+{
+    _ZN7android14MediaExtractor23RegisterDefaultSniffersEv();
+}
 
 /* 
 * FUNCTION NAME: NuMediaExtractor::getTrackFormat.
@@ -89,9 +98,9 @@ void _ZNK7android16NuMediaExtractor14getTrackFormatEmPNS_2spINS_8AMessageEEE(siz
 * NOTES: This is a proprietary function from MediaTek.
 */
 #ifdef __LP64__
-void _ZN7android14FindAVCSPSInfoEPhmPNS_7SPSInfoE(uint8_t *seqParamSet, size_t size, struct SPSInfo *pSPSInfo) {} //SPSInfo
+void _ZN7android14FindAVCSPSInfoEPhmPNS_7SPSInfoE(uint8_t *seqParamSet __attribute__((unused)), size_t size __attribute__((unused)), struct SPSInfo *pSPSInfo __attribute__((unused))) {} //SPSInfo
 #else
-void _ZN7android14FindAVCSPSInfoEPhmPNS_7SPSInfoEb(uint8_t *seqParamSet, size_t size, struct SPSInfo *pSPSInfo) {} //SPSInfo
+void _ZN7android14FindAVCSPSInfoEPhmPNS_7SPSInfoEb(uint8_t *seqParamSet __attribute__((unused)), size_t size __attribute__((unused)), struct SPSInfo *pSPSInfo __attribute__((unused))) {} //SPSInfo
 #endif
 
 /* 
@@ -189,13 +198,23 @@ status_t _ZN7android11MPEG4Writer5resetEv(bool stopSource)
 
 /* 
 * FUNCTION NAME: MPEG4Writer::reset.
-* USE: Resets the MPEG4Writer give thread.
+* USE: Resets the MPEG4Writer given thread.
 * NOTES: It looks like this function was renamed in N. Stub out to the correct call.
 */
 int _ZN7android10CameraBaseINS_6CameraENS_12CameraTraitsIS1_EEE13getCameraInfoEiPNS_10CameraInfoE(int cameraId,
     struct hardware::CameraInfo* cameraInfo)
 {
     return _ZN7android8hardware15BpCameraService13getCameraInfoEiPNS0_10CameraInfoE(cameraId, cameraInfo);
+}
+
+/* 
+* FUNCTION NAME: MediaRecorder::setOutputFile.
+* USE: Sets the output file (?)
+* NOTES: It looks like this function was renamed in N. Stub out to the correct call.
+*/
+status_t _ZN7android13MediaRecorder13setOutputFileEixx(int fd)
+{
+    return _ZN7android13MediaRecorder13setOutputFileEi(fd);
 }
 
 #ifdef __cplusplus

@@ -1,3 +1,4 @@
+#ifndef _GNU_SOURCE
 #define _GNU_SOURCE
 
 #include <string.h>
@@ -16,13 +17,17 @@ extern "C" {
 
   EVP_PKEY *EVP_PKEY_new_mac_key(int type, ENGINE *e, const uint8_t *mac_key, size_t mac_key_len) {
      void *crypto_library;
+
      orig_EVP_PKEY_new_mac_key_type orig_EVP_PKEY_new_mac_key;
+
      EVP_PKEY *ret = NULL;
+
      ALOGI("EVP_PKEY_new_mac_key[0x%08X] (orig_EVP_PKEY_new_mac_key, %d ...)\n", type);
+
      crypto_library = dlopen("/system/lib/libcrypto.so", RTLD_LAZY);
 
      if (!crypto_library) {
-         ALOGI("Cannot open crypto library.");
+         ALOGI("Cannot dlopen crypto library.");
          return NULL;
      }
 
@@ -33,3 +38,5 @@ extern "C" {
    }
 
 }
+
+#endif // _GNU_SOURCE

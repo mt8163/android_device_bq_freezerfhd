@@ -9,7 +9,6 @@ namespace android {
 	    uint32_t profile;
 	    uint32_t level;
     }; // SPSInfo
-
 }  // namespace android
 
 #endif  // MEDIA_SHIM_H_
