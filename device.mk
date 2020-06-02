@@ -43,7 +43,9 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     YGPS \
-    libcurl
+    libcurl \
+    gps.mt8163 \
+    mtk_agpsd
 
 # GPS force mode
 PRODUCT_PROPERTY_OVERRIDES += \

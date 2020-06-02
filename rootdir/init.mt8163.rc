@@ -1307,14 +1307,6 @@ service pppd_gprs /system/bin/pppd_dt /dev/ttyACM0 debug noauth refuse-eap usepe
 #  Modem related services (End)
 #
 
-service agpsd /system/bin/mtk_agpsd
-    class main
-    socket agpsd stream 660 gps system
-    socket agpsd2 stream 660 gps inet
-    socket agpsd3 stream 660 gps inet
-    user gps
-    group gps radio inet sdcard_r sdcard_rw misc
-
 service slpd /system/bin/slpd
     class main
     user gps
@@ -1322,14 +1314,13 @@ service slpd /system/bin/slpd
 
 service wifi2agps /system/bin/wifi2agps
     class main
-    user root
+    user wifi
     group gps inet
-    oneshot
 
 service mnld /system/xbin/mnld
     class main
-    user root
-    group gps inet misc sdcard_rw sdcard_r media_rw system
+    user gps
+    group gps inet misc sdcard_rw sdcard_r media_rw system radio
     socket mnld stream 660 gps system
 
 service ipod /system/bin/ipod
