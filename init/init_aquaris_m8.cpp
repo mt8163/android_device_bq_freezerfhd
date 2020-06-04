@@ -104,6 +104,13 @@ void property_override(char const prop[], char const value[])
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
+void property_override_dual(char const system_prop[],
+        char const vendor_prop[], char const value[])
+{
+    property_override(system_prop, value);
+    property_override(vendor_prop, value);
+}
+
 void vendor_load_properties()
 {
     LOG(ERROR) << "[#] This is libinit...\n";
@@ -113,15 +120,15 @@ void vendor_load_properties()
 
     if (device.find("aquaris_m8") == 0) {
         LOG(ERROR) << "[?] Setting propreties for Aquaris M8...\n";
-        //property_override("ro.build.fingerprint", "bq/Aquaris_M8/Aquaris_M8:6.0/MRA58K/1537280831:user/release-keys");
-        //property_override("ro.build.description", "full_bq_aquaris_m8-user 6.0 MRA58K 1537280832 release-keys");
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "bq/Aquaris_M8/Aquaris_M8:6.0/MRA58K/1537280831:user/release-keys");
+        property_override("ro.build.description", "full_bq_aquaris_m8-user 6.0 MRA58K 1537280832 release-keys");
         property_override("ro.product.device_is_m8", "true");
-        property_override("ro.product.model", "Aquaris M8");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "Aquaris M8");
         property_override("ro.product.customer", "bq");
     } else {
         LOG(ERROR) << "[?] Setting propreties for unknown device...\n";
         property_override("ro.product.device_is_m8", "false");
-        property_override("ro.product.model", "Unknown");
+        property_override_dual("ro.product.model", "ro.vendor.product.device", "Unknown");
         property_override("ro.product.customer", "unknown");
     }
 
