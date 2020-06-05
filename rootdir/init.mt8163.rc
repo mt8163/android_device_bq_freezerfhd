@@ -1,12 +1,18 @@
 # MTK platform .rc configure
 
-import init.project.rc
+import init.mt8163.usb.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
 
 on init
+    # Set up media
+    mount tmpfs tmpfs /mnt/media_rw/ mode=0755,uid=1000,gid=1000
+    mkdir /mnt/media_rw/usbotg 0700 media_rw media_rw
+    mkdir /storage/usbotg 0700 root root
+    mount tmpfs tmpfs /storage/usbotg mode=0755,uid=1000,gid=1000
+
     # Support legacy paths
     symlink /sdcard /mnt/sdcard
 
@@ -112,16 +118,78 @@ on post-fs
     chmod a+rw /dev/block/platform/mtk-msdc.0/11120000.MSDC0/by-name/nvram
 
 on post-fs-data
-    chown system system /persist
-    chmod 0771 /persist
-
-    # Create basic filesystem structure
-    mkdir /data/nvram 0771 root system
-    mkdir /data/nvram/media 0771 media audio
-    chmod 0777 /data/nvram/APCFG/APRDEB/BT_Addr
-    chown system system /data/nvram/APCFG/APRDEB/BT_Addr
+    # Wi-Fi
+    mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    mkdir /data/misc/wpa_supplicant 0770 wifi wifi
+    chown wifi wifi /data/misc/wifi
 
     chmod 0660 /data/misc/wifi/p2p_supplicant.conf
+
+    # Connectivity BT/FM/GPS usage
+    chmod 0660 /dev/ttyMT2
+    chown system system /dev/ttyMT2
+
+    # Wi-Fi
+    mknod /dev/wmtWifi c 153 0
+    chmod 0660 /dev/wmtWifi
+    chown system system /dev/wmtWifi
+
+    # Camera
+    chmod 0660 /dev/MAINAF
+    chown system camera /dev/MAINAF
+
+    chmod 0660 /dev/MAINAF2
+    chown system camera /dev/MAINAF2
+
+    chmod 0660 /dev/SUBAF
+    chown system camera /dev/SUBAF
+
+    chmod 0660 /dev/GAF001AF
+    chown system camera /dev/GAF001AF
+   
+    chmod 0660 /dev/DW9714AF
+    chown system camera /dev/DW9714AF
+    
+    chmod 0660 /dev/AD5820AF
+    chown system camera /dev/AD5820AF
+    
+    chmod 0660 /dev/BU64745GWZAF
+    chown system camera /dev/BU64745GWZAF
+
+    chmod 0660 /dev/FM50AF
+    chown system camera /dev/FM50AF
+
+    # SMB
+    chown system system /proc/smb/ScreenComm
+    chmod 0660 /proc/smb/ScreenComm
+
+    # GPS
+    mkdir /data/gps_mnl 0771 gps system
+    mkdir /data/misc/gps 0770 gps system
+
+    chown gps gps /sys/class/gpsdrv/gps/pwrctl
+    chown gps gps /sys/class/gpsdrv/gps/suspend
+    chown gps gps /sys/class/gpsdrv/gps/state
+    chown gps gps /sys/class/gpsdrv/gps/pwrsave
+    chown gps gps /sys/class/gpsdrv/gps/status
+
+    # ATCID
+    chmod 660 /dev/ttyGS0 
+    chown system /dev/ttyGS0 
+    chmod 660 /dev/ttyGS1 
+    chown system /dev/ttyGS1
+
+    # Char device for BT 3.0 HS
+    mknod /dev/ampc0 c 151 0
+    chown bluetooth bluetooth /dev/ampc0
+    chmod 0660 /dev/ampc0
+
+    # bq27520
+    chown system system /proc/bq27520-update
+
+    # D2TW
+    chown system system /proc/gesture_open
 
     # Give system access to rfkill device node
     chmod 0660 /dev/rfkill
@@ -130,9 +198,15 @@ on post-fs-data
     mkdir /dev/radio 0770 radio radio
     mkdir /data/drm/wv 0770 drm system
 
-    # GPS
-    mkdir /data/gps_mnl 0771 gps system
-    mkdir /data/misc/gps 0770 gps system
+    # Create basic filesystem structure
+    mkdir /data/nvram 0771 root system
+    mkdir /data/nvram/media 0771 media audio
+    chmod 0777 /data/nvram/APCFG/APRDEB/BT_Addr
+    chown system system /data/nvram/APCFG/APRDEB/BT_Addr
+
+    # Persist
+    chown system system /persist
+    chmod 0771 /persist
 
     # NFC
     mkdir /data/nfc_socket 0771 nfc radio
@@ -1119,6 +1193,27 @@ service aal /system/bin/aal
 #
 # MTK Wi-Fi related services (Begin)
 #
+
+service wmtLoader /system/bin/wmt_loader
+    user root
+    group root
+    class core
+    oneshot
+
+service conn_launcher /system/bin/6620_launcher -p /system/etc/firmware/
+    user system
+    group system
+    class core
+
+on property:service.wcn.coredump.mode=2
+start stp_dump
+
+service stp_dump /system/bin/stp_dump3
+    user root
+    group root
+    class core
+    disabled
+    oneshot
 
 # Monitor property and power on/off wlan
 on property:wlan.driver.status=ok
