@@ -144,10 +144,6 @@ TARGET_INIT_VENDOR_LIB := libinit_aquaris_m8
 # Shims
 TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libwvm.so|libshim_wvm.so \
-    /system/lib/libgui_ext.so|libshim_gui.so \
-    /system/lib64/libgui_ext.so|libshim_gui.so \
-    /system/lib/libui_ext.so|libshim_ui.so \
-    /system/lib64/libui_ext.so|libshim_ui.so \
     /system/bin/boot_logo_updater|libshim_media.so \
     /system/bin/kpoc_charger|libshim_media.so \
     /system/lib/libshowlogo.so|libshim_media.so \
