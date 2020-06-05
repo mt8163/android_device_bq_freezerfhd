@@ -128,7 +128,7 @@ void vendor_load_properties()
     } else {
         LOG(ERROR) << "[?] Setting propreties for unknown device...\n";
         property_override("ro.product.device_is_m8", "false");
-        property_override_dual("ro.product.model", "ro.vendor.product.device", "Unknown");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "Unknown");
         property_override("ro.product.customer", "unknown");
     }
 
