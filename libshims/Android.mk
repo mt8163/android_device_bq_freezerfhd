@@ -36,22 +36,20 @@ LOCAL_MODULE := libshim_audio
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
 
-# GUI Shim (Graphics)
+# Camera Shim
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
-	gui/SensorManager.cpp \
-    gui/gui_shim.cpp
+	camera/SensorManager.cpp
 
 LOCAL_SHARED_LIBRARIES := \
 	libbinder \
-	libgui \
 	liblog \
 	libsensor \
 	libui \
 	libutils
 
-LOCAL_MODULE := libshim_gui
+LOCAL_MODULE := libshim_camera
 
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
@@ -98,22 +96,6 @@ LOCAL_SRC_FILES := misc/xlog_shim.cpp
 LOCAL_SHARED_LIBRARIES := liblog
 
 LOCAL_MODULE := libxlog
-
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_SHARED_LIBRARY)
-
-# UI Shim (Graphics)
-include $(CLEAR_VARS)
-
-LOCAL_SRC_FILES := \
-	ui/ui_shim.cpp
-
-LOCAL_SHARED_LIBRARIES := \
-	libbinder \
-	libui \
-	libutils
-
-LOCAL_MODULE := libshim_ui
 
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)

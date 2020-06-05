@@ -154,8 +154,8 @@ TARGET_LD_SHIM_LIBS := \
     /system/bin/audiocmdservice_atci|libshim_audio.so \
     /system/lib/libcam_utils.so|libshim_media.so \
     /system/lib64/libcam_utils.so|libshim_media.so \
-    /system/lib/libcam.utils.sensorlistener.so|libshim_gui.so \
-    /system/lib64/libcam.utils.sensorlistener.so|libshim_gui.so \
+    /system/lib/libcam.utils.sensorlistener.so|libshim_camera.so \
+    /system/lib64/libcam.utils.sensorlistener.so|libshim_camera.so \
     /system/lib/libsource.so|libshim_media.so \
     /system/lib64/libsource.so|libshim_media.so \
     /system/lib/libsink.so|libshim_media.so \

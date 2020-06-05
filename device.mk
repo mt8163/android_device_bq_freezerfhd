@@ -57,8 +57,7 @@ PRODUCT_PACKAGES += \
     libshim_atomic \
     libshim_audio \
     libshim_omx \
-    libshim_ui \
-    libshim_gui \
+    libshim_camera \
     libxlog \
     libshim_gps \
     libshim_program_binary_service \
