@@ -32,6 +32,7 @@ brunch lineage_aquaris_m8-userdebug -j12
 
 ### WORKING ###
 - Boots
+- DRM (L3)
 - Bluetooth
 - Wi-Fi
 - Camera
