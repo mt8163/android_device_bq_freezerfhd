@@ -40,14 +40,16 @@ include $(BUILD_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := \
-	camera/SensorManager.cpp
+	camera/SensorManager.cpp \
+    camera/camera_shim.cpp
 
 LOCAL_SHARED_LIBRARIES := \
 	libbinder \
 	liblog \
 	libsensor \
 	libui \
-	libutils
+	libutils \
+    libgui
 
 LOCAL_MODULE := libshim_camera
 
