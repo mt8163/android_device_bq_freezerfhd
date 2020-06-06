@@ -44,8 +44,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     YGPS \
     libcurl \
-    gps.mt8163 \
-    mtk_agpsd
+    gps.mt8163
 
 # GPS force mode
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -63,7 +62,8 @@ PRODUCT_PACKAGES += \
     libshim_program_binary_service \
     libshim_wvm \
     libshim_drm \
-    libshim_media
+    libshim_media \
+    libshim_mmsdk
 
 # Power
 PRODUCT_PACKAGES += power.mt8163
@@ -178,6 +178,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/vendor/etc/wifi/p2p_supplicant_overlay.conf \
     $(LOCAL_PATH)/configs/ecc_list.xml:system/etc/ecc_list.xml \
     $(LOCAL_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml
+
+# GPS Config
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/vendor/etc/agps_profiles_conf2.xml
 
 # Vulkan
 PRODUCT_COPY_FILES += \
