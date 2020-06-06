@@ -62,8 +62,7 @@ PRODUCT_PACKAGES += \
     libshim_program_binary_service \
     libshim_wvm \
     libshim_drm \
-    libshim_media \
-    libshim_mmsdk
+    libshim_media
 
 # Power
 PRODUCT_PACKAGES += power.mt8163
