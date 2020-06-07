@@ -37,7 +37,6 @@ PRODUCT_PROPERTY_OVERRIDES += ro.boot.btmacaddr=00:00:00:00:00:00
 
 # Camera
 PRODUCT_PACKAGES += \
-    Camera2 \
     Snap \
     libcamera_parameters_mtk
 

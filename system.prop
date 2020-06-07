@@ -56,7 +56,7 @@ debug.hwui.use_partial_updates=false
 
 # Screen/LCM/LCD
 ro.sf.hwrotation=0
-ro.sf.lcd_density=213
+ro.sf.lcd_density=220
 
 # RILD
 rild.libpath=mtk-ril.so
