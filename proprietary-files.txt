@@ -107,7 +107,7 @@ lib64/libui_ext.so
 lib64/libfeatureio.so
 lib64/libaudiocomponentengine.so
 lib64/egl/libGLES_mali.so
-#lib64/libion_mtk.so
+lib64/libion_mtk.so
 lib64/libperfservicenative.so
 lib64/libem_gpio_jni.so
 lib64/libgui_ext.so
@@ -324,7 +324,7 @@ lib/libui_ext.so
 lib/libfeatureio.so
 lib/libaudiocomponentengine.so
 lib/egl/libGLES_mali.so
-#lib/libion_mtk.so
+lib/libion_mtk.so
 lib/libperfservicenative.so
 lib/libem_gpio_jni.so
 lib/libaudiomtkdcremoval.so
