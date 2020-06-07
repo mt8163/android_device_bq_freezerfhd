@@ -113,11 +113,27 @@ void property_override_dual(char const system_prop[],
 
 void vendor_load_properties()
 {
-    LOG(ERROR) << "[#] This is libinit...\n";
+    LOG(ERROR) << "[#] Starting libinit...\n";
 
     const std::string override_serial = GetProperty("ro.override.serialno", "");
     const std::string device = GetProperty("ro.product.device", "");
 
+    std::ifstream model;
+    std::string line;
+
+    model.open("/sys/firmware/devicetree/base/model");
+
+    /* Check for MT8163 */
+    while(getline(model, line)) {
+        if (line.find("MT8163") == 0) {
+            LOG(ERROR) << "[?] Setting platform to mt8163...\n";
+            property_override("ro.board.platform", "mt8163");
+        } else {
+            property_override("ro.board.platform", "unknown");
+        }
+    }
+
+    /* Check for device (aquaris_m8) */
     if (device.find("aquaris_m8") == 0) {
         LOG(ERROR) << "[?] Setting propreties for Aquaris M8...\n";
         property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "bq/Aquaris_M8/Aquaris_M8:6.0/MRA58K/1537280831:user/release-keys");
@@ -139,5 +155,5 @@ void vendor_load_properties()
         write_serial(override_serial);
     }
 
-    LOG(ERROR) << "\n[?] Exiting libinit...";
+    LOG(ERROR) << "[?] Exiting libinit...";
 }
