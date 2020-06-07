@@ -36,6 +36,7 @@ brunch lineage_aquaris_m8-userdebug -j12
 - Bluetooth
 - Wi-Fi
 - Camera
+- Video Recording
 - Hardware Composer
 - Gralloc
 - Sensors (Light & Accelerometer)
@@ -51,7 +52,6 @@ brunch lineage_aquaris_m8-userdebug -j12
 ### NOT WORKING ###
 - GPS
 - Gatekeeper (Lockscreen protection)
-- Video Recording
 - Encryption
 - HDMI (To be tested)
 
