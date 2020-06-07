@@ -1,6 +1,8 @@
 #ifndef _GNU_SOURCE
 #define _GNU_SOURCE
 
+#define LOG_TAG "EVP_CRYPTO"
+
 #include <string.h>
 #include <stdio.h>
 #include <dlfcn.h>
@@ -8,8 +10,6 @@
 
 #include <log/log.h>
 #include <openssl/evp.h>
-
-#define LOG_TAG "EVP_CRYPTO"
 
 extern "C" {
 

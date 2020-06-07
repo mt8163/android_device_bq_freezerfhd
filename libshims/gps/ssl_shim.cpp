@@ -1,9 +1,8 @@
 #define LOG_TAG "SSL_ctrl_stub"
+
 #include <log/log.h>
 #include <string.h>
 #include <stdlib.h>
-
-#define LOG_TAG "SSL_SHIM"
 
 extern "C"
 {

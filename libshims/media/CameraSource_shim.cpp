@@ -1,3 +1,5 @@
+#define LOG_TAG "CameraSource_shim"
+
 #include <stdlib.h>
 #include <stdint.h>
 
@@ -15,8 +17,6 @@
 #include <ui/GraphicBufferMapper.h>
 
 #include <log/log.h>
-
-#define LOG_TAG "CameraSource_shim"
 
 /* kMetadataBufferTypeGraphicBuffer is used to indicate that
  * the payload of the metadata buffers can be interpreted as

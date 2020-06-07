@@ -1,3 +1,5 @@
+#define LOG_TAG "xlog"
+
 #include <log/log.h>
 #include <cutils/log.h>
 #include <sys/stat.h>
@@ -13,8 +15,6 @@
 #define XLOG_SET_TAG_LEVEL   14
 
 #define XLOG_FILTER_DEFAULT_LEVEL 0x00223222
-
-#define LOG_TAG "xlog"
 
 #ifdef __cplusplus
 extern "C"

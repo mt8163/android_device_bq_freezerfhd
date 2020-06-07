@@ -1,8 +1,8 @@
+#define LOG_TAG "CRYPTO_SHIM"
+
 #include <stdint.h>
 #include <stdlib.h>
 #include <log/log.h>
-
-#define LOG_TAG "CRYPTO_SHIM"
 
 extern "C"
 {

@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+#define LOG_TAG "SurfaceControl_shim"
+
 #include <stdint.h>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -34,8 +36,6 @@
 #include <gui/SurfaceComposerClient.h>
 
 #include "include/SurfaceControl_shim.h"
-
-#define LOG_TAG "SurfaceControl_shim"
 
 using namespace android;
 using android::sp;
