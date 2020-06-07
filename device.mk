@@ -57,7 +57,7 @@ PRODUCT_PACKAGES += \
     libshim_audio \
     libshim_omx \
     libshim_camera \
-    libxlog \
+    libshim_xlog \
     libshim_gps \
     libshim_program_binary_service \
     libshim_wvm \

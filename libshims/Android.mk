@@ -97,7 +97,7 @@ LOCAL_SRC_FILES := misc/xlog_shim.cpp
 
 LOCAL_SHARED_LIBRARIES := liblog
 
-LOCAL_MODULE := libxlog
+LOCAL_MODULE := libshim_xlog
 
 LOCAL_PROPRIETARY_MODULE := true
 include $(BUILD_SHARED_LIBRARY)

@@ -147,7 +147,7 @@ TARGET_LD_SHIM_LIBS := \
     /system/bin/boot_logo_updater|libshim_media.so \
     /system/bin/kpoc_charger|libshim_media.so \
     /system/lib/libshowlogo.so|libshim_media.so \
-    /system/bin/xlog|libxlog.so \
+    /system/bin/xlog|libshim_xlog.so \
     /system/bin/program_binary_service|libshim_program_binary_service.so \
     /system/lib/hw/audio.primary.mt8163.so|libshim_audio.so \
     /system/lib64/hw/audio.primary.mt8163.so|libshim_audio.so \
