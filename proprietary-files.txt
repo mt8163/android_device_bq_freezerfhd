@@ -495,8 +495,8 @@ vendor/pittpatt/models/detection/yaw_roll_face_detectors.6/head-y0-yi45-p0-pi45-
 vendor/pittpatt/models/recognition/face.face.y0-y0-22-b-N.bin
 
 # APTX Encoder libs catched from Vivo 1815
-libaptX_encoder.so|a407a92a6eb467886c3970629ebcab4db95b7600
-libaptXHD_encoder.so|76eb03998f9b4f98029a4408076685892726e45as
+vendor/lib64/libaptX_encoder.so|a407a92a6eb467886c3970629ebcab4db95b7600
+vendor/lib64/libaptXHD_encoder.so|76eb03998f9b4f98029a4408076685892726e45as
 
 # Codec libraries catched from Walmart's ONN8' tablet
 lib/libMtkOmxVdecEx.so|478d59a82c9108aa9f1485c227522cd48d28a2da
