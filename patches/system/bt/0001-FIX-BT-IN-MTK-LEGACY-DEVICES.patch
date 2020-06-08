@@ -39,3 +39,4 @@ index a6b61f094..c9815fe41 100644
 +  if (*page_number_ptr >= feature_pages_count) return; // just stop here and don't crash
    STREAM_TO_ARRAY(feature_pages[*page_number_ptr].as_array, stream,
                    (int)sizeof(bt_device_features_t));
+
