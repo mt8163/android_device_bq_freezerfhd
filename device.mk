@@ -177,6 +177,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/ecc_list.xml:system/etc/ecc_list.xml \
     $(LOCAL_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml
 
+# Thermal Configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/thermal/thermal.conf:system/etc/.tp/thermal.conf \
+    $(LOCAL_PATH)/configs/thermal/thermal.off.conf:system/etc/.tp/thermal.off.conf \
+    $(LOCAL_PATH)/configs/thermal/.ht120.mtc:system/etc/.tp/.ht120.mtc
+
 # GPS Config
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/vendor/etc/agps_profiles_conf2.xml
