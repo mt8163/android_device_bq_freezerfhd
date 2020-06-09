@@ -1428,53 +1428,6 @@ service ipod /system/bin/ipod
     group root
     disabled
 
-service extmdlogger /system/bin/extmdlogger
-    class main
-    user shell
-    group shell system radio sdcard_rw inet sdcard_r media_rw
-
-service mdlogger /system/bin/mdlogger
-    class main
-    user shell
-    group shell system radio sdcard_rw inet sdcard_r media_rw
-    disabled
-    oneshot
-
-service dualmdlogger /system/bin/dualmdlogger
-    class main
-    user shell
-    group shell system radio sdcard_rw inet sdcard_r media_rw
-    disabled
-    oneshot
-
-service emdlogger1 /system/bin/emdlogger1
-    class main
-    user shell
-    group system shell radio sdcard_rw inet sdcard_r media_rw
-    disabled
-    oneshot
-
-service emdlogger2 /system/bin/emdlogger2
-    class main
-    user shell
-    group system shell radio sdcard_rw inet sdcard_r media_rw
-    disabled
-    oneshot
-
-service emdlogger5 /system/bin/emdlogger5
-    class main
-    user shell
-    group system shell radio sdcard_rw inet sdcard_r media_rw
-    disabled
-    oneshot
-
-service emdlogger6 /system/bin/emdlogger6
-    class main
-    user shell
-    group system shell radio sdcard_rw inet sdcard_r media_rw
-    disabled
-    oneshot
-
 #
 # Sensor service (begin)
 #
@@ -1504,8 +1457,9 @@ service memsicd /system/bin/memsicd
 service memsicd3416x /system/bin/memsicd3416x
      disabled
 	 user system
-    group system
-    class main
+     group system
+     class main
+
 service akmd8975 /system/bin/akmd8975
     disabled
     user system
@@ -1649,6 +1603,7 @@ service sn /system/bin/sn
 
 # Add for power-off alarm
 service poad /system/bin/poad
+    disabled
     class main
     user system
     group system
@@ -1656,11 +1611,13 @@ service poad /system/bin/poad
 
 # Monitor battery status
 service batterywarning /system/bin/batterywarning
+    disabled
     class main
     user shell
     group shell
 
 service backuprestore /system/bin/br_app_data_service
+    disabled
 	class main
 	socket backuprestore stream 0660 root sdcard_rw
 	user root
