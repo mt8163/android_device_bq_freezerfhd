@@ -47,7 +47,7 @@ If you are interested in building LineageOS 15.1 for the BQ Aquaris M8, check ou
 - GPS
 - Gatekeeper (Lockscreen protection)
 - Encryption
-- HDMI (To be tested)
+- HDMI
 
 ### SPECIAL THANKS ###
 - Kaijones23, huckleberrypie, JMPF6 and t0x1cSH for the help.
