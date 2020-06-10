@@ -46,6 +46,17 @@ PRODUCT_PACKAGES += \
     libcurl \
     gps.mt8163
 
+# MNLD
+ifeq ($(TARGET_PROVIDES_MNLD_HAL),false) 
+PRODUCT_PACKAGES += \
+    libmnl \
+    mnld \
+    libDR \
+    libgeofence \
+    libhostill \
+    libsupl
+endif
+
 # GPS force mode
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.force.gps.mode=gnss

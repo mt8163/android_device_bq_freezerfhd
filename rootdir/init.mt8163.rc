@@ -1365,11 +1365,7 @@ service PPLAgent /system/bin/ppl_agent
     group system cache
 
 service vtservice /system/bin/vtservice
-<<<<<<< HEAD
     disabled
-=======
-    disable
->>>>>>> 1e7006d19cb8d72ce6734391e10595d5bfd38558
     class main
     socket soc_vt_tcv dgram 660 radio system
     socket soc_vt_stk dgram 660 radio system

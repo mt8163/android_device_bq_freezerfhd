@@ -166,7 +166,6 @@ lib64/libgpu_aux.so
 lib64/libimageio_plat_drv.so
 lib64/libbtcusttable.so
 lib64/libmtkjpeg.so
-lib64/libcurl.so
 lib64/libem_bt_jni.so
 lib64/libblisrc32.so
 lib64/libmtk_mmutils.so
@@ -391,7 +390,6 @@ lib/libgpu_aux.so
 lib/libimageio_plat_drv.so
 lib/libbtcusttable.so
 lib/libmtkjpeg.so
-lib/libcurl.so
 lib/libem_bt_jni.so
 lib/libblisrc32.so
 lib/libmtk_mmutils.so
