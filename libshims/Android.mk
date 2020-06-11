@@ -87,7 +87,7 @@ LOCAL_SRC_FILES := misc/omx_shim.cpp
 LOCAL_MODULE := libshim_omx
 
 LOCAL_PROPRIETARY_MODULE := true
-LOCAL_SHARED_LIBRARIES := libdpframework
+LOCAL_SHARED_LIBRARIES := libdpframework liblog libion_mtk libion
 include $(BUILD_SHARED_LIBRARY)
 
 # XLOG Shim
