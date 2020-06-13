@@ -100,6 +100,10 @@ PRODUCT_PACKAGES += \
     libgui_ext \
     libui_ext
 
+# MediaTek Parts
+PRODUCT_PACKAGES += \
+    MediaTekParts
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     libbluetooth_mtk \

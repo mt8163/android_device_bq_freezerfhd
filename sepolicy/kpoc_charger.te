@@ -45,3 +45,4 @@ allow kpoc_charger mmcblk0_block_device:blk_file open;
 # Nougat
 allow kpoc_charger sysfs:file { read write open };
 allow kpoc_charger rootfs:file { read open getattr };
+
