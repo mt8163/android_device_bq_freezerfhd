@@ -112,6 +112,9 @@ mtk_in_house_tee_support=true
 # Serial S/N to override. If you don't want to override the serial, leave this as "NULL"
 ro.override.serialno=NULL
 
+# Hide YGPS by default
+persist.ygps.enable=0
+
 # MediaTek Props
 ro.mtk_deinterlace_support=1
 ro.mtk_sensorhub_support=1
