@@ -25,23 +25,23 @@ This branch it's ONLY for building LineageOS 15.1.
 If you are interested in building LineageOS 15.1 for the BQ Aquaris M8, check our [build guide](https://github.com/mt8163/android_vendor_bq_mt8163/blob/lineage-15.1/README.md), it will probably help you.
 
 ### WORKING ###
-- Boots
-- DRM (L3)
-- Bluetooth
-- Wi-Fi
-- Camera
-- Video Recording
-- Hardware Composer
-- Gralloc
-- Sensors (Light & Accelerometer)
-- Lights (LEDs, etc)
-- MTP/ADB
-- OMX (HW)
-- Sound/Audio
-- Online/Offline charging
-- FM Radio
-- D2TW (Working but ugly workaround)
-- LiveDisplay
+- Boots.
+- DRM (L3).
+- Bluetooth.
+- Wi-Fi.
+- Camera.
+- Video Recording.
+- Hardware Composer.
+- Gralloc.
+- Sensors (Light & Accelerometer).
+- Lights (LEDs, etc).
+- MTP/ADB.
+- OMX (HW).
+- Sound/Audio.
+- Online/Offline charging.
+- FM Radio.
+- D2TW.
+- LiveDisplay.
 
 ### NOT WORKING ###
 - GPS
