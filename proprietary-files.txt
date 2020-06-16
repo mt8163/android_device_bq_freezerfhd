@@ -469,12 +469,6 @@ lib/hw/power.default.so
 # Vendor's 32 bit libraries
 vendor/lib/libwvm.so
 vendor/lib/libdrmwvmplugin.so
-vendor/lib/mediadrm/libdrmclearkeyplugin.so
-vendor/lib/mediadrm/libmockdrmcryptoplugin.so
-
-# Vendor's 64 bit libraries
-vendor/lib64/mediadrm/libmockdrmcryptoplugin.so
-vendor/lib64/mediadrm/libdrmclearkeyplugin.so
 
 # Device's specific keylayouts
 usr/keylayout/mtk-kpd.kl
