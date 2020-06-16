@@ -73,8 +73,7 @@ PRODUCT_PACKAGES += \
     libshim_program_binary_service \
     libshim_wvm \
     libshim_drm \
-    libshim_media \
-    libshim_egl
+    libshim_media
 
 # Power
 PRODUCT_PACKAGES += power.mt8163
@@ -245,5 +244,4 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
      media.stagefright.legacyencoder=true \
      media.stagefright.less-secure=true \
-     persist.media.treble_omx=false \
-     persist.force.sw.decoding=true
+     persist.media.treble_omx=false
