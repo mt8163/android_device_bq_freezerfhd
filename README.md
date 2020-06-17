@@ -42,10 +42,10 @@ If you are interested in building LineageOS 15.1 for the BQ Aquaris M8, check ou
 - FM Radio.
 - D2TW.
 - LiveDisplay.
+- Gatekeeper/Keymaster.
 
 ### NOT WORKING ###
 - GPS
-- Gatekeeper (Lockscreen protection)
 - Encryption
 - HDMI
 
