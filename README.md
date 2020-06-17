@@ -43,6 +43,7 @@ If you are interested in building LineageOS 15.1 for the BQ Aquaris M8, check ou
 - D2TW.
 - LiveDisplay.
 - Gatekeeper/Keymaster.
+- Thermal.
 
 ### NOT WORKING ###
 - GPS
