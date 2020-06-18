@@ -140,10 +140,9 @@ TARGET_INIT_VENDOR_LIB := libinit_aquaris_m8
 # Shims
 TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libwvm.so|libshim_wvm.so \
-    /system/bin/boot_logo_updater|libshim_media.so \
     /system/bin/kpoc_charger|libshim_media.so \
-    /system/lib/libshowlogo.so|libshim_media.so \
     /system/bin/xlog|libshim_xlog.so \
+    /system/lib/libshowlogo.so|libshim_media.so \
     /system/bin/program_binary_service|libshim_program_binary_service.so \
     /system/lib/hw/audio.primary.mt8163.so|libshim_audio.so \
     /system/lib64/hw/audio.primary.mt8163.so|libshim_audio.so \
@@ -159,8 +158,6 @@ TARGET_LD_SHIM_LIBS := \
     /system/lib/libstagefright_soft_ddpdec.so|libshim_omx.so \
     /system/lib/libMtkOmxVdecEx.so|libshim_omx.so \
     /system/lib/libMtkOmxVenc.so|libshim_omx.so \
-    /system/lib/libfeatureio.so|libshim_omx.so \
-    /system/lib64/libfeatureio.so|libshim_omx.so \
     /system/bin/nandread|libshim_bionic.so
 
 # Recovery
