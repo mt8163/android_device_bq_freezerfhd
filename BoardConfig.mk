@@ -146,7 +146,7 @@ TARGET_LD_SHIM_LIBS := \
     /system/bin/program_binary_service|libshim_program_binary_service.so \
     /system/lib/hw/audio.primary.mt8163.so|libshim_audio.so \
     /system/lib64/hw/audio.primary.mt8163.so|libshim_audio.so \
-    /system/vendor/lib/soundfx/libaudiopreprocessing.so:libshim_audio \
+    /system/vendor/lib/soundfx/libaudiopreprocessing.so|libshim_audio \
     /system/bin/audiocmdservice_atci|libshim_audio.so \
     /system/lib/libcam_utils.so|libshim_media.so \
     /system/lib64/libcam_utils.so|libshim_media.so \
