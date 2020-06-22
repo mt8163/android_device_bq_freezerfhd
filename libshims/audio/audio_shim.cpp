@@ -19,14 +19,3 @@ extern "C" {
     }
 }
 
-/* libaudioprocessing.so (sound effect) */
-extern "C" 
-{
-    /* libwebrtc_audio_processing.so exports */
-    int _ZN6webrtc15AudioProcessing6CreateEi(int /* config */, void* /* nullptr */) { return 0; }
-
-    int _ZN6webrtc15AudioProcessing6CreateEv(int config, void* /* nullptr */) {
-        /* AudioProcessing::Create (M/N) */
-        return _ZN6webrtc15AudioProcessing6CreateEi(config, nullptr);
-    }
-}

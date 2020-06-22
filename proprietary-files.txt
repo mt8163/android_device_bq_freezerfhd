@@ -114,7 +114,7 @@ lib64/libgui_ext.so
 #lib64/libgralloc_extra.so
 lib64/mtk-ril.so
 lib64/libcam_utils.so
-lib64/libwebrtc_audio_preprocessing.so
+#lib64/libwebrtc_audio_preprocessing.so
 lib64/libdpframework.so
 lib64/libbwc.so
 lib64/libmal.so
@@ -332,7 +332,7 @@ lib/libgui_ext.so
 lib/libmtcloader.so
 lib/mtk-ril.so
 lib/libcam_utils.so
-lib/libwebrtc_audio_preprocessing.so
+#lib/libwebrtc_audio_preprocessing.so
 lib/libdpframework.so
 lib/libbwc.so
 lib/libmnl.so
