@@ -31,6 +31,7 @@ If you are interested in building LineageOS 15.1 for the BQ Aquaris M8, check ou
 - Wi-Fi.
 - Camera.
 - Video Recording.
+- Sound Recording (microphone).
 - Hardware Composer.
 - Gralloc.
 - Sensors (Light & Accelerometer).
@@ -38,17 +39,17 @@ If you are interested in building LineageOS 15.1 for the BQ Aquaris M8, check ou
 - MTP/ADB.
 - OMX (HW).
 - Sound/Audio.
-- Online/Offline charging.
+- Online/Offline charging (kpoc).
 - FM Radio.
 - D2TW.
 - LiveDisplay.
 - Gatekeeper/Keymaster.
 - Thermal.
-- GPS.
 
 ### NOT WORKING ###
-- Encryption
-- HDMI
+- Encryption.
+- HDMI.
+- GPS.
 
 ### SPECIAL THANKS ###
 - Kaijones23, huckleberrypie, JMPF6 and t0x1cSH for the help.
