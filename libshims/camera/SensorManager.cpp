@@ -29,7 +29,7 @@
 #include <sensor/ISensorServer.h>
 #include <sensor/ISensorEventConnection.h>
 #include <sensor/Sensor.h>
-#include "SensorManager.h"
+#include "camera/SensorManager.h"
 #include <sensor/SensorEventQueue.h>
 
 // ----------------------------------------------------------------------------

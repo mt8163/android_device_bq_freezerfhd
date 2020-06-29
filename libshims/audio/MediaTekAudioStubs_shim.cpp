@@ -4,9 +4,10 @@
 
 #include <MtpTypes.h>
 #include <system/audio.h>
-//#include <StrongPointer.h>
 #include <media/IAudioFlinger.h>
 #include <hardware/audio.h>
+
+#include "common.h"
 
 namespace android {
 
@@ -38,7 +39,7 @@ namespace android {
     }
 
     /* _ZN7android11AudioSystem17SetVoiceUnlockSRCEjj */
-    int AudioSystem::SetVoiceUnlockSRC(uint outSR, uint outChannel)
+    int AudioSystem::SetVoiceUnlockSRC(PGM_GNUC_UNUSED uint outSR, PGM_GNUC_UNUSED uint outChannel)
     {
         return 0;
     }
@@ -56,13 +57,13 @@ namespace android {
     }
 
     /* _ZN7android11AudioSystem15ReadRefFromRingEPvjS1_ */
-    int AudioSystem::ReadRefFromRing(void*buf, uint32_t datasz, void* DLtime)
+    int AudioSystem::ReadRefFromRing(PGM_GNUC_UNUSED void*buf, PGM_GNUC_UNUSED uint32_t datasz, PGM_GNUC_UNUSED void* DLtime)
     {
         return 0;
     }
 
     /* _ZN7android11AudioSystem20GetVoiceUnlockULTimeEPv */
-    int AudioSystem::GetVoiceUnlockULTime(void* DLtime)
+    int AudioSystem::GetVoiceUnlockULTime(PGM_GNUC_UNUSED void* DLtime)
     {
         return 0;
     }
@@ -94,17 +95,17 @@ namespace android {
             return 0;
         }
 
-        virtual int ATVCS_matv_ps_init(int on)
+        virtual int ATVCS_matv_ps_init(PGM_GNUC_UNUSED int on)
         {
             return 0;
         }
 
-        virtual int ATVCS_matv_set_parameterb(int in)
+        virtual int ATVCS_matv_set_parameterb(PGM_GNUC_UNUSED int in)
         {
             return 0;
         }
 
-        virtual int ATVCS_matv_suspend(int on)
+        virtual int ATVCS_matv_suspend(PGM_GNUC_UNUSED int on)
         {
             return 0;
         }
@@ -114,16 +115,16 @@ namespace android {
             return 0;
         }
 
-        virtual void ATVCS_matv_chscan(int mode) {}
+        virtual void ATVCS_matv_chscan(PGM_GNUC_UNUSED int mode) {}
 
         virtual void ATVCS_matv_chscan_stop() {}
 
-        virtual int ATVCS_matv_get_chtable(int ch, void *entry, int len)
+        virtual int ATVCS_matv_get_chtable(PGM_GNUC_UNUSED int ch, PGM_GNUC_UNUSED void *entry, PGM_GNUC_UNUSED int len)
         {
             return 0;
         }
 
-        virtual int ATVCS_matv_set_chtable(int ch, void *entry, int len)
+        virtual int ATVCS_matv_set_chtable(PGM_GNUC_UNUSED int ch, PGM_GNUC_UNUSED void *entry, PGM_GNUC_UNUSED int len)
         {
             return 0;
         }
@@ -133,11 +134,11 @@ namespace android {
             return 0;
         }
 
-        virtual void ATVCS_matv_change_channel(int ch) {}
+        virtual void ATVCS_matv_change_channel(PGM_GNUC_UNUSED int ch) {}
 
-        virtual void ATVCS_matv_set_country(int country) {}
+        virtual void ATVCS_matv_set_country(PGM_GNUC_UNUSED int country) {}
 
-        virtual void ATVCS_matv_set_tparam(int mode) {}
+        virtual void ATVCS_matv_set_tparam(PGM_GNUC_UNUSED int mode) {}
 
         virtual void ATVCS_matv_audio_play() {}
 
@@ -148,37 +149,37 @@ namespace android {
             return 0;
         }
 
-        virtual void ATVCS_matv_audio_set_format(int val) {}
+        virtual void ATVCS_matv_audio_set_format(PGM_GNUC_UNUSED int val) {}
 
         virtual int ATVCS_matv_audio_get_sound_system()
         {
             return 0;
         }
 
-        virtual int ATVCS_matv_adjust(int item, int val)
+        virtual int ATVCS_matv_adjust(PGM_GNUC_UNUSED int item, PGM_GNUC_UNUSED int val)
         {
             return 0;
         }
 
-        virtual int ATVCS_matv_get_chipdep(int item)
+        virtual int ATVCS_matv_get_chipdep(PGM_GNUC_UNUSED int item)
         {
             return 0;
         }
 
-        virtual int ATVCS_matv_set_chipdep(int item, int val)
+        virtual int ATVCS_matv_set_chipdep(PGM_GNUC_UNUSED int item, PGM_GNUC_UNUSED int val)
         {
             return 0;
         }
 
         virtual void ATVCS_matv_register_callback() {}
 
-        virtual void registerClient(const sp<IATVCtrlClient>& client) {}
+        virtual void registerClient(PGM_GNUC_UNUSED const sp<IATVCtrlClient>& client) {}
 
-        virtual void registerClient_FM(const sp<IATVCtrlClient>& client) {}
+        virtual void registerClient_FM(PGM_GNUC_UNUSED const sp<IATVCtrlClient>& client) {}
 
-        virtual void CLI(char input) {}
+        virtual void CLI(PGM_GNUC_UNUSED char input) {}
 
-        virtual int ATVCS_fm_powerup(void *parm, int len)
+        virtual int ATVCS_fm_powerup(PGM_GNUC_UNUSED void *parm, PGM_GNUC_UNUSED int len)
         {
             return 0;
         }
@@ -193,22 +194,22 @@ namespace android {
             return 0;
         }
 
-        virtual int ATVCS_fm_tune(void *parm, int len)
+        virtual int ATVCS_fm_tune(PGM_GNUC_UNUSED void *parm, PGM_GNUC_UNUSED int len)
         {
             return 0;
         }
  
-        virtual int ATVCS_fm_seek(void *parm, int len)
+        virtual int ATVCS_fm_seek(PGM_GNUC_UNUSED void *parm, PGM_GNUC_UNUSED int len)
         {
             return 0;
         }
 
-        virtual int ATVCS_fm_scan(void *parm, int len)
+        virtual int ATVCS_fm_scan(PGM_GNUC_UNUSED void *parm, PGM_GNUC_UNUSED int len)
         {
             return 0;
         }
 
-        virtual int ATVCS_fm_mute(int val)
+        virtual int ATVCS_fm_mute(PGM_GNUC_UNUSED int val)
         {
             return 0;
         }

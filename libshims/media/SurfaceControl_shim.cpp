@@ -35,7 +35,7 @@
 
 #include <gui/SurfaceComposerClient.h>
 
-#include "include/SurfaceControl_shim.h"
+#include "media/SurfaceControl_shim.h"
 
 using namespace android;
 using android::sp;

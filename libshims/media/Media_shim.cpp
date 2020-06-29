@@ -17,7 +17,8 @@
 #include <media/AudioTrack.h>
 #include <media/mediarecorder.h>
 
-#include "include/Media_shim.h"
+#include "common.h"
+#include "media/Media_shim.h"
 
 namespace android {
 
@@ -27,28 +28,28 @@ extern "C"
 #endif
 
 /* Android N exports */
-extern void _ZNK7android16NuMediaExtractor14getTrackFormatEjPNS_2spINS_8AMessageEEEj(size_t index, sp<AMessage> *format, uint32_t) {} //FIXME
+extern status_t _ZNK7android16NuMediaExtractor14getTrackFormatEjPNS_2spINS_8AMessageEEEj(PGM_GNUC_UNUSED size_t index, PGM_GNUC_UNUSED sp<AMessage> *format, uint32_t) { return 0; } /* FIX ME! */
 /*----------------------------------------------------*/
-extern int _ZN7android6Camera7connectEiRKNS_8String16Eii(void *, int, void **, int, int);
+extern status_t _ZN7android6Camera7connectEiRKNS_8String16Eii(void *, int, void **, int, int);
 /*----------------------------------------------------*/
 extern void _ZN7android10AudioTrackC1E19audio_stream_type_tj14audio_format_tjj20audio_output_flags_tPFviPvS4_ES4_i15audio_session_tNS0_13transfer_typeEPK20audio_offload_info_tjiPK18audio_attributes_tbf(
-    audio_stream_type_t streamType,
-    uint32_t sampleRate,
-    audio_format_t format,
-    audio_channel_mask_t channelMask,
-    size_t frameCount,
-    audio_output_flags_t flags,
-    AudioTrack::callback_t cbf,
-    void* user,
-    int32_t,
-    audio_session_t sessionId,
-    AudioTrack::transfer_type transferType,
-    const audio_offload_info_t *offloadInfo,
-    uid_t uid,
-    pid_t pid,
-    const audio_attributes_t* pAttributes,
-    bool doNotReconnect,
-    float maxRequiredSpeed){} //FIXME
+    PGM_GNUC_UNUSED audio_stream_type_t streamType,
+    PGM_GNUC_UNUSED uint32_t sampleRate,
+    PGM_GNUC_UNUSED audio_format_t format,
+    PGM_GNUC_UNUSED audio_channel_mask_t channelMask,
+    PGM_GNUC_UNUSED size_t frameCount,
+    PGM_GNUC_UNUSED audio_output_flags_t flags,
+    PGM_GNUC_UNUSED AudioTrack::callback_t cbf,
+    PGM_GNUC_UNUSED void* user,
+    PGM_GNUC_UNUSED int32_t,
+    PGM_GNUC_UNUSED audio_session_t sessionId,
+    PGM_GNUC_UNUSED AudioTrack::transfer_type transferType,
+    PGM_GNUC_UNUSED const audio_offload_info_t *offloadInfo,
+    PGM_GNUC_UNUSED uid_t uid,
+    PGM_GNUC_UNUSED pid_t pid,
+    PGM_GNUC_UNUSED const audio_attributes_t* pAttributes,
+    PGM_GNUC_UNUSED bool doNotReconnect,
+    PGM_GNUC_UNUSED float maxRequiredSpeed) {/* FIX ME! */}
 /*----------------------------------------------------*/
 extern int _ZN7android11AudioSourceC1E14audio_source_tRKNS_8String16Ejjjji(uint32_t inputSource, const String16 &opPackageName,
     uint32_t sampleRate, uint32_t channelCount, uint32_t outSampleRate,
@@ -87,9 +88,9 @@ void _ZN7android10DataSource23RegisterDefaultSniffersEv()
 * USE: Returns the track format.
 * NOTES: It looks like this function was renamed in N. Stub out to the correct call.
 */
-void _ZNK7android16NuMediaExtractor14getTrackFormatEmPNS_2spINS_8AMessageEEE(size_t index, sp<AMessage> *format, uint32_t flags)
+status_t _ZNK7android16NuMediaExtractor14getTrackFormatEmPNS_2spINS_8AMessageEEE(size_t index, sp<AMessage> *format, uint32_t flags)
 {
-    _ZNK7android16NuMediaExtractor14getTrackFormatEjPNS_2spINS_8AMessageEEEj(index, format, flags);
+    return _ZNK7android16NuMediaExtractor14getTrackFormatEjPNS_2spINS_8AMessageEEEj(index, format, flags);
 }
 
 /* 

@@ -30,7 +30,7 @@ LOCAL_SHARED_LIBRARIES := \
 	libmedia \
     libutils
 
-LOCAL_C_INCLUDES += frameworks/av/media/mtp/ frameworks/rs/server/ frameworks/av/include/ hardware/libhardware/include/ system/core/include/
+LOCAL_C_INCLUDES += frameworks/av/media/mtp/ frameworks/rs/server/ frameworks/av/include/ hardware/libhardware/include/ system/core/include/ $(LOCAL_PATH)/include
 
 LOCAL_MODULE := libshim_audio
 LOCAL_PROPRIETARY_MODULE := true
@@ -50,6 +50,8 @@ LOCAL_SHARED_LIBRARIES := \
 	libui \
 	libutils \
     libgui
+
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/include
 
 LOCAL_MODULE := libshim_camera
 
@@ -172,6 +174,8 @@ LOCAL_SHARED_LIBRARIES := \
     libbase \
     android.hidl.token@1.0-utils \
     android.hardware.graphics.bufferqueue@1.0
+
+LOCAL_C_INCLUDES += $(LOCAL_PATH)/include
 
 LOCAL_CFLAGS := -Wno-unused-variable -Wno-unused-parameter -Wall -Wextra
 LOCAL_MODULE_TAGS := optional
