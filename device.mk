@@ -185,9 +185,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:system/vendor/etc/wifi/wpa_supplicant.conf \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/vendor/etc/wifi/wpa_supplicant_overlay.conf \
-    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/vendor/etc/wifi/p2p_supplicant_overlay.conf \
-    $(LOCAL_PATH)/configs/ecc_list.xml:system/etc/ecc_list.xml \
-    $(LOCAL_PATH)/configs/spn-conf.xml:system/etc/spn-conf.xml
+    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:system/vendor/etc/wifi/p2p_supplicant_overlay.conf
 
 # Thermal Configs
 PRODUCT_COPY_FILES += \
@@ -197,7 +195,10 @@ PRODUCT_COPY_FILES += \
 
 # GPS Config
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/agps_profiles_conf2.xml:system/vendor/etc/agps_profiles_conf2.xml
+    $(LOCAL_PATH)/configs/gps/agps_profiles_conf2.xml:system/vendor/etc/agps_profiles_conf2.xml \
+    $(LOCAL_PATH)/configs/gps/gps.conf:system/vendor/etc/gps.conf \
+    $(LOCAL_PATH)/configs/gps/ecc_list.xml:system/vendor/etc/ecc_list.xml \
+    $(LOCAL_PATH)/configs/gps/spn-conf.xml:system/vendor/etc/spn-conf.xml
 
 # Vulkan
 PRODUCT_COPY_FILES += \
