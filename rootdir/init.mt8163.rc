@@ -1402,7 +1402,7 @@ service slpd /system/vendor/bin/slpd
     user gps
     group gps inet
 
-service wifi2agps /system/bin/wifi2agps
+service wifi2agps /system/vendor/bin/wifi2agps
     class main
     user wifi
     group gps inet
