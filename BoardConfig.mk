@@ -23,19 +23,19 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
 # Kernel
-KERNEL_PREBUILT := true
+TARGET_USES_PREBUILT_KERNEL := false
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-ifeq ($(KERNEL_PREBUILT),true)
+ifeq ($(TARGET_USES_PREBUILT_KERNEL),true)
 TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/prebuilt/Image.gz-dtb
 PRODUCT_COPY_FILES += \
     $(TARGET_PREBUILT_KERNEL):kernel
 else
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(shell pwd)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-TARGET_KERNEL_CONFIG := aquaris_m8_defconfig
-TARGET_KERNEL_SOURCE := aquaris_m8
+TARGET_KERNEL_CONFIG := lineageos_aquaris_m8_defconfig
+TARGET_KERNEL_SOURCE := kernel/bq/aquaris_m8
 endif
 
 TARGET_USES_64_BIT_BINDER := true
