@@ -17,16 +17,10 @@ extern "C" {
     }
 
     /* android::IPprogramBinaryService::uiRendererProgramAtlasTerminate */
-    int _ZN7android10uirenderer12ProgramAtlas9terminateEv(void)
-    {
-        return 0x0;
-    }
+    void _ZN7android10uirenderer12ProgramAtlas9terminateEv() { /* Nothing here */ }
 
     /* android::IProgramBinaryService::uiRendererProgramAtlasLoadProgramBinariesAndDeleteEPliPvi */
-    int _ZN7android10uirenderer12ProgramAtlas28loadProgramBinariesAndDeleteEPliPvi(void)
-    {
-        return 0x0;
-    }
+    void _ZN7android10uirenderer12ProgramAtlas28loadProgramBinariesAndDeleteEPliPvi(int64_t* map, int mapLength, void* buffer, int length) { /* Nothing here */ }
 
     /* android::IprogramBinaryService::C2Ev */
     bool _ZN7android21IProgramBinaryServiceC2Ev() 
@@ -41,7 +35,7 @@ extern "C" {
     }
 
     /* android::IprogramBinaryService::uiRendererProgramAtlasCreatePrograms */
-    int _ZN7android10uirenderer12ProgramAtlas14createProgramsEPlPi(uint32_t program_name)
+    int _ZN7android10uirenderer12ProgramAtlas14createProgramsEPlPi(int64_t* map, int* mapLength)
     {
         return 0x0;
     }
