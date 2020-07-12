@@ -18,22 +18,17 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-         $(DEVICE_PATH)/overlay \
-         $(DEVICE_PATH)/overlay-lineage
+    $(DEVICE_PATH)/overlay \
+    $(DEVICE_PATH)/overlay-lineage
 
-# Display
+# Display/Screen
 TARGET_SCREEN_HEIGHT := 1280
 TARGET_SCREEN_WIDTH := 800
-
-# Screen density
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
-# Recovery allowed devices
+# Recovery allowed devices (assert)
 TARGET_OTA_ASSERT_DEVICE := Aquaris_M8,aquaris_m8,karin
-
-# Bluetooth Address
-PRODUCT_PROPERTY_OVERRIDES += ro.boot.btmacaddr=00:00:00:00:00:00
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -46,7 +41,11 @@ PRODUCT_PACKAGES += \
     libcurl \
     gps.mt8163
 
-# MNLD
+# GPS force mode
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.force.gps.mode=gnss
+
+# MNLD (GPS)
 ifeq ($(TARGET_PROVIDES_MNLD_HAL),false) 
 PRODUCT_PACKAGES += \
     libmnl \
@@ -57,9 +56,12 @@ PRODUCT_PACKAGES += \
     libsupl
 endif
 
-# GPS force mode
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.force.gps.mode=gnss
+# GPS Configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps/agps_profiles_conf2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/agps_profiles_conf2.xml \
+    $(LOCAL_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf \
+    $(LOCAL_PATH)/configs/gps/ecc_list.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ecc_list.xml \
+    $(LOCAL_PATH)/configs/gps/spn-conf.xml:$(TARGET_COPY_OUT_VENDOR)/etc/spn-conf.xml
 
 # Shim symbols
 PRODUCT_PACKAGES += \
@@ -81,10 +83,10 @@ PRODUCT_PACKAGES += power.mt8163
 # Lights
 PRODUCT_PACKAGES += lights.mt8163
 
-# MTK WPA Supplicant Libraries
+# WPA Supplicant Libraries
 PRODUCT_PACKAGES += lib_driver_cmd_mt66xx
 
-# Network
+# Network/Wi-Fi
 PRODUCT_PACKAGES += \
     netd \
     wpa_supplicant \
@@ -94,7 +96,13 @@ PRODUCT_PACKAGES += \
     wificond \
     wifilogd
 
-# Graphic
+# Wifi Configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
+    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
+    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf
+
+# Graphics
 PRODUCT_PACKAGES += \
     libGLES_android \
     libgralloc_extra \
@@ -102,10 +110,13 @@ PRODUCT_PACKAGES += \
     libgui_ext \
     libui_ext
 
-# Bluetooth
+# Bluetooth Packages
 PRODUCT_PACKAGES += \
     libbluetooth_mtk \
     libbt-vendor
+
+# Bluetooth Default Address
+PRODUCT_PROPERTY_OVERRIDES += ro.boot.btmacaddr=00:00:00:00:00:00
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -115,10 +126,10 @@ PRODUCT_PACKAGES += \
 
 # FM Radio
 PRODUCT_PACKAGES += \
-	FMRadio \
-	libfmcust
+    FMRadio \
+    libfmcust
 
-# Audio
+# Audio Packages
 PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.r_submix.default \
@@ -128,6 +139,21 @@ PRODUCT_PACKAGES += \
     libtinyalsa \
     libtinyxml \
     tinymix
+
+# Audio Policy
+PRODUCT_COPY_FILES += \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
+    $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
+
+# Audio Configs
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
+    $(LOCAL_PATH)/configs/audio/audio_device.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_device.xml \
+    $(LOCAL_PATH)/configs/audio/audio_em.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_em.xml \
+    $(LOCAL_PATH)/configs/audio/AudioParamOptions.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_param/AudioParamOptions.xml
 
 # XML Parser
 PRODUCT_PACKAGES += libxml2
@@ -156,14 +182,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/tablet_core_hardware.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/tablet_core_hardware.xml \
     frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.location.gps.xml
 
-# Audio Policy
-PRODUCT_COPY_FILES += \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
-    $(TOPDIR)frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
-
 # Media
 PRODUCT_COPY_FILES += \
     frameworks/av/media/libstagefright/data/media_codecs_google_audio.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_codecs_google_audio.xml \
@@ -176,31 +194,17 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/media/media_profiles_V1_0.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/media_profiles_V1_0.xml \
     $(LOCAL_PATH)/configs/media/mtk_omx_core.cfg:$(TARGET_COPY_OUT_VENDOR)/etc/mtk_omx_core.cfg
 
-# Audio
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
-    $(LOCAL_PATH)/configs/audio/audio_device.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_device.xml \
-    $(LOCAL_PATH)/configs/audio/audio_em.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_em.xml \
-    $(LOCAL_PATH)/configs/audio/AudioParamOptions.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_param/AudioParamOptions.xml
-
-# Wifi Configs
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/wifi/wpa_supplicant.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant.conf \
-    $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
-    $(LOCAL_PATH)/configs/wifi/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf
+# Media Overrides
+PRODUCT_PROPERTY_OVERRIDES += \
+     media.stagefright.legacyencoder=true \
+     media.stagefright.less-secure=true \
+     persist.media.treble_omx=false
 
 # Thermal Configs
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal/thermal.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/.tp/thermal.conf \
     $(LOCAL_PATH)/configs/thermal/thermal.off.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/.tp/thermal.off.conf \
     $(LOCAL_PATH)/configs/thermal/.ht120.mtc:$(TARGET_COPY_OUT_SYSTEM)/etc/.tp/.ht120.mtc
-
-# GPS Config
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps/agps_profiles_conf2.xml:$(TARGET_COPY_OUT_VENDOR)/etc/agps_profiles_conf2.xml \
-    $(LOCAL_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf \
-    $(LOCAL_PATH)/configs/gps/ecc_list.xml:$(TARGET_COPY_OUT_VENDOR)/etc/ecc_list.xml \
-    $(LOCAL_PATH)/configs/gps/spn-conf.xml:$(TARGET_COPY_OUT_VENDOR)/etc/spn-conf.xml
 
 # Vulkan
 PRODUCT_COPY_FILES += \
@@ -251,9 +255,3 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.adb.secure=0 \
     ro.secure=0 \
     ro.allow.mock.location=1
-
-# Media
-PRODUCT_PROPERTY_OVERRIDES += \
-     media.stagefright.legacyencoder=true \
-     media.stagefright.less-secure=true \
-     persist.media.treble_omx=false
