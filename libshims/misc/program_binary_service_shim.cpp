@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+#include "common.h"
+
 extern "C" {
 
     /* android::IprogramBinaryService::getInterfaceDescriptor */
@@ -20,7 +22,8 @@ extern "C" {
     void _ZN7android10uirenderer12ProgramAtlas9terminateEv() { /* Nothing here */ }
 
     /* android::IProgramBinaryService::uiRendererProgramAtlasLoadProgramBinariesAndDeleteEPliPvi */
-    void _ZN7android10uirenderer12ProgramAtlas28loadProgramBinariesAndDeleteEPliPvi(int64_t* map, int mapLength, void* buffer, int length) { /* Nothing here */ }
+    void _ZN7android10uirenderer12ProgramAtlas28loadProgramBinariesAndDeleteEPliPvi(PGM_GNUC_UNUSED int64_t* map, 
+        PGM_GNUC_UNUSED int mapLength, PGM_GNUC_UNUSED void* buffer, PGM_GNUC_UNUSED int length) { /* Nothing here */ }
 
     /* android::IprogramBinaryService::C2Ev */
     bool _ZN7android21IProgramBinaryServiceC2Ev() 
@@ -35,7 +38,7 @@ extern "C" {
     }
 
     /* android::IprogramBinaryService::uiRendererProgramAtlasCreatePrograms */
-    int _ZN7android10uirenderer12ProgramAtlas14createProgramsEPlPi(int64_t* map, int* mapLength)
+    int _ZN7android10uirenderer12ProgramAtlas14createProgramsEPlPi(PGM_GNUC_UNUSED int64_t* map, PGM_GNUC_UNUSED int* mapLength)
     {
         return 0x0;
     }
