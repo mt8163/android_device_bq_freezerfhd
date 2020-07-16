@@ -51,7 +51,7 @@
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
-#define SERIAL_LENGTH 17
+#define SERIAL_LENGTH 19
 
 using android::init::property_set;
 using android::base::GetProperty;
@@ -61,27 +61,22 @@ void write_serial(std::string serial) {
     const std::string proinfo = "/dev/block/platform/soc/11230000.mmc/by-name/proinfo";
 
     /* Sanity check of the serial length */
-    if (serial.length() != SERIAL_LENGTH) {
-        LOG(ERROR) << "[!] Serial lenght is invalid. Expected 17 but got " << serial.length() <<std::endl;
+    if (serial.length() > SERIAL_LENGTH) {
+        LOG(ERROR) << "[!] Serial lenght is too large. Expected 19 but got " << serial.length() << std::endl;
         exit(1);
     }
 
-    /* Before overwriting the PRO_INFO block create a copy in /data/local/tmp so user can restore it if the overwriting was not expected */
-    LOG(ERROR) << "[!] WARNING WARNING WARNING WARNING: You're about to overwrite the PRO_INFO block";
-    LOG(ERROR) << "[!] If this is not expected, restore the backup of PRO_INFO (/data/local/tmp/proinfo_backup) in next boot";
-    LOG(ERROR) << "[!] And disable the serial overwriting in the build prop!\n";
-
     /* Copy backup */
     std::ifstream srce(proinfo, std::ios::binary);
-    std::ofstream dest("/data/local/tmp/proinfo_backup", std::ios::binary);
+    std::ofstream dest("/tmp/proinfo_orig", std::ios::binary);
     dest << srce.rdbuf();
 
-    /* Open PRO_INFO block */
+    /* Open PRO INFO block */
     std::fstream processedFile(proinfo.c_str());
     std::stringstream fileData;
 
     /* Write the serial */
-    LOG(ERROR) << "[?] Writing " << serial << " with length of " << serial.length() << " to the PRO_INFO block...";
+    LOG(ERROR) << "[?] Writing " << serial << " with length of " << serial.length() << " to the PRO INFO block...";
     fileData << serial;
 
     fileData << processedFile.rdbuf();
@@ -123,9 +118,16 @@ void vendor_load_properties()
 
     model.open("/sys/firmware/devicetree/base/model");
 
-    /* Check for MT8163 */
-    while(getline(model, line)) {
-        if (line.find("MT8163") == 0) {
+    /* 
+     * Check for the platform and set the desired platform.
+     * Conditions:
+     *  - If model is MT8163 set platform to mt8163.
+     *  - If model is not MT8163 set platform to unknown.
+     */
+    while (getline(model, line)) 
+    {
+        if (line.find("MT8163") == 0) 
+        {
             LOG(ERROR) << "[?] Setting platform to mt8163...\n";
             property_override("ro.board.platform", "mt8163");
         } else {
@@ -133,8 +135,14 @@ void vendor_load_properties()
         }
     }
 
-    /* Check for device (aquaris_m8) */
-    if (device.find("aquaris_m8") == 0) {
+    /*
+     * Check for the device and set the desired properties.
+     * Conditions:
+     *   - If ro.product.device is aquaris_m8 set properties for it.
+     *   - If ro.product.device it's not aquaris_m8 set properties for unknown.
+     */
+    if (device.find("aquaris_m8") == 0) 
+    {
         LOG(ERROR) << "[?] Setting propreties for Aquaris M8...\n";
         property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "bq/Aquaris_M8/Aquaris_M8:6.0/MRA58K/1537280831:user/release-keys");
         property_override("ro.build.description", "full_bq_aquaris_m8-user 6.0 MRA58K 1537280832 release-keys");
@@ -148,8 +156,12 @@ void vendor_load_properties()
         property_override("ro.product.customer", "unknown");
     }
 
-    /* Not real NULL, just a string with word 'NULL' */
-    /* Serial overwriting is not recommended as may mess up PRO_INFO block. THIS IS ONLY FOR TESTING. You have been warned.. */
+    /* 
+     * Decide if we are going to override the serial.
+     * Conditions:
+     *   - If ro.override.serialno it's "NULL" don't override it.
+     *   - If ro.override.serialno it's not "NULL", override it.
+     */
     if (override_serial.find("NULL") != 0) {
         LOG(ERROR) << "[?] Attempt to override the serial...\n";
         write_serial(override_serial);
