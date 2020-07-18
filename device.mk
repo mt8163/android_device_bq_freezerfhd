@@ -255,3 +255,8 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.adb.secure=0 \
     ro.secure=0 \
     ro.allow.mock.location=1
+
+# Force Lockscreen Rotation
+PRODUCT_PRODUCT_PROPERTIES += \
+    log.tag.launcher_force_rotate=VERBOSE \
+    lockscreen.rot_override=true
