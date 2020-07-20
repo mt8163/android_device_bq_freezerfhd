@@ -13,6 +13,9 @@ $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui
 # HIDL (HAL Interface Definition Language)
 -include $(DEVICE_PATH)/hidl.mk
 
+# Languages
+$(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
+
 # GC
 PRODUCT_TAGS += dalvik.gc.type-precise
 
