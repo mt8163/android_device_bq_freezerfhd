@@ -96,7 +96,7 @@ wifi.tethering.interface=wlan0
 ro.tether.denied=false
 
 # Device-Specific prop
-ro.product.device_is_m8=true
+ro.product.device_is_m10=true
 
 # DRM
 drm.service.enabled=true
