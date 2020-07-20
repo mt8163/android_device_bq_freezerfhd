@@ -1,5 +1,11 @@
 [
   {
+    "target_path": "kernel/bq/freezerfhd",
+    "repository":  "mt8163/android_kernel_bq_freezerfhd",
+    "remote":      "github",
+    "revision":    "lineage-15.1"
+  },
+  {
     "target_path": "vendor/bq/mt8163",
     "repository":  "mt8163/android_vendor_bq_mt8163",
     "remote":      "github",
