@@ -33,9 +33,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Recovery allowed devices (assert)
 TARGET_OTA_ASSERT_DEVICE := Aquaris_M10FHD,freezerfhd,aquaris_m10FHD
 
-# Based OTA
-BLOCK_BASED_OTA := false
-
 # Camera
 PRODUCT_PACKAGES += \
     Snap \
