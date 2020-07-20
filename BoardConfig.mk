@@ -164,7 +164,7 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/bin/nandread|libshim_bionic.so
 
 # Recovery
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/fstab.mt8163
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/etc/twrp.fstab
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 BOARD_HAS_NO_SELECT_BUTTON := true
