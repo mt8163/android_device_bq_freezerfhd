@@ -1,5 +1,5 @@
 This is patch directory
 
 cd WORKING_DIR
-sh device/bq/aquaris_m8/patches/install.sh
-sh device/bq/aquaris_m8/patches/uninstall.sh
+sh device/bq/freezerfhd/patches/install.sh
+sh device/bq/freezerfhd/patches/uninstall.sh

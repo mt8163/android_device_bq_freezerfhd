@@ -1,7 +1,7 @@
-DEVICE_PATH := device/bq/aquaris_m8
+DEVICE_PATH := device/bq/freezerfhd
 
 # Call the Vendor Makefile
-$(call inherit-product, vendor/bq/aquaris_m8/aquaris_m8-vendor.mk)
+$(call inherit-product, vendor/bq/freezerfhd/freezerfhd-vendor.mk)
 
 # Call the mt8163-common Vendor Makefile
 include vendor/bq/mt8163/mt8163-vendor.mk
@@ -28,7 +28,7 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Recovery allowed devices (assert)
-TARGET_OTA_ASSERT_DEVICE := Aquaris_M8,aquaris_m8,karin
+TARGET_OTA_ASSERT_DEVICE := Aquaris_M10FHD,freezerfhd,aquaris_m10FHD
 
 # Camera
 PRODUCT_PACKAGES += \

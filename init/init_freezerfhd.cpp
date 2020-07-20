@@ -138,20 +138,20 @@ void vendor_load_properties()
     /*
      * Check for the device and set the desired properties.
      * Conditions:
-     *   - If ro.product.device is aquaris_m8 set properties for it.
-     *   - If ro.product.device it's not aquaris_m8 set properties for unknown.
+     *   - If ro.product.device is freezerfhd set properties for it.
+     *   - If ro.product.device it's not freezerfhd set properties for unknown.
      */
-    if (device.find("aquaris_m8") == 0) 
+    if (device.find("freezerfhd") == 0) 
     {
-        LOG(ERROR) << "[?] Setting propreties for Aquaris M8...\n";
-        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "bq/Aquaris_M8/Aquaris_M8:6.0/MRA58K/1537280831:user/release-keys");
-        property_override("ro.build.description", "full_bq_aquaris_m8-user 6.0 MRA58K 1537280832 release-keys");
-        property_override("ro.product.device_is_m8", "true");
-        property_override_dual("ro.product.model", "ro.vendor.product.model", "Aquaris M8");
+        LOG(ERROR) << "[?] Setting propreties for Aquaris M10 FHD...\n";
+        property_override_dual("ro.build.fingerprint", "ro.vendor.build.fingerprint", "bq/Aquaris_M10_FHD/Aquaris_M10_FHD:6.0/MRA58K/1516959575:user/release-keys");
+        property_override("ro.build.description", "full_bq_aquaris_m10_FHD-user 6.0 MRA58K 1516959575 release-keys");
+        property_override("ro.product.device_is_m10", "true");
+        property_override_dual("ro.product.model", "ro.vendor.product.model", "Aquaris M10 FHD");
         property_override("ro.product.customer", "bq");
     } else {
         LOG(ERROR) << "[?] Setting propreties for unknown device...\n";
-        property_override("ro.product.device_is_m8", "false");
+        property_override("ro.product.device_is_m10", "false");
         property_override_dual("ro.product.model", "ro.vendor.product.model", "Unknown");
         property_override("ro.product.customer", "unknown");
     }

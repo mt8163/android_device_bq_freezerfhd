@@ -1,10 +1,10 @@
-DEVICE_PATH := device/bq/aquaris_m8
-VENDOR_PATH := vendor/bq/aquaris_m8
+DEVICE_PATH := device/bq/freezerfhd
+VENDOR_PATH := vendor/bq/freezerfhd
 
-include vendor/bq/aquaris_m8/BoardConfigVendor.mk
+include vendor/bq/freezerfhd/BoardConfigVendor.mk
 
 # Platform
-TARGET_BOOTLOADER_BOARD_NAME := Aquaris_M8
+TARGET_BOOTLOADER_BOARD_NAME := Aquaris_M10FHD
 TARGET_BOARD_PLATFORM := mt8163
 TARGET_NO_BOOTLOADER := true
 TARGET_IS_64_BIT := true
@@ -34,8 +34,8 @@ TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := $(shell pwd)/prebuilts/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
-TARGET_KERNEL_CONFIG := lineageos_aquaris_m8_defconfig
-TARGET_KERNEL_SOURCE := kernel/bq/aquaris_m8
+TARGET_KERNEL_CONFIG := lineageos_freezerfhd_defconfig
+TARGET_KERNEL_SOURCE := kernel/bq/freezerfhd
 endif
 
 TARGET_USES_64_BIT_BINDER := true
@@ -137,7 +137,7 @@ WIFI_DRIVER_STATE_ON := 1
 WIFI_DRIVER_STATE_OFF := 0
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_aquaris_m8
+TARGET_INIT_VENDOR_LIB := libinit_freezerfhd
 
 # Shims
 TARGET_LD_SHIM_LIBS := \

@@ -24,8 +24,8 @@ LOCAL_C_INCLUDES := \
     system/core/base/include \
     system/core/init
 
-LOCAL_SRC_FILES := init_aquaris_m8.cpp
-LOCAL_MODULE := libinit_aquaris_m8
+LOCAL_SRC_FILES := init_freezerfhd.cpp
+LOCAL_MODULE := libinit_freezerfhd
 
 LOCAL_SHARED_LIBRARIES := liblog libbase libcutils
 LOCAL_STATIC_LIBRARIES += liblog libbase libcutils

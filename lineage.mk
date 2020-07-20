@@ -23,15 +23,15 @@ $(call inherit-product, $(LINEAGE_VENDOR)/config/common_full_tablet_wifionly.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Inherit from device
-$(call inherit-product, device/bq/aquaris_m8/device.mk)
+$(call inherit-product, device/bq/freezerfhd/device.mk)
 
 # This is a tablet
 PRODUCT_CHARACTERISTICS := tablet
 
-PRODUCT_DEVICE := aquaris_m8
-PRODUCT_NAME := lineage_aquaris_m8
+PRODUCT_DEVICE := freezerfhd
+PRODUCT_NAME := lineage_freezerfhd
 PRODUCT_BRAND := google
-PRODUCT_MODEL := Aquaris M8
+PRODUCT_MODEL := Aquaris M10 FHD
 PRODUCT_MANUFACTURER := bq
 
 # GMS
