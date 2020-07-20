@@ -9,6 +9,6 @@ PRODUCT_DEVICE := freezerfhd
 PRODUCT_NAME := full_freezerfhd
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Aquaris M10 FHD
-PRODUCT_MANUFACTURER := bq # Bonito por fuera y feo por dentro xD
+PRODUCT_MANUFACTURER := bq
 PRODUCT_RESTRICT_VENDOR_FILES := false
 

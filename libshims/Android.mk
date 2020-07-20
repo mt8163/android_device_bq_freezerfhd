@@ -1,13 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_SRC_FILES := vold.cpp
-LOCAL_MODULE := libshim_vold
-LOCAL_MODULE_CLASS := SHARED_LIBRARIES
-LOCAL_PROPRIETARY_MODULE := true
-include $(BUILD_SHARED_LIBRARY)
-
-include $(CLEAR_VARS)
 LOCAL_SRC_FILES := media.cpp
 LOCAL_MODULE := libshim_media
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES

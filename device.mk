@@ -4,10 +4,6 @@ DEVICE_VENDOR := vendor/bq/freezerfhd
 # Device overlay
 DEVICE_PACKAGE_OVERLAYS += $(DEVICE_BASE)/overlay
 
-# Install init.d scripts
-PRODUCT_COPY_FILES += \
-    $(DEVICE_BASE)/configs/99exfat-support:system/etc/init.d/99exfat-support
-
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Device uses high-density artwork where available
@@ -117,8 +113,6 @@ PRODUCT_PACKAGES += \
 
 # Shims
 PRODUCT_PACKAGES += \
-    libshim_vold \
-    libshim_media \
     libshim_audio
 
 # Camera
@@ -164,4 +158,4 @@ $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-he
 # call hwui memory config
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
 
-$(call inherit-product-if-exists, vendor/bq/aquaris_m8/aquaris_m8-vendor.mk)
+$(call inherit-product-if-exists, vendor/bq/freezerfhd/freezerfhd-vendor.mk)
