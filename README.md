@@ -25,10 +25,30 @@ This branch it's ONLY for building LineageOS 15.1.
 If you are interested in building LineageOS 15.1 for the BQ Aquaris M10 FHD, check our [build guide](https://github.com/mt8163/android_vendor_bq_mt8163/blob/lineage-15.1/README.md), it will probably help you.
 
 ### WORKING ###
-- Don't know.
+- Boots.
+- Wi-Fi.
+- Sound/Audio.
+- Gralloc.
+- Hardware Composer.
+- ADB/MTP.
+- Camera.
+- Video Recording.
+- DT2W.
+- LiveDisplay.
+- Offline Charging.
+- Lights (LEDs).
+- DRM (L3).
+- Bluetooth.
+- Thermal.
+- Sensors.
 
 ### NOT WORKING ###
-- Don't know.
+- GPS.
+- Sound Recording (Only Audio) (In videos works fine).
+- Encryption.
+
+### NOT TESTED ###
+- HDMI.
 
 ### SPECIAL THANKS ###
 - Kaijones23, huckleberrypie, JMPF6 and t0x1cSH for the help.
