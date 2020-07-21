@@ -55,7 +55,7 @@ dalvik.vm.heapsize=256m
 debug.hwui.use_partial_updates=false
 
 # Screen/LCM/LCD
-ro.sf.hwrotation=0
+ro.sf.hwrotation=90
 ro.sf.lcd_density=220
 
 # RILD
