@@ -41,14 +41,14 @@ If you are interested in building LineageOS 15.1 for the BQ Aquaris M10 FHD, che
 - Bluetooth.
 - Thermal.
 - Sensors.
+- GPS.
+- OMX (SW).
 
 ### NOT WORKING ###
-- GPS.
+- HDMI.
 - Sound Recording (Only Audio) (In videos works fine).
 - Encryption.
-
-### NOT TESTED ###
-- HDMI.
+- OMX (HW).
 
 ### SPECIAL THANKS ###
 - Kaijones23, huckleberrypie, JMPF6 and t0x1cSH for the help.
