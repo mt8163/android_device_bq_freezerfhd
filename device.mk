@@ -1,5 +1,7 @@
 DEVICE_PATH := device/bq/freezerfhd
 
+TARGET_IS_TABLET := true
+
 # Call the Vendor Makefile
 $(call inherit-product, vendor/bq/freezerfhd/freezerfhd-vendor.mk)
 
