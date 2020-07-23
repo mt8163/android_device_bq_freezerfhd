@@ -1,3 +1,3 @@
-add_lunch_combo lineage_freezerfhd-userdebug
-add_lunch_combo lineage_freezerfhd-user
-add_lunch_combo lineage_freezerfhd-eng
+add_lunch_combo bootleg_freezerfhd-userdebug
+add_lunch_combo bootleg_freezerfhd-user
+add_lunch_combo bootleg_freezerfhd-eng

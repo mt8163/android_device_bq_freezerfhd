@@ -14,12 +14,12 @@
 # limitations under the License.
 #
 
-LINEAGE_VENDOR := vendor/lineage
+BOOTLEGGERS_VENDOR := vendor/bootleggers
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
-$(call inherit-product, $(LINEAGE_VENDOR)/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, $(BOOTLEGGERS_VENDOR)/config/common_full_tablet_wifionly.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Inherit from device
@@ -28,8 +28,9 @@ $(call inherit-product, device/bq/freezerfhd/device.mk)
 # This is a tablet
 PRODUCT_CHARACTERISTICS := tablet
 
+# Set those variables here to overwrite the inherited values.
 PRODUCT_DEVICE := freezerfhd
-PRODUCT_NAME := lineage_freezerfhd
+PRODUCT_NAME := bootleg_freezerfhd
 PRODUCT_BRAND := google
 PRODUCT_MODEL := Aquaris M10 FHD
 PRODUCT_MANUFACTURER := bq
