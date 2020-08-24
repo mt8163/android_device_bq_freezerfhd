@@ -251,6 +251,3 @@ PRODUCT_PRODUCT_PROPERTIES += \
     log.tag.launcher_force_rotate=VERBOSE \
     lockscreen.rot_override=true
 
-# OTA
-PRODUCT_PRODUCT_PROPERTIES += \
-    lineage.updater.uri=https://raw.githubusercontent.com/R0rt1z2/android_lineage_custom_OTA/master/lineageos_freezerfhd.json
