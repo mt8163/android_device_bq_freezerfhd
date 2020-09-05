@@ -256,4 +256,5 @@ PRODUCT_PRODUCT_PROPERTIES += \
 
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.hwui.renderer=opengl
+    debug.hwui.renderer=opengl \
+    debug.hwui.use_partial_updates=false
