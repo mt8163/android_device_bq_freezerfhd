@@ -258,4 +258,5 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.hwui.renderer=opengl \
     debug.hwui.use_partial_updates=false \
-    debug.sf.disable_backpressure=1
+    debug.sf.disable_backpressure=1 \
+    debug.sf.latch_unsignaled=1
