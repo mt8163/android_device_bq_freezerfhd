@@ -26,7 +26,6 @@ If you are interested in building LineageOS 16.0 for the BQ Aquaris M10 FHD, che
 
 ### WORKING ###
 - Boots.
-- Wi-Fi.
 - Gralloc.
 - Hardware Composer.
 - ADB.
@@ -39,17 +38,18 @@ If you are interested in building LineageOS 16.0 for the BQ Aquaris M10 FHD, che
 - Bluetooth.
 - Thermal.
 - Sensors.
+- Audio/Sound.
 
 ### NOT WORKING ###
 - Encryption.
 - OMX (HW/SW).
 - HDMI.
 - DRM.
-- Audio/Sound.
 - Sound Recording.
 - Storage.
 - MTP.
 - GPS.
+- Wi-Fi.
 
 ### SPECIAL THANKS ###
 - Kaijones23, huckleberrypie, JMPF6 and t0x1cSH for the help.
